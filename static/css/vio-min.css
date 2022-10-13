@@ -1,0 +1,281 @@
+/*
+    2022/10/11
+    TODO 有些属性应该是成变量
+    TODO 写的有点乱，以后重构
+*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Helvetica , Arial , sans-serif;
+    text-decoration: none;
+}
+
+:root{
+    --vio-font-color:rgb(79, 79, 79);
+}
+
+
+body{
+    /* background-color:rgb(245, 245, 247); */
+    background-color:rgb(244, 244, 244); 
+    color: var(--vio-font-color);
+}
+
+
+/* display style */
+.vio-card{
+    background: white;
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+    transition: all 0.3s;
+}
+
+.vio-card:hover{
+    box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+    transition: all 0.5s;
+}
+
+/* # header */
+header{
+    position: fixed;
+    z-index: 999;
+}
+
+
+header .menu{
+    display: flex;
+    margin: .7rem 3rem;
+    height: 3.4rem;
+    backdrop-filter: blur(7px);
+    border-radius: .7rem;
+}
+header ul{
+    list-style-type: none;
+    display:flex;
+    padding: .5rem 1rem;
+    /* opacity: 0.8; */
+    background-color: #38abf2e4;
+    /* background-color: #f4f4f4; */
+    border-radius: .7rem;
+}
+header ul li{
+    opacity: 1;
+}
+
+header ul li{
+    margin: 0 auto;
+    margin: auto 1rem;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.banner{
+    height:70vh;
+    /*  60% height  */
+    font-weight: 100%;
+    background: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg") center; /* TODO 背景图，应该是变量 */
+    background-size:cover;
+    background-attachment: fixed;
+    padding: 3rem;
+    padding-bottom: 7rem;
+    display: flex;
+    align-items: center;
+}
+.sayhello{
+    /* background: red; */
+    color: #f4f4f4;
+}
+.sayhello > h1{
+    font-size: 3rem;
+    line-height: 4rem;
+    letter-spacing: 0.15rem;
+}
+
+.sayhello > p{
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+}
+
+
+/* # 内容容器 */
+.container{
+    max-width: 80rem;
+    margin: -20vh auto 1rem auto;
+    padding:0 2rem;
+    display: flex;
+}
+
+
+/* ## main */
+
+.art-list{
+    flex:6;
+}
+
+.art-list > ul{
+    list-style-type: none;
+}
+/* ### 列表项 */
+.art-list a{
+    text-decoration: none;
+    color: rgb(79, 79, 79); /* 链接颜色 TODO 应该是变量*/
+}
+.art-list li{
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+    transition: all 0.3s;
+    display: flex;
+    /* text-decoration: none; */
+    color: rgb(79, 79, 79);  /* 文章列表文字颜色 */
+}
+.art-list li:hover{
+    box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+    transition: all 0.5s;
+}
+
+.art-card{
+    flex: 7;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 500;
+}
+.art-card h2{
+    margin:.4rem 0;
+    font-size: 2rem;
+    font-weight: 900;
+}
+.art-card .art-info{
+    /* 时间类型标签 */
+    opacity: 0.6;
+    margin: 0.4rem 0;
+    z-index: -1;
+    /* background-color: red; */
+}
+
+.art-card .spanart-ellipsis{
+    /* 省略号渐变 */
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,131,255,0) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:transparent;
+    /* font-size: 1.2rem; */
+}
+
+.art-excerpt{
+    margin:1rem 0 1.5rem 0;
+    line-height: 1.6;
+}
+
+.art-img{
+    max-width: 15rem;
+    flex: 3;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin: 0 0 0 1rem;
+    transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+}
+
+.art-img:hover{
+    transform: rotate(.007turn) scale(1.2);
+    transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+    box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
+}
+.art-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ## tag & category */
+.art-tags ,
+.art-cats{
+    margin: 0 .5rem;
+}
+
+.art-tags > a,
+.art-cats > a{
+    /* color: #2a93d4; */
+    /* font-size: 1.1rem; */
+    transition: all 0.3s;
+}
+.art-cats > a::before{
+    display: inline-block;
+    content: "";
+    width: .5rem;
+    height: .5rem;
+    align-self: center;
+    /* ^ 画圈圈 😇 */
+    font-size: .5rem;
+    border: solid .13rem;
+    border-radius: 1rem;
+    margin: 0 .2rem;
+}
+
+.art-tags > a::before{
+    content: "#";
+    font-weight: bold;
+    margin: 0 .2rem;
+}
+
+.art-list li:hover .art-tags > a{
+    color: #2a93d4;
+}
+
+.art-list li:hover .art-cats > a{
+    color: #7f2ad4;
+}
+
+.art-tags > a:hover{
+    text-decoration: solid;
+}
+
+
+
+
+
+/* ## sidebar */
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    /* border: white solid; */
+    margin: 2rem 0 2rem 2rem;
+    /* border-radius: 1rem;  */
+}
+
+.bar-myself{
+    position: sticky;
+    top: .5rem;
+    min-height: 10rem;
+    padding: 2rem;
+}
+
+.bar-myself-info{
+    display: flex;
+    align-items: center;
+    /* margin: 1rem 0; */
+}
+
+.bar-myself-info > img{
+    width: 4rem;
+    height: 4rem;
+    border-radius:1rem;
+    margin-right: 1rem;
+
+    /* border: rgba(165, 165, 165, 0.538) .05rem solid; */ /* TODO 可能？ 白色背景头像不易区分，加个边框也很丑 */
+}
+
+.bar-myself-info > h2{
+    font-weight: 900;
+}
+
