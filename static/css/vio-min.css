@@ -271,8 +271,6 @@ header ul li a{
     height: 4rem;
     border-radius:1rem;
     margin-right: 1rem;
-
-    /* border: rgba(165, 165, 165, 0.538) .05rem solid; */ /* TODO 可能？ 白色背景头像不易区分，加个边框也很丑 */
 }
 
 .bar-myself-info > h2{

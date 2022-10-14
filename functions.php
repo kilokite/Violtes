@@ -40,6 +40,7 @@ function vio_fuck()
 
 		add_filter('show_admin_bar', '__return_false'); //移除顶部工具栏（admin_bar）
 		//TODO 隐藏 还是 更好的的显示方式
+		//这玩意真有人用？
 
 
 	}
@@ -48,7 +49,7 @@ function vio_fuck()
 function vio_feature()
 {
 	//添加特色图片支持
-	add_theme_support("post-thumbnails"); 
+	add_theme_support("post-thumbnails");
 
 	//摘录字数
 	function wpdocs_custom_excerpt_length($length)
@@ -56,13 +57,53 @@ function vio_feature()
 		return 200;
 	}
 	add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
-	
+
 	//摘录省略号
 	function wpdocs_excerpt_more($more)
 	{
 		return '<span class="art_ellipsis">.....</span>';
 	}
 	add_filter('excerpt_more', 'wpdocs_excerpt_more');
+
+	function vio_menu()
+	{
+		//注册菜单
+		add_menu_page("Violets", "Violets", "manage_options", "vio-option", "vio_option_main");
+		function vio_option_main()
+		{
+			get_template_part("templates/option", "main");
+		}
+		add_submenu_page("vio-option", "内容", "内容", "manage_options", "vio-option-content", "vio_option_content");
+		function vio_option_content()
+		{
+			get_template_part("templates/option", "content");
+		}
+		add_submenu_page("vio-option", "样式", "样式", "manage_options", "vio-option-style", "vio_option_style");
+		function vio_option_style()
+		{
+			get_template_part("templates/option", "style");
+		}
+	}
+	add_action('admin_menu', 'vio_menu');
+
+	function vio_option()
+	{
+		//设置项
+		register_setting("vio-option-content", "vio-option-content");
+			add_settings_section('vio-option-content-info','个人信息','vio_option_content_info','vio-option-content');
+			function vio_option_content_info()
+			{
+				echo "这里是个人信息";
+			}
+			add_settings_field('vio-user_name','用户名','vio_option_content_user_name','vio-option-content','vio-option-content-info');
+			function vio_option_content_user_name()
+			{
+				?>
+				<input type="text" name="vio-user_name" value="<?php echo get_option('vio-user_name'); ?>">
+				<?php
+			}
+	}
+	add_action('admin_init', 'vio_option');
 }
 
 
