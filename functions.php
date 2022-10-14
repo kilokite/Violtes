@@ -85,25 +85,6 @@ function vio_feature()
 		}
 	}
 	add_action('admin_menu', 'vio_menu');
-
-	function vio_option()
-	{
-		//设置项
-		register_setting("vio-option-content", "vio-option-content");
-			add_settings_section('vio-option-content-info','个人信息','vio_option_content_info','vio-option-content');
-			function vio_option_content_info()
-			{
-				echo "这里是个人信息";
-			}
-			add_settings_field('vio-user_name','用户名','vio_option_content_user_name','vio-option-content','vio-option-content-info');
-			function vio_option_content_user_name()
-			{
-				?>
-				<input type="text" name="vio-user_name" value="<?php echo get_option('vio-user_name'); ?>">
-				<?php
-			}
-	}
-	add_action('admin_init', 'vio_option');
 }
 
 
