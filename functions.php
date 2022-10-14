@@ -4,7 +4,6 @@ function vio_require_styles()
 {
 	//静态资源
 	wp_enqueue_style('vio-min', get_theme_file_uri('static/css/vio-min.css'));
-	wp_enqueue_style('req-hake-hard', get_theme_file_uri('static/css/shake-hard.css'));
 }
 add_action('wp_enqueue_scripts', 'vio_require_styles');
 
@@ -61,7 +60,7 @@ function vio_feature()
 	//摘录省略号
 	function wpdocs_excerpt_more($more)
 	{
-		return '<span class="art_ellipsis">.....</span>';
+		return '<span class="art-ellipsis">.....</span>';
 	}
 	add_filter('excerpt_more', 'wpdocs_excerpt_more');
 
@@ -104,3 +103,5 @@ function vio_sidebar($bar)
 
 vio_feature();
 vio_fuck();
+
+?>
