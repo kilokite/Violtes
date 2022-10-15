@@ -1,0 +1,127 @@
+@charset "UTF-8";
+/*
+    组件？
+*/
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+}
+
+.vio-card, .toast {
+  border-radius: 0.5rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  transition: all 0.3s;
+}
+.vio-card:hover, .toast:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+  transition: all 0.5s;
+}
+
+.toast {
+  min-width: 8rem;
+  padding: 0.7rem;
+  background: #6dc2f2;
+  position: fixed;
+  top: -5rem;
+  right: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: Toast 4s ease;
+}
+@keyframes Toast {
+  0% {
+    top: 4rem;
+  }
+  6% {
+    transform: translate(0px, 7px) rotate(3.5deg);
+  }
+  8% {
+    transform: translate(0px, -9px) rotate(-0.5deg);
+  }
+  10% {
+    transform: translate(-8px, -5px) rotate(2.5deg);
+  }
+  12% {
+    transform: translate(-1px, 4px) rotate(3.5deg);
+  }
+  14% {
+    transform: translate(8px, 4px) rotate(0.5deg);
+  }
+  16% {
+    transform: translate(-3px, 8px) rotate(0.5deg);
+  }
+  18% {
+    transform: translate(10px, 10px) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate(-4px, 10px) rotate(0.5deg);
+  }
+  22% {
+    transform: translate(6px, 4px) rotate(0.5deg);
+  }
+  24% {
+    transform: translate(-9px, -7px) rotate(-0.5deg);
+  }
+  26% {
+    transform: translate(8px, 3px) rotate(-1.5deg);
+  }
+  28% {
+    transform: translate(-8px, -9px) rotate(2.5deg);
+  }
+  30% {
+    transform: translate(0px, -3px) rotate(-0.5deg);
+  }
+  80% {
+    top: 4rem;
+  }
+  100% {
+    top: -5rem;
+  }
+}
+
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+}
+
+form p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(79, 79, 79);
+}
+form > div {
+  margin: 1rem 0.5rem;
+}
+form > div > h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+form > div label {
+  display: inline-block;
+  width: 15rem;
+}
+form > div label::after {
+  content: ":";
+}
+form > div input {
+  display: inline-block;
+  width: 20rem;
+  height: 2rem;
+  border: solid 1px rgb(79, 79, 79);
+  border-radius: 0.5rem;
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+}
+form button {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  background-color: #a66df2;
+  border: none;
+  border-radius: 1rem;
+}
+form button:before {
+  content: "";
+}
+
+/*# sourceMappingURL=vio-option.css.map */

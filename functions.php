@@ -100,6 +100,10 @@ function vio_sidebar($bar)
 	get_template_part('templates/sidebar', $bar);
 }
 
+function vio_option($name){
+	echo get_option("vio-".$name);
+}
+
 
 vio_feature();
 vio_fuck();

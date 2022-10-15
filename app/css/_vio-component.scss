@@ -1,0 +1,102 @@
+/*
+    组件？
+*/
+@import 'vio-var';
+
+
+$radius: 1rem !default;
+
+.vio-card {
+    //基本样式 basic style
+    border-radius: .5rem;
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+        transition: all 0.5s;
+    }
+}
+
+.toast {
+    @extend .vio-card;
+    min-width: 8rem;
+    padding: .7rem;
+    background: $color-sky-light;
+    position: fixed;
+    top: -5rem;
+    right: 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    animation: Toast 4s ease;
+
+    @keyframes Toast {
+        0% {
+            top: 4rem;
+        }
+    
+        6% {
+            transform: translate(0px, 7px) rotate(3.5deg);
+        }
+    
+        8% {
+            transform: translate(0px, -9px) rotate(-0.5deg);
+        }
+    
+        10% {
+            transform: translate(-8px, -5px) rotate(2.5deg);
+        }
+    
+        12% {
+            transform: translate(-1px, 4px) rotate(3.5deg);
+        }
+    
+        14% {
+            transform: translate(8px, 4px) rotate(0.5deg);
+        }
+    
+        16% {
+            transform: translate(-3px, 8px) rotate(0.5deg);
+        }
+    
+        18% {
+            transform: translate(10px, 10px) rotate(-0.5deg);
+        }
+    
+        20% {
+            transform: translate(-4px, 10px) rotate(0.5deg);
+        }
+    
+        22% {
+            transform: translate(6px, 4px) rotate(0.5deg);
+        }
+    
+        24% {
+            transform: translate(-9px, -7px) rotate(-0.5deg);
+        }
+    
+        26% {
+            transform: translate(8px, 3px) rotate(-1.5deg);
+        }
+    
+        28% {
+            transform: translate(-8px, -9px) rotate(2.5deg);
+        }
+    
+        30% {
+            transform: translate(0px, -3px) rotate(-0.5deg);
+        }
+    
+        80% {
+            top: 4rem;
+        }
+    
+        100% {
+            // transform: translate(0, -5rem);
+            top: -5rem;
+        }
+    }
+}
+
+

@@ -5,6 +5,7 @@
 */
 
 @use 'shake-hard';
+@use 'vio-var';
 
 * {
     margin: 0;
@@ -34,7 +35,7 @@ body {
     transition: all 0.3s;
 
     &:hover {
-        // box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
         transition: all 0.5s;
     }
 }

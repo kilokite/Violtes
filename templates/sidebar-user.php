@@ -1,6 +1,6 @@
 <div class="bar-myself vio-card">
     <div class="bar-myself-info">
-        <img src="http://q1.qlogo.cn/g?b=qq&nk=1934412741&s=640" alt="" class="shake-hard">
-        <h2>Kilokite</h2>
+        <img src="<?php vio_option("portrait")?>" alt="" class="shake-hard">
+        <h2><?php vio_option('name')?></h2>
     </div>
 </div>

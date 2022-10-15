@@ -183,6 +183,10 @@
 }
 
 /*# sourceMappingURL=csshake-hard.css.map */
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+}
+
 /*
     2022/10/11
     TODO 有些属性应该是成变量
@@ -214,6 +218,7 @@ body {
   transition: all 0.3s;
 }
 .vio-card:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
   transition: all 0.5s;
 }
 
