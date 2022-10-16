@@ -183,15 +183,15 @@
 }
 
 /*# sourceMappingURL=csshake-hard.css.map */
-:root {
-  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-}
-
 /*
     2022/10/11
     TODO 有些属性应该是成变量
     TODO 写的有点乱，以后重构
 */
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -425,22 +425,37 @@ header ul li a {
 
 .bar-myself {
   position: sticky;
-  top: 0.5rem;
-  min-height: 10rem;
+  top: 1rem;
   padding: 2rem;
 }
-.bar-myself .bar-myself-info {
+.bar-myself > .info {
   display: flex;
   align-items: center;
 }
-.bar-myself .bar-myself-info > img {
+.bar-myself > .info > img {
   width: 4rem;
   height: 4rem;
   border-radius: 1rem;
   margin-right: 1rem;
 }
-.bar-myself .bar-myself-info > h2 {
-  font-weight: 900;
+.bar-myself > .info > div > h2 {
+  font-weight: bold;
+}
+.bar-myself > .info > div > p {
+  color: rgba(79, 79, 79, 0.8);
+}
+.bar-myself > .badge {
+  margin-top: 1rem;
+}
+.bar-myself > .badge > img {
+  border-radius: 0.3rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  transition: 0.5s cubic-bezier(0, 0, 0, 1);
+}
+.bar-myself > .badge > img:hover {
+  transform: translate(0, -0.2rem);
+  transition: 0.3s cubic-bezier(0, 0, 0, 1);
 }
 
 /*# sourceMappingURL=vio-min.css.map */

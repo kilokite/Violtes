@@ -5,7 +5,7 @@
 */
 
 @use 'shake-hard';
-@use 'vio-var';
+@import 'vio-var';
 
 * {
     margin: 0;
@@ -278,11 +278,10 @@ header {
 
 .bar-myself {
     position: sticky;
-    top: .5rem;
-    min-height: 10rem;
+    top: 1rem;
     padding: 2rem;
 
-    .bar-myself-info {
+    > .info {
         display: flex;
         align-items: center;
 
@@ -293,8 +292,32 @@ header {
             margin-right: 1rem;
         }
 
-        >h2 {
-            font-weight: 900;
+        >div{
+            >h2{
+                font-weight: bold;
+            }
+            >p{
+                color: $font-color-light;
+            }
+        }
+    }
+
+    > .badge{
+        margin-top: 1rem;
+        >img{
+            border-radius: .3rem;
+            // width: 2rem;
+            height: 2rem;
+            margin-right: .5rem;
+
+            transition: .5s cubic-bezier(0, 0, 0, 1);
+            &:hover{
+                // box-shadow: .2rem .2rem .5rem rgba(128, 128, 128, 0.273);
+                // background: linear-gradient(145deg, #ddd, #fff);
+                // box-shadow: 2px 4px 8px #ddd, -2px -4px 8px #fff;
+                transform: translate(0, -0.2rem);
+                transition: .3s cubic-bezier(0, 0, 0, 1);
+            }
         }
     }
 
