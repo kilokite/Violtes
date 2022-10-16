@@ -183,13 +183,9 @@
 }
 
 /*# sourceMappingURL=csshake-hard.css.map */
-/*
-    2022/10/11
-    TODO 有些属性应该是成变量
-    TODO 写的有点乱，以后重构
-*/
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+  font-weight: 500;
 }
 
 * {
@@ -198,6 +194,107 @@
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
   text-decoration: none;
+}
+
+.vio-card, article {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  transition: box-shadow 0.3s;
+}
+.vio-card:hover, article:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+  transition: box-shadow 0.5s;
+}
+
+article > .info > img {
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+}
+article > .info > img:hover {
+  transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+  box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
+}
+
+article {
+  flex: 1;
+  background: white;
+  margin: 2rem 0;
+  padding: 2rem;
+}
+article > .info {
+  display: flex;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 0.1rem solid rgba(128, 128, 128, 0.199);
+}
+article > .info > div {
+  flex: 6;
+}
+article > .info > div > h1 {
+  font-size: 2rem;
+}
+article > .info > div p {
+  opacity: 0.6;
+  margin: 0.4rem 0;
+  z-index: -1;
+}
+article > .info > div p .item {
+  margin-left: 0.5rem;
+}
+article > .info > div p a {
+  color: rgb(79, 79, 79);
+}
+article > .info:hover .art-cats a {
+  color: #7f2ad4;
+}
+article > .info:hover .art-tags a {
+  color: #2a93d4;
+}
+article > .info > img {
+  transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+  border-radius: 1rem;
+  width: 30%;
+  max-height: 30vh;
+}
+article > .info > img:hover {
+  transform: rotate(0.007turn) scale(1.2);
+  transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+}
+article > .main-body {
+  line-height: 1.8;
+}
+article > .main-body img {
+  margin: 1rem 0;
+  border-radius: 1rem !important;
+  border: none;
+}
+
+/*
+    2022/10/11
+    TODO 有些属性应该是成变量
+*/
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+  font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+.vio-card {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  transition: box-shadow 0.3s;
+}
+.vio-card:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+  transition: box-shadow 0.5s;
 }
 
 :root {
@@ -215,11 +312,11 @@ body {
   background: white;
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
-  transition: all 0.3s;
+  transition: box-shadow 0.3s;
 }
 .vio-card:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
-  transition: all 0.5s;
+  transition: box-shadow 0.5s;
 }
 
 /* # header */
@@ -233,6 +330,7 @@ header .menu {
   height: 3.4rem;
   backdrop-filter: blur(7px);
   border-radius: 0.7rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.246);
 }
 header ul {
   list-style-type: none;
@@ -274,6 +372,7 @@ header ul li a {
   color: #f4f4f4;
 }
 .sayhello > h1 {
+  font-weight: bold;
   font-size: 3rem;
   line-height: 4rem;
   letter-spacing: 0.15rem;
@@ -359,6 +458,7 @@ header ul li a {
   border-radius: 1rem;
   margin: 0 0 0 1rem;
   transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+  max-height: 30vh;
 }
 .art-list li .art-img:hover {
   transform: rotate(0.007turn) scale(1.2);
@@ -381,7 +481,7 @@ header ul li a {
 .art-cats > a {
   /* color: #2a93d4; */
   /* font-size: 1.1rem; */
-  transition: all 0.3s;
+  transition: color 0.3s;
 }
 
 .art-cats > a::before {
@@ -419,7 +519,8 @@ header ul li a {
 .sidebar {
   display: flex;
   flex-direction: column;
-  flex: 2;
+  flex: 0;
+  flex-basis: auto;
   margin: 2rem 0 2rem 2rem;
 }
 
@@ -451,11 +552,11 @@ header ul li a {
   border-radius: 0.3rem;
   height: 2rem;
   margin-right: 0.5rem;
-  transition: 0.5s cubic-bezier(0, 0, 0, 1);
+  transition: transform 0.5s cubic-bezier(0, 0, 0, 1);
 }
 .bar-myself > .badge > img:hover {
-  transform: translate(0, -0.2rem);
-  transition: 0.3s cubic-bezier(0, 0, 0, 1);
+  transform: translate(0, -0.2rem) scale(1.2);
+  transition: transform 0.3s cubic-bezier(0, 0, 0, 1);
 }
 
 /*# sourceMappingURL=vio-min.css.map */

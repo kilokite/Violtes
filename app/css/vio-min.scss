@@ -1,19 +1,12 @@
 /*
     2022/10/11
     TODO 有些属性应该是成变量
-    TODO 写的有点乱，以后重构
 */
 
 @use 'shake-hard';
+@use 'vio-article';
 @import 'vio-var';
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Helvetica, Arial, sans-serif;
-    text-decoration: none;
-}
 
 :root {
     --vio-font-color: rgb(79, 79, 79);
@@ -32,11 +25,11 @@ body {
     background: white;
     border-radius: 1rem;
     box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
-    transition: all 0.3s;
+    transition: box-shadow 0.3s;
 
     &:hover {
         box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
-        transition: all 0.5s;
+        transition: box-shadow 0.5s;
     }
 }
 
@@ -52,6 +45,7 @@ header {
         height: 3.4rem;
         backdrop-filter: blur(7px);
         border-radius: .7rem;
+        box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
     }
 
     ul {
@@ -100,6 +94,7 @@ header {
     color: #f4f4f4;
 
     >h1 {
+        font-weight: bold;
         font-size: 3rem;
         line-height: 4rem;
         letter-spacing: 0.15rem;
@@ -195,12 +190,15 @@ header {
 
         .art-img {
             max-width: 15rem;
+            // max-height: 15rem; //防止太长的图片 怪，这里
             flex: 3;
             overflow: hidden;
             border-radius: 1rem;
             margin: 0 0 0 1rem;
             transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
 
+            max-height: 30vh;
+        
             &:hover {
                 transform: rotate(.007turn) scale(1.2);
                 transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
@@ -215,8 +213,8 @@ header {
         }
     }
 
-}
 
+}
 
 
 
@@ -230,7 +228,7 @@ header {
 .art-cats>a {
     /* color: #2a93d4; */
     /* font-size: 1.1rem; */
-    transition: all 0.3s;
+    transition: color 0.3s;
 }
 
 .art-cats>a::before {
@@ -272,7 +270,8 @@ header {
 .sidebar {
     display: flex;
     flex-direction: column;
-    flex: 2;
+    flex: 0;
+    flex-basis: auto;
     margin: 2rem 0 2rem 2rem;
 }
 
@@ -310,13 +309,13 @@ header {
             height: 2rem;
             margin-right: .5rem;
 
-            transition: .5s cubic-bezier(0, 0, 0, 1);
+            transition: transform .5s cubic-bezier(0, 0, 0, 1);
             &:hover{
                 // box-shadow: .2rem .2rem .5rem rgba(128, 128, 128, 0.273);
                 // background: linear-gradient(145deg, #ddd, #fff);
                 // box-shadow: 2px 4px 8px #ddd, -2px -4px 8px #fff;
-                transform: translate(0, -0.2rem);
-                transition: .3s cubic-bezier(0, 0, 0, 1);
+                transform: translate(0, -0.2rem) scale(1.2);
+                transition: transform .3s cubic-bezier(0, 0, 0, 1);
             }
         }
     }

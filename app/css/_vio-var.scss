@@ -1,12 +1,21 @@
-$font-stack:Helvetica, Arial, sans-serif; //TODO 用苹方，或者其他？
+//TODO 属性并非完全统一
 
+// 字体栈 font stack
+$font-stack:Helvetica, Arial, sans-serif; //TODO Arial中文字体似乎不是很好看，苹方备选一下
+// 字重 font weight
+$font-weight-light:300;
+$font-weight-normal:500;
+$font-weight-bold:900;
+
+
+//基础文字颜色 basic font color?
 $font-color:rgb(79, 79, 79);
 $font-color-light:rgba(79, 79, 79, 0.800);;
 
-
+//白色和不那么白色  white and not very white
 $background-color:rgb(244, 244, 244);
 $card-background-color:white;
-
+//蓝色和紫色 blue and violet
 $color-violet:#7f2ad4;
 $color-violet-light:#a66df2;
 $color-violet-dark:#4f0a9d;
@@ -14,13 +23,50 @@ $color-sky:#2a93d4;
 $color-sky-light:#6dc2f2;
 $color-sky-dark:#0a5d9d;
 
-$vio-background-img:--vio-background-img;
 
+
+//这应该是个背景图 it's a background img?
+$vio-background-img:--vio-background-img;
+//你想要多圆 hao round you want
 $radius:1rem;
+
+
 
 
 :root{
     --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg"); //TODO 应该能换
+
+    font-weight: $font-weight-normal; 
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; //so , fuck you content-box
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
 
+}
+
+//一个卡片应该长啥样 What should at least look like？
+.vio-card {
+    //基本样式 basic style
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+        transition: box-shadow 0.5s;
+    }
+}
+
+%vio-img{
+        object-fit: cover;
+        border-radius: $radius;
+        transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+        &:hover {
+            transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+            box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
+        }
+}

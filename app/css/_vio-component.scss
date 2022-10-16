@@ -6,20 +6,10 @@
 
 $radius: 1rem !default;
 
-.vio-card {
-    //基本样式 basic style
-    border-radius: .5rem;
-    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
-    transition: all 0.3s;
-
-    &:hover {
-        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
-        transition: all 0.5s;
-    }
-}
 
 .toast {
     @extend .vio-card;
+    border-radius: .5rem;
     min-width: 8rem;
     padding: .7rem;
     background: $color-sky-light;

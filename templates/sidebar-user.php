@@ -13,5 +13,6 @@
         <img src="<?php echo get_theme_file_uri('static/badge/cadpa-18.svg')?>" alt="">
         <img src="<?php echo get_theme_file_uri('static/badge/code-vsc.svg')?>" alt="">
         <img src="<?php echo get_theme_file_uri('static/badge/c-hfs.png')?>" alt="">
+        <!-- TODO 如何生成没想好 -->
     </div>
 </div>

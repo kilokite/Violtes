@@ -1,0 +1,80 @@
+@import 'vio-var';
+
+article {
+    flex: 1;
+    // display: flex;
+    @extend .vio-card;
+    background: $card-background-color;
+    margin: 2rem 0;
+    padding: 2rem;
+    // transition: all 0.5s ease-out;
+
+    >.info {
+        //文章头部信息部分
+        display: flex;
+
+        //分割线
+        padding-bottom: .5rem;
+        margin-bottom: 1.5rem;
+        border-bottom: .1rem solid rgba(128, 128, 128, 0.199);
+
+        >div {
+            //信息展示卡的文字部分
+            flex: 6;
+
+            >h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                opacity: 0.6;
+                margin: 0.4rem 0;
+                z-index: -1;
+                // color: $font-color;
+
+                .item {
+                    margin-left: .5rem;
+                }
+
+                a {
+                    color: $font-color;
+                }
+            }
+        }
+
+        &:hover {
+            .art-cats a {
+                color: $color-violet;
+            }
+
+            .art-tags a {
+                color: $color-sky;
+            }
+        }
+
+        >img {
+            //左侧图片
+            @extend %vio-img;
+            transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+            border-radius: $radius;
+            width: 30%;
+            max-height: 30vh;
+
+            &:hover {
+                transform: rotate(.007turn) scale(1.2);
+                transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+            }
+        }
+    }
+
+    >.main-body{
+        //正文部分
+        line-height: 1.8;
+        img{
+            margin: 1rem 0;
+            border-radius: $radius !important;
+            border: none;
+        }
+    }
+
+}

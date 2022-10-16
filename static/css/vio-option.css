@@ -4,19 +4,29 @@
 */
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+  font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
 }
 
 .vio-card, .toast {
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
-  transition: all 0.3s;
+  transition: box-shadow 0.3s;
 }
 .vio-card:hover, .toast:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
-  transition: all 0.5s;
+  transition: box-shadow 0.5s;
 }
 
 .toast {
+  border-radius: 0.5rem;
   min-width: 8rem;
   padding: 0.7rem;
   background: #6dc2f2;
@@ -81,6 +91,25 @@
 
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+  font-weight: 500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+.vio-card {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  transition: box-shadow 0.3s;
+}
+.vio-card:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+  transition: box-shadow 0.5s;
 }
 
 form p {
