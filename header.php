@@ -13,7 +13,7 @@
 
     <header>
         <!-- 导航栏 -->
-        <?php wp_nav_menu(array('theme_location' => 'header-menu')) ?>
+        <?php wp_nav_menu(array('header-menu' => '顶部菜单')) ?>
     </header>
     <!-- banner -->
     <section class="banner">

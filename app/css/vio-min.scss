@@ -44,7 +44,7 @@ header {
         margin: .7rem 3rem;
         height: 3.4rem;
         backdrop-filter: blur(7px);
-        border-radius: .7rem;
+        border-radius: $radius;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
     }
 
@@ -55,7 +55,7 @@ header {
         /* opacity: 0.8; */
         background-color: #38abf2e4;
         /* background-color: #f4f4f4; */
-        border-radius: .7rem;
+        border-radius: $radius;
 
         li {
             opacity: 1;
@@ -136,11 +136,11 @@ header {
 
     li {
         background: white;
-        border-radius: 1rem;
+        border-radius: $radius;
         padding: 2rem;
         margin: 2rem 0;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
-        transition: all 0.3s;
+        transition: box-shadow 0.3s ease-out;
         display: flex;
         /* text-decoration: none; */
         color: rgb(79, 79, 79);
@@ -148,14 +148,14 @@ header {
 
         &:hover {
             box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
-            transition: all 0.5s;
+            transition: box-shadow 0.5s ease-out;
         }
 
         .art-card {
             flex: 7;
             align-items: center;
             flex-direction: column;
-            font-weight: 500;
+            font-weight: $font-weight-normal;
 
             h2 {
                 margin: .4rem 0;
@@ -193,15 +193,15 @@ header {
             // max-height: 15rem; //防止太长的图片 怪，这里
             flex: 3;
             overflow: hidden;
-            border-radius: 1rem;
+            border-radius: $radius;
             margin: 0 0 0 1rem;
-            transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+            transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04),box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
 
             max-height: 30vh;
         
             &:hover {
                 transform: rotate(.007turn) scale(1.2);
-                transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+                transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04),box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
                 box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
             }
 
@@ -287,7 +287,7 @@ header {
         >img {
             width: 4rem;
             height: 4rem;
-            border-radius: 1rem;
+            border-radius: $radius;
             margin-right: 1rem;
         }
 

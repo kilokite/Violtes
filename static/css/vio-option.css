@@ -4,14 +4,14 @@
 */
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 500;
+  font-weight: 400;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, HarmonyOS_Medium, Microsoft YaHei, sans-serif;
   text-decoration: none;
 }
 
@@ -91,14 +91,14 @@
 
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 500;
+  font-weight: 400;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, HarmonyOS_Medium, Microsoft YaHei, sans-serif;
   text-decoration: none;
 }
 

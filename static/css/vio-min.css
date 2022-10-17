@@ -185,14 +185,14 @@
 /*# sourceMappingURL=csshake-hard.css.map */
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 500;
+  font-weight: 400;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, HarmonyOS_Medium, Microsoft YaHei, sans-serif;
   text-decoration: none;
 }
 
@@ -263,11 +263,104 @@ article > .info > img:hover {
 }
 article > .main-body {
   line-height: 1.8;
+  text-align: left;
+  font-size: 1.07rem;
 }
 article > .main-body img {
   margin: 1rem 0;
   border-radius: 1rem !important;
-  border: none;
+  border: 0.1rem solid rgba(128, 128, 128, 0);
+}
+article > .main-body figcaption {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(79, 79, 79, 0.8);
+  margin-top: -1rem;
+  text-align: center;
+}
+article > .main-body h2 {
+  margin: 0.8rem 0;
+}
+article > .main-body h2::before {
+  content: "#";
+  color: white;
+  padding: 0.1rem 0.4rem;
+  margin-right: 0.5rem;
+  background: #a66df2;
+  border-radius: 0.5rem;
+}
+article > .main-body h3 {
+  margin: 0.5rem 0;
+}
+article > .main-body h3:before {
+  content: "##";
+  color: white;
+  padding: 0.1rem 0.4rem;
+  margin-right: 0.5rem;
+  background: #a66df2;
+  border-radius: 0.5rem;
+}
+article > .main-body ul {
+  margin: 0.5rem 0;
+  list-style-type: none;
+  border-left: 0.3rem dashed #a66df2;
+  padding-left: 1rem;
+}
+article > .main-body .wp-block-quote {
+  background: rgba(127, 42, 212, 0.0823529412);
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1rem 0;
+}
+article > .main-body .wp-block-quote p {
+  align-self: flex-end;
+  color: #4f0a9d;
+}
+article > .main-body .wp-block-quote p:before {
+  content: "--";
+  margin-right: 0.5rem;
+}
+article > .main-body .wp-block-quote p:empty {
+  display: none;
+}
+article > .main-body .wp-block-quote p:empty + cite::before {
+  content: "TIPS";
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.1rem 0.4rem;
+  margin-right: 0.5rem;
+  background: #a66df2;
+  border-radius: 0.5rem;
+  border: 0.1rem solid #a66df2;
+  color: #a66df2;
+  background: none;
+}
+article > .main-body .wp-block-quote cite {
+  font-weight: 400;
+  color: rgba(79, 79, 79, 0.8);
+  text-align: left;
+  font-style: normal;
+}
+article > .main-body .wp-block-quote cite:before {
+  content: "“";
+  color: #a66df2;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+article > .main-body .wp-block-code {
+  background: #242424;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: white;
+  overflow: auto;
+}
+article > .main-body .wp-block-code code {
+  color: white;
 }
 
 /*
@@ -276,14 +369,14 @@ article > .main-body img {
 */
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 500;
+  font-weight: 400;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, HarmonyOS_Medium, Microsoft YaHei, sans-serif;
   text-decoration: none;
 }
 
@@ -329,7 +422,7 @@ header .menu {
   margin: 0.7rem 3rem;
   height: 3.4rem;
   backdrop-filter: blur(7px);
-  border-radius: 0.7rem;
+  border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.246);
 }
 header ul {
@@ -339,7 +432,7 @@ header ul {
   /* opacity: 0.8; */
   background-color: rgba(56, 171, 242, 0.8941176471);
   /* background-color: #f4f4f4; */
-  border-radius: 0.7rem;
+  border-radius: 1rem;
 }
 header ul li {
   opacity: 1;
@@ -409,7 +502,7 @@ header ul li a {
   padding: 2rem;
   margin: 2rem 0;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
-  transition: all 0.3s;
+  transition: box-shadow 0.3s ease-out;
   display: flex;
   /* text-decoration: none; */
   color: rgb(79, 79, 79);
@@ -417,13 +510,13 @@ header ul li a {
 }
 .art-list li:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
-  transition: all 0.5s;
+  transition: box-shadow 0.5s ease-out;
 }
 .art-list li .art-card {
   flex: 7;
   align-items: center;
   flex-direction: column;
-  font-weight: 500;
+  font-weight: 400;
 }
 .art-list li .art-card h2 {
   margin: 0.4rem 0;
@@ -457,12 +550,12 @@ header ul li a {
   overflow: hidden;
   border-radius: 1rem;
   margin: 0 0 0 1rem;
-  transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+  transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
   max-height: 30vh;
 }
 .art-list li .art-img:hover {
   transform: rotate(0.007turn) scale(1.2);
-  transition: all 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+  transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
   box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
 }
 .art-list li .art-img img {

@@ -1,10 +1,11 @@
 //TODO 属性并非完全统一
 
 // 字体栈 font stack
-$font-stack:Helvetica, Arial, sans-serif; //TODO Arial中文字体似乎不是很好看，苹方备选一下
+$font-stack:Helvetica Neue,Helvetica,PingFang SC,HarmonyOS_Medium,Microsoft YaHei,sans-serif; 
+//TODO ennnn，不同字体符号不一样
 // 字重 font weight
 $font-weight-light:300;
-$font-weight-normal:500;
+$font-weight-normal:400;
 $font-weight-bold:900;
 
 
@@ -19,9 +20,12 @@ $card-background-color:white;
 $color-violet:#7f2ad4;
 $color-violet-light:#a66df2;
 $color-violet-dark:#4f0a9d;
+$color-violet-argon:#7f2ad415;
+
 $color-sky:#2a93d4;
 $color-sky-light:#6dc2f2;
 $color-sky-dark:#0a5d9d;
+$color-sky-argon:#2a93d415;
 
 
 
@@ -29,7 +33,6 @@ $color-sky-dark:#0a5d9d;
 $vio-background-img:--vio-background-img;
 //你想要多圆 hao round you want
 $radius:1rem;
-
 
 
 
@@ -43,7 +46,7 @@ $radius:1rem;
     margin: 0;
     padding: 0;
     box-sizing: border-box; //so , fuck you content-box
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: $font-stack;
     text-decoration: none;
 
 }

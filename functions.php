@@ -47,6 +47,15 @@ function vio_fuck()
 
 function vio_feature()
 {
+	function register_my_menus() {
+		register_nav_menus(
+		  array(
+			'header-menu' => '顶部菜单',
+		   )
+		 );
+	   }
+	   add_action( 'init', 'register_my_menus' );
+
 	//添加特色图片支持
 	add_theme_support("post-thumbnails");
 
@@ -66,7 +75,7 @@ function vio_feature()
 
 	function vio_menu()
 	{
-		//注册菜单
+		//注册设置菜单
 		add_menu_page("Violets", "Violets", "manage_options", "vio-option", "vio_option_main");
 		function vio_option_main()
 		{
@@ -104,6 +113,11 @@ function vio_option($name){
 	echo get_option("vio-".$name);
 }
 
+function vio_badge($num){
+	$badge = get_option("vio-badge");
+	$badge = explode(",", $badge);
+
+}
 
 vio_feature();
 vio_fuck();
