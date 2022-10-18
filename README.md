@@ -1,3 +1,5 @@
+![IMG_20221017_225602](https://user-images.githubusercontent.com/61401879/196308005-702e69f8-c656-4bd7-9098-070db60f0214.png)
+
 # Violets
 🚧  一个wordpress主题 🚧
 
