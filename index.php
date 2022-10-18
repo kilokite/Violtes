@@ -3,7 +3,24 @@
 ?>
 
 <main class="art-list">
+    <?php if (is_archive()) : ?>
+        <?php if (is_tag()) : ?>
+            <div class="vio-archive-title" tag>
+                <div>
+                <h1>标签：<?php single_tag_title() ?></h1>
+                <p><?php echo tag_description() ?></p>
+                </div>
+            </div>
+        <?php elseif (is_category()) : ?>
+            <div class="vio-archive-title">
+                <div>
+                <h1>分类：<?php single_cat_title() ?></h1>
+                <p><?php echo category_description() ?></p>
+                </div>
+            </div>
+        <?php endif ?>
 
+    <?php endif ?>
     <?php if (have_posts()) : ?>
         <ul>
             <?php while (have_posts()) : the_post() ?>

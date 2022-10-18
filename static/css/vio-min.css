@@ -183,6 +183,9 @@
 }
 
 /*# sourceMappingURL=csshake-hard.css.map */
+/*
+
+*/
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
   font-weight: 400;
@@ -196,12 +199,12 @@
   text-decoration: none;
 }
 
-.vio-card, article {
+.vio-card, .vio-archive-title, article {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
   transition: box-shadow 0.3s;
 }
-.vio-card:hover, article:hover {
+.vio-card:hover, .vio-archive-title:hover, article:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
   transition: box-shadow 0.5s;
 }
@@ -367,6 +370,9 @@ article > .main-body .wp-block-code code {
     2022/10/11
     TODO 有些属性应该是成变量
 */
+/*
+
+*/
 :root {
   --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
   font-weight: 400;
@@ -380,12 +386,12 @@ article > .main-body .wp-block-code code {
   text-decoration: none;
 }
 
-.vio-card {
+.vio-card, .vio-archive-title {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
   transition: box-shadow 0.3s;
 }
-.vio-card:hover {
+.vio-card:hover, .vio-archive-title:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
   transition: box-shadow 0.5s;
 }
@@ -401,13 +407,13 @@ body {
 }
 
 /* display style */
-.vio-card {
+.vio-card, .vio-archive-title {
   background: white;
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
   transition: box-shadow 0.3s;
 }
-.vio-card:hover {
+.vio-card:hover, .vio-archive-title:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
   transition: box-shadow 0.5s;
 }
@@ -667,6 +673,43 @@ header ul li a {
 }
 .vio-pagination .current {
   color: #a66df2;
+}
+
+.vio-archive-title {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  font-size: 1rem;
+}
+.vio-archive-title > div {
+  display: inline-block;
+}
+.vio-archive-title h1 {
+  font-weight: 900;
+}
+.vio-archive-title p {
+  color: rgba(79, 79, 79, 0.8);
+}
+.vio-archive-title::before {
+  display: inline-block;
+  content: "&";
+  line-height: 3rem;
+  text-align: center;
+  color: #a66df2;
+  font-weight: 900;
+  font-size: 1.5rem;
+  height: 3rem;
+  width: 3rem;
+  background: rgba(127, 42, 212, 0.0823529412);
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+.vio-archive-title[tag]:before {
+  content: "#";
+  background-color: rgba(42, 147, 212, 0.0823529412);
+  color: #6dc2f2;
 }
 
 /*# sourceMappingURL=vio-min.css.map */

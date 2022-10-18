@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo('name') ?></title>
+    <title><?php bloginfo('name') . wp_title("&nbsp; - &nbsp;")?></title>
     <?php wp_head() ?>
 </head>
 
 <body>
-
     <header>
         <!-- 导航栏 -->
         <?php wp_nav_menu(array('header-menu' => '顶部菜单')) ?>
     </header>
     <!-- banner -->
+    <!-- sayhello 和 文章 归档 标题 都是h1 ，这，不标准？-->
     <section class="banner">
         <div class="banner-content">
             <div class="sayhello">

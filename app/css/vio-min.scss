@@ -195,13 +195,13 @@ header {
             overflow: hidden;
             border-radius: $radius;
             margin: 0 0 0 1rem;
-            transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04),box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+            transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
 
             max-height: 30vh;
-        
+
             &:hover {
                 transform: rotate(.007turn) scale(1.2);
-                transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04),box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+                transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
                 box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
             }
 
@@ -280,7 +280,7 @@ header {
     top: 1rem;
     padding: 2rem;
 
-    > .info {
+    >.info {
         display: flex;
         align-items: center;
 
@@ -291,26 +291,29 @@ header {
             margin-right: 1rem;
         }
 
-        >div{
-            >h2{
+        >div {
+            >h2 {
                 font-weight: bold;
             }
-            >p{
+
+            >p {
                 color: $font-color-light;
             }
         }
     }
 
-    > .badge{
+    >.badge {
         margin-top: 1rem;
-        >img{
+
+        >img {
             border-radius: .3rem;
             // width: 2rem;
             height: 2rem;
             margin-right: .5rem;
 
             transition: transform .5s cubic-bezier(0, 0, 0, 1);
-            &:hover{
+
+            &:hover {
                 // box-shadow: .2rem .2rem .5rem rgba(128, 128, 128, 0.273);
                 // background: linear-gradient(145deg, #ddd, #fff);
                 // box-shadow: 2px 4px 8px #ddd, -2px -4px 8px #fff;
@@ -322,20 +325,67 @@ header {
 
 }
 
-.vio-pagination{
+.vio-pagination {
+    //分页
     display: inline-block;
     background: $color-violet-argon;
     border-radius: $radius;
     padding: 1rem 1.5rem;
-    .page-numbers{
+
+    .page-numbers {
         margin: 0 1rem;
         font-weight: $font-weight-bold;
     }
-    .dots{
-        margin: 0 ;
+
+    .dots {
+        margin: 0;
     }
-    .current{
+
+    .current {
         color: $color-violet-light;
-        
+
+    }
+}
+
+.vio-archive-title {
+    @extend .vio-card;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+    border-radius: $radius;
+    font-size: 1rem;
+    >div{
+        display: inline-block;
+    }
+
+    h1 {
+        font-weight: $font-weight-bold;
+    }
+    p{
+        color: $font-color-light;
+    }
+
+    &::before {
+        display: inline-block;
+        content: "&";
+        line-height: 3rem;
+        text-align: center;
+        color: $color-violet-light;
+        font-weight: $font-weight-bold;
+        font-size: 1.5rem;
+        height:3rem;
+        width: 3rem;
+        background: $color-violet-argon;
+        border-radius: $radius;
+        margin-right: 1rem;
+    }
+
+    &[tag]{
+        &:before{
+            content: "#";
+            background-color: $color-sky-argon;
+            color: $color-sky-light;
+        }
     }
 }
