@@ -62,7 +62,7 @@ function vio_feature()
 	//摘录字数
 	function wpdocs_custom_excerpt_length($length)
 	{
-		return 200;
+		return 150;
 	}
 	add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
 
@@ -116,10 +116,15 @@ function vio_option($name){
 function vio_badge($num){
 	$badge = get_option("vio-badge");
 	$badge = explode(",", $badge);
+}
 
+function vio_pagination(){
+	the_posts_pagination( array(
+		'max_size'  => 2,
+		'prev_text' => __( '◂', 'textdomain' ),
+		'next_text' => __( '▸', 'textdomain' ),
+	) );
 }
 
 vio_feature();
 vio_fuck();
-
-?>

@@ -14,7 +14,8 @@
                         <div class="art-excerpt"><?php the_excerpt() ?></div>
                         <p class="art-info">
                             <span><?php the_time("Y-m-d") ?></span>
-                            <span class="art-cats"><?php the_category(" ", " ") //🐱?></span>
+                            <span class="art-cats"><?php the_category(" ", " ") //🐱
+                                                    ?></span>
                             <span class="art-tags"><?php the_tags("", " ") ?></span>
                         </p>
                     </div>
@@ -27,6 +28,8 @@
                 </li>
             <?php endwhile ?>
         </ul>
+        <div class="vio-pagination"><?php vio_pagination(); ?></div>
+
     <?php else : ?>
     <?php endif ?>
 </main>

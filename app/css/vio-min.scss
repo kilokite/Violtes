@@ -79,7 +79,7 @@ header {
     height: 70vh;
     /*  60% height  */
     font-weight: 100%;
-    background: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg") center;
+    background: url("https://sm.bi/?m=2.jpg") center;
     /* TODO 背景图，应该是变量 */
     background-size: cover;
     background-attachment: fixed;
@@ -320,4 +320,22 @@ header {
         }
     }
 
+}
+
+.vio-pagination{
+    display: inline-block;
+    background: $color-violet-argon;
+    border-radius: $radius;
+    padding: 1rem 1.5rem;
+    .page-numbers{
+        margin: 0 1rem;
+        font-weight: $font-weight-bold;
+    }
+    .dots{
+        margin: 0 ;
+    }
+    .current{
+        color: $color-violet-light;
+        
+    }
 }
