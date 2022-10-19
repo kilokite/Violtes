@@ -1,19 +1,24 @@
+@import 'vio-icon';
+
 //TODO 属性并非完全统一
 
 // 字体栈 font stack
-$font-stack:Helvetica Neue,Helvetica,PingFang SC,HarmonyOS_Medium,Microsoft YaHei,sans-serif; 
+$font-stack:-apple-system,Noto Sans,Helvetica Neue,Helvetica,Nimbus Sans L,Arial,Liberation Sans,PingFang SC,Hiragino Sans GB,Noto Sans CJK SC,Source Han Sans SC,Source Han Sans CN,Microsoft YaHei,Wenquanyi Micro Hei,WenQuanYi Zen Hei,ST Heiti,SimHei,WenQuanYi Zen Hei Sharp,sans-serif; //TODO 用苹方，或者其他？
 //TODO ennnn，不同字体符号不一样
 
 // 字重 font weight
 //win字体似乎只有三个档
 $font-weight-light:300;
 $font-weight-normal:400;
-$font-weight-bold:900;
+$font-weight-bold:bold;
 
 
 //基础文字颜色 basic font color?
 $font-color:rgb(79, 79, 79);
-$font-color-light:rgba(79, 79, 79, 0.800);;
+$font-color-light:rgba(79, 79, 79, 0.800);
+$font-color-argon:rgba(79, 79, 79, 0.15);
+$font-color-feather:rgba(79, 79, 79, 0.344);
+
 
 //白色和不那么白色  white and not very white
 $background-color:rgb(244, 244, 244);
@@ -23,10 +28,12 @@ $card-background-color:white;
 
 */
 $color-violet:#7f2ad4;
+$color-violet-argon:#7f2ad415;
+$color-violet-feather:#7f2ad449;
 $color-violet-light:#a66df2;
 $color-violet-dark:#4f0a9d;
 $color-violet-black:#240548;
-$color-violet-argon:#7f2ad415;
+
 
 $color-sky:#2a93d4;
 $color-sky-light:#6dc2f2;
@@ -61,11 +68,11 @@ $radius:1rem;
 .vio-card {
     //基本样式 basic style
     border-radius: 1rem;
-    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.05);
     transition: box-shadow 0.3s;
 
     &:hover {
-        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.100);
         transition: box-shadow 0.5s;
     }
 }

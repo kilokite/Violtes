@@ -1,4 +1,6 @@
 <?php get_header(); ?>
+<div class="container content">
+
 <?php // TODO 置顶帖子实现
 ?>
 
@@ -55,5 +57,5 @@
     <!-- sideBar! -->
     <?php vio_sidebar('user') ?>
 </nav>
-
+</div>
 <?php get_footer() ?>

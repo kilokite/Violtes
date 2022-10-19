@@ -183,6 +183,10 @@
 }
 
 /*# sourceMappingURL=csshake-hard.css.map */
+@font-face {
+  font-family: "md-icon"; /* Project id 3713561 */
+  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
+}
 /*
 
 */
@@ -195,96 +199,98 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, HarmonyOS_Medium, Microsoft YaHei, sans-serif;
+  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   text-decoration: none;
 }
 
-.vio-card, .vio-archive-title, article {
+.vio-card, .vio-archive-title, .vio-comments, .vio-single > article {
   border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
 }
-.vio-card:hover, .vio-archive-title:hover, article:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+.vio-card:hover, .vio-archive-title:hover, .vio-comments:hover, .vio-single > article:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
 }
 
-article > .info > img {
+.vio-single > article > .info > img {
   object-fit: cover;
   border-radius: 1rem;
   transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
 }
-article > .info > img:hover {
+.vio-single > article > .info > img:hover {
   transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
   box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
 }
 
-article {
+.vio-single {
   flex: 1;
+}
+.vio-single > article {
   background: white;
   margin: 2rem 0;
   padding: 2rem;
 }
-article > .info {
+.vio-single > article > .info {
   display: flex;
   padding-bottom: 0.5rem;
   margin-bottom: 1.5rem;
   border-bottom: 0.1rem solid rgba(128, 128, 128, 0.199);
 }
-article > .info > div {
+.vio-single > article > .info > div {
   flex: 6;
 }
-article > .info > div > h1 {
+.vio-single > article > .info > div > h1 {
   font-size: 2rem;
 }
-article > .info > div p {
+.vio-single > article > .info > div p {
   opacity: 0.6;
   margin: 0.4rem 0;
   z-index: -1;
 }
-article > .info > div p .item {
+.vio-single > article > .info > div p .item {
   margin-left: 0.5rem;
 }
-article > .info > div p a {
+.vio-single > article > .info > div p a {
   color: rgb(79, 79, 79);
 }
-article > .info:hover .art-cats a {
+.vio-single > article > .info:hover .art-cats a {
   color: #7f2ad4;
 }
-article > .info:hover .art-tags a {
+.vio-single > article > .info:hover .art-tags a {
   color: #2a93d4;
 }
-article > .info > img {
+.vio-single > article > .info > img {
   transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
   border-radius: 1rem;
   width: 30%;
   max-height: 30vh;
 }
-article > .info > img:hover {
+.vio-single > article > .info > img:hover {
   transform: rotate(0.007turn) scale(1.2);
   transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
 }
-article > .main-body {
+.vio-single > article > .main-body {
   line-height: 1.8;
   text-align: left;
   font-size: 1.07rem;
 }
-article > .main-body img {
+.vio-single > article > .main-body img {
   margin: 1rem 0;
   border-radius: 1rem !important;
   border: 0.1rem solid rgba(128, 128, 128, 0);
 }
-article > .main-body figcaption {
+.vio-single > article > .main-body figcaption {
   font-size: 0.8rem;
   font-weight: 400;
   color: rgba(79, 79, 79, 0.8);
   margin-top: -1rem;
   text-align: center;
 }
-article > .main-body h2 {
+.vio-single > article > .main-body h2 {
   margin: 0.8rem 0;
 }
-article > .main-body h2::before {
+.vio-single > article > .main-body h2::before {
   content: "#";
   color: white;
   padding: 0.1rem 0.4rem;
@@ -292,10 +298,10 @@ article > .main-body h2::before {
   background: #a66df2;
   border-radius: 0.5rem;
 }
-article > .main-body h3 {
+.vio-single > article > .main-body h3 {
   margin: 0.5rem 0;
 }
-article > .main-body h3:before {
+.vio-single > article > .main-body h3:before {
   content: "##";
   color: white;
   padding: 0.1rem 0.4rem;
@@ -303,13 +309,13 @@ article > .main-body h3:before {
   background: #a66df2;
   border-radius: 0.5rem;
 }
-article > .main-body ul {
+.vio-single > article > .main-body ul {
   margin: 0.5rem 0;
   list-style-type: none;
   border-left: 0.3rem dashed #a66df2;
   padding-left: 1rem;
 }
-article > .main-body .wp-block-quote {
+.vio-single > article > .main-body .wp-block-quote {
   background: rgba(127, 42, 212, 0.0823529412);
   padding: 1rem;
   border-radius: 1rem;
@@ -317,18 +323,18 @@ article > .main-body .wp-block-quote {
   flex-direction: column-reverse;
   margin: 1rem 0;
 }
-article > .main-body .wp-block-quote p {
+.vio-single > article > .main-body .wp-block-quote p {
   align-self: flex-end;
   color: #4f0a9d;
 }
-article > .main-body .wp-block-quote p:before {
+.vio-single > article > .main-body .wp-block-quote p:before {
   content: "--";
   margin-right: 0.5rem;
 }
-article > .main-body .wp-block-quote p:empty {
+.vio-single > article > .main-body .wp-block-quote p:empty {
   display: none;
 }
-article > .main-body .wp-block-quote p:empty + cite::before {
+.vio-single > article > .main-body .wp-block-quote p:empty + cite::before {
   content: "TIPS";
   color: white;
   font-weight: bold;
@@ -341,19 +347,19 @@ article > .main-body .wp-block-quote p:empty + cite::before {
   color: #a66df2;
   background: none;
 }
-article > .main-body .wp-block-quote cite {
+.vio-single > article > .main-body .wp-block-quote cite {
   font-weight: 400;
   color: rgba(79, 79, 79, 0.8);
   text-align: left;
   font-style: normal;
 }
-article > .main-body .wp-block-quote cite:before {
+.vio-single > article > .main-body .wp-block-quote cite:before {
   content: "“";
   color: #a66df2;
   font-size: 2rem;
   margin-right: 0.5rem;
 }
-article > .main-body .wp-block-code {
+.vio-single > article > .main-body .wp-block-code {
   background: #242424;
   padding: 1rem;
   border-radius: 1rem;
@@ -362,14 +368,23 @@ article > .main-body .wp-block-code {
   color: white;
   overflow: auto;
 }
-article > .main-body .wp-block-code code {
+.vio-single > article > .main-body .wp-block-code code {
   color: white;
+}
+
+.vio-comments {
+  padding: 2rem;
+  background: white;
 }
 
 /*
     2022/10/11
     TODO 有些属性应该是成变量
 */
+@font-face {
+  font-family: "md-icon"; /* Project id 3713561 */
+  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
+}
 /*
 
 */
@@ -382,18 +397,86 @@ article > .main-body .wp-block-code code {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Helvetica Neue, Helvetica, PingFang SC, HarmonyOS_Medium, Microsoft YaHei, sans-serif;
+  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   text-decoration: none;
 }
 
 .vio-card, .vio-archive-title {
   border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
 }
 .vio-card:hover, .vio-archive-title:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
+}
+
+@font-face {
+  font-family: "md-icon"; /* Project id 3713561 */
+  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
+}
+/*
+
+*/
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
+  text-decoration: none;
+}
+
+.vio-card, .vio-archive-title {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
+  transition: box-shadow 0.3s;
+}
+.vio-card:hover, .vio-archive-title:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
+  transition: box-shadow 0.5s;
+}
+
+.footer-line {
+  margin-bottom: 2rem;
+  border-bottom: solid 0.5rem rgba(127, 42, 212, 0.0823529412);
+}
+
+footer {
+  width: 100%;
+  margin: 2rem 0;
+}
+footer > div {
+  display: flex;
+}
+footer > div .footer-left {
+  flex: 1;
+  color: rgba(79, 79, 79, 0.8);
+}
+footer > div .footer-left > .title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: rgba(79, 79, 79, 0.344);
+}
+footer > div .footer-left .theme-logo {
+  margin-top: 2rem;
+  text-decoration-style: none;
+  padding: 0.5rem;
+  background: rgba(127, 42, 212, 0.0823529412);
+  color: #a66df2;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+footer > div .footer-right {
+  flex: 1;
+  color: rgba(79, 79, 79, 0.8);
 }
 
 :root {
@@ -410,11 +493,11 @@ body {
 .vio-card, .vio-archive-title {
   background: white;
   border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
 }
 .vio-card:hover, .vio-archive-title:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.199);
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
 }
 
@@ -453,10 +536,10 @@ header ul li a {
 }
 
 .banner {
-  height: 70vh;
+  height: 80vh;
   /*  60% height  */
   font-weight: 100%;
-  background: url("https://sm.bi/?m=2.jpg") center;
+  background: url("https://tva4.sinaimg.cn/large/ec43126fgy1gzuaszf2xwj22801cye82.jpg") center;
   /* TODO 背景图，应该是变量 */
   background-size: cover;
   background-attachment: fixed;
@@ -469,6 +552,7 @@ header ul li a {
 .sayhello {
   /* background: red; */
   color: #f4f4f4;
+  margin-top: -10vh;
 }
 .sayhello > h1 {
   font-weight: bold;
@@ -482,11 +566,23 @@ header ul li a {
   letter-spacing: 0.15rem;
 }
 
+.vio-404 > h1 {
+  font-size: 5rem;
+}
+.vio-404 > p {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
 /* # 内容容器 */
 .container {
+  margin: auto;
   max-width: 80rem;
-  margin: -20vh auto 1rem auto;
   padding: 0 2rem;
+}
+
+.content {
+  margin: -35vh auto 2rem auto;
   display: flex;
 }
 
@@ -507,7 +603,6 @@ header ul li a {
   border-radius: 1rem;
   padding: 2rem;
   margin: 2rem 0;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.134);
   transition: box-shadow 0.3s ease-out;
   display: flex;
   /* text-decoration: none; */
@@ -527,7 +622,7 @@ header ul li a {
 .art-list li .art-card h2 {
   margin: 0.4rem 0;
   font-size: 2rem;
-  font-weight: 900;
+  font-weight: bold;
 }
 .art-list li .art-card .art-info {
   /* 时间类型标签 */
@@ -664,9 +759,12 @@ header ul li a {
   border-radius: 1rem;
   padding: 1rem 1.5rem;
 }
+.vio-pagination:empty {
+  display: none;
+}
 .vio-pagination .page-numbers {
   margin: 0 1rem;
-  font-weight: 900;
+  font-weight: bold;
 }
 .vio-pagination .dots {
   margin: 0;
@@ -687,7 +785,7 @@ header ul li a {
   display: inline-block;
 }
 .vio-archive-title h1 {
-  font-weight: 900;
+  font-weight: bold;
 }
 .vio-archive-title p {
   color: rgba(79, 79, 79, 0.8);
@@ -698,7 +796,7 @@ header ul li a {
   line-height: 3rem;
   text-align: center;
   color: #a66df2;
-  font-weight: 900;
+  font-weight: bold;
   font-size: 1.5rem;
   height: 3rem;
   width: 3rem;

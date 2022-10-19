@@ -1,0 +1,44 @@
+@import 'vio-var';
+
+
+.footer-line {
+    margin-bottom: 2rem ;
+    border-bottom: solid .5rem $color-violet-argon;
+}
+
+footer {
+    width: 100%;
+    margin: 2rem 0;
+
+    >div {
+        display: flex;
+        .footer-left {
+            flex: 1;
+            color: $font-color-light;
+            >.title {
+                font-size: 1.8rem;
+                font-weight: $font-weight-bold;
+                margin-bottom: 1rem;
+                color: $font-color-feather;
+            }
+            .theme-logo{
+                margin-top: 2rem;
+                text-decoration-style: none;
+                padding: .5rem;
+                background: $color-violet-argon;
+                // color: $color-violet-light;
+                color: $color-violet-light;
+                border-radius: calc($radius / 2);
+                font-weight: $font-weight-bold;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+        }
+
+        .footer-right {
+            flex: 1;
+            color: $font-color-light;
+        }
+    }
+}

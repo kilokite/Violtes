@@ -6,7 +6,7 @@
 @use 'shake-hard';
 @use 'vio-article';
 @import 'vio-var';
-
+@import 'vio-footer';
 
 :root {
     --vio-font-color: rgb(79, 79, 79);
@@ -24,11 +24,11 @@ body {
 .vio-card {
     background: white;
     border-radius: 1rem;
-    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.05);
     transition: box-shadow 0.3s;
 
     &:hover {
-        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.199);
+        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.100);
         transition: box-shadow 0.5s;
     }
 }
@@ -76,10 +76,10 @@ header {
 
 
 .banner {
-    height: 70vh;
+    height: 80vh;
     /*  60% height  */
     font-weight: 100%;
-    background: url("https://sm.bi/?m=2.jpg") center;
+    background: url("https://tva4.sinaimg.cn/large/ec43126fgy1gzuaszf2xwj22801cye82.jpg") center;
     /* TODO 背景图，应该是变量 */
     background-size: cover;
     background-attachment: fixed;
@@ -93,6 +93,7 @@ header {
     /* background: red; */
     color: #f4f4f4;
 
+    margin-top: -10vh;
     >h1 {
         font-weight: bold;
         font-size: 3rem;
@@ -109,14 +110,27 @@ header {
 }
 
 
-/* # 内容容器 */
-.container {
-    max-width: 80rem;
-    margin: -20vh auto 1rem auto;
-    padding: 0 2rem;
-    display: flex;
+.vio-404{
+    >h1{
+        font-size: 5rem;
+    }
+    >p{
+        margin-top: 1rem;
+        font-size: 1.5rem;
+    }
 }
 
+/* # 内容容器 */
+.container {
+    margin: auto;
+    max-width: 80rem;
+    padding: 0 2rem;
+}
+
+.content{
+    margin: -35vh auto 2rem auto;
+    display: flex;
+}
 
 /* ## main */
 
@@ -139,7 +153,7 @@ header {
         border-radius: $radius;
         padding: 2rem;
         margin: 2rem 0;
-        box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
+        // box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
         transition: box-shadow 0.3s ease-out;
         display: flex;
         /* text-decoration: none; */
@@ -160,7 +174,7 @@ header {
             h2 {
                 margin: .4rem 0;
                 font-size: 2rem;
-                font-weight: 900;
+                font-weight: $font-weight-bold;
             }
 
             .art-info {
@@ -331,6 +345,10 @@ header {
     background: $color-violet-argon;
     border-radius: $radius;
     padding: 1rem 1.5rem;
+
+    &:empty{
+        display: none;
+    }
 
     .page-numbers {
         margin: 0 1rem;

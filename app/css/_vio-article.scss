@@ -1,204 +1,214 @@
 @import 'vio-var';
 
-article {
+.vio-single {
     flex: 1;
-    // display: flex;
-    @extend .vio-card;
-    background: $card-background-color;
-    margin: 2rem 0;
-    padding: 2rem;
-    // transition: all 0.5s ease-out;
 
-    >.info {
-        //文章头部信息部分
-        display: flex;
+    >article {
+        // display: flex;
+        @extend .vio-card;
+        background: $card-background-color;
+        margin: 2rem 0;
+        padding: 2rem;
+        // transition: all 0.5s ease-out;
 
-        //分割线
-        padding-bottom: .5rem;
-        margin-bottom: 1.5rem;
-        border-bottom: .1rem solid rgba(128, 128, 128, 0.199);
-
-        >div {
-            //信息展示卡的文字部分
-            flex: 6;
-
-            >h1 {
-                font-size: 2rem;
-            }
-
-            p {
-                opacity: 0.6;
-                margin: 0.4rem 0;
-                z-index: -1;
-                // color: $font-color;
-
-                .item {
-                    margin-left: .5rem;
-                }
-
-                a {
-                    color: $font-color;
-                }
-            }
-        }
-
-        &:hover {
-            .art-cats a {
-                color: $color-violet;
-            }
-
-            .art-tags a {
-                color: $color-sky;
-            }
-        }
-
-        >img {
-            //左侧图片
-            @extend %vio-img;
-            transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-            border-radius: $radius;
-            width: 30%;
-            max-height: 30vh;
-
-            &:hover {
-                transform: rotate(.007turn) scale(1.2);
-                transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-            }
-        }
-    }
-
-    >.main-body {
-        //正文部分
-        line-height: 1.8;
-        text-align: left;
-        font-size: 1.07rem;
-
-        img {
-            margin: 1rem 0;
-            border-radius: $radius !important;
-            border: .1rem solid rgba(128, 128, 128, 0);
-        }
-
-        figcaption {
-            font-size: .8rem;
-            font-weight: 400;
-            color: $font-color-light;
-            margin-top: -1rem;
-            text-align: center;
-        }
-
-        h2 {
-            // font-size: 1.6rem;
-            margin: .8rem 0;
-
-            &::before {
-                content: "#";
-                color: white;
-                padding: .1rem .4rem;
-                margin-right: .5rem;
-                background: $color-violet-light;
-                border-radius: calc($radius / 2);
-            }
-        }
-
-        h3 {
-            // font-size: 1.2rem;
-            margin: 0.5rem 0;
-
-            &:before {
-                content: "##";
-                color: white;
-                padding: .1rem .4rem;
-                margin-right: .5rem;
-                background: $color-violet-light;
-                border-radius: calc($radius / 2);
-
-            }
-        }
-
-        ul {
-            margin: .5rem 0;
-            list-style-type: none;
-            border-left: .3rem dashed $color-violet-light;
-            padding-left: 1rem;
-        }
-
-        .wp-block-quote {
-            // border-left: $color-violet-light .3rem solid;
-            background: $color-violet-argon;
-            padding: 1rem;
-            border-radius: $radius;
+        >.info {
+            //文章头部信息部分
             display: flex;
-            flex-direction: column-reverse;
-            margin: 1rem 0;
 
-            p {
-                align-self: flex-end;
-                color: $color-violet-dark;
+            //分割线
+            padding-bottom: .5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: .1rem solid rgba(128, 128, 128, 0.199);
 
-                &:before {
-                    content: "--";
-                    margin-right: .5rem;
+            >div {
+                //信息展示卡的文字部分
+                flex: 6;
+
+                >h1 {
+                    font-size: 2rem;
                 }
 
-                &:empty {
-                    //如果没有内容，那咱就是个提示框
-                    display: none;
+                p {
+                    opacity: 0.6;
+                    margin: 0.4rem 0;
+                    z-index: -1;
+                    // color: $font-color;
 
-                    +cite {
-                        &::before {
-                            //TODO 「TIPS」实心展示 空心展示 不展示 三选一 
-                            // display: none;
-                            content: "TIPS";
-                            color: white;
-                            font-weight: bold;
-                            font-size: 1rem;
-                            padding: .1rem .4rem;
-                            margin-right: .5rem;
-                            background: $color-violet-light;
-                            border-radius: calc($radius / 2);
+                    .item {
+                        margin-left: .5rem;
+                    }
 
-                            border: .1rem solid $color-violet-light;
-                            color: $color-violet-light;
-                            background: none;
-                        }
+                    a {
+                        color: $font-color;
                     }
                 }
             }
 
-            cite {
-                font-weight: $font-weight-normal;
-                color: $font-color-light;
-                text-align: left;
-                font-style: normal;
+            &:hover {
+                .art-cats a {
+                    color: $color-violet;
+                }
 
-                &:before {
-                    content: "“";
-                    color: $color-violet-light;
-                    font-size: 2rem;
-                    margin-right: .5rem;
+                .art-tags a {
+                    color: $color-sky;
                 }
             }
 
-        }
+            >img {
+                //左侧图片
+                @extend %vio-img;
+                transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+                border-radius: $radius;
+                width: 30%;
+                max-height: 30vh;
 
-        .wp-block-code {
-            //代码块
-            //TODO 代码块高亮以后再说
-            background: #242424;
-            padding: 1rem;
-            border-radius: $radius;
-            margin: 1rem 0;
-            font-size: 1rem;
-            color: white;
-            overflow: auto;
-
-            code {
-                color: white;
+                &:hover {
+                    transform: rotate(.007turn) scale(1.2);
+                    transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+                }
             }
         }
 
+        >.main-body {
+            //正文部分
+            line-height: 1.8;
+            text-align: left;
+            font-size: 1.07rem;
+
+            img {
+                margin: 1rem 0;
+                border-radius: $radius !important;
+                border: .1rem solid rgba(128, 128, 128, 0);
+            }
+
+            figcaption {
+                font-size: .8rem;
+                font-weight: 400;
+                color: $font-color-light;
+                margin-top: -1rem;
+                text-align: center;
+            }
+
+            h2 {
+                // font-size: 1.6rem;
+                margin: .8rem 0;
+
+                &::before {
+                    content: "#";
+                    color: white;
+                    padding: .1rem .4rem;
+                    margin-right: .5rem;
+                    background: $color-violet-light;
+                    border-radius: calc($radius / 2);
+                }
+            }
+
+            h3 {
+                // font-size: 1.2rem;
+                margin: 0.5rem 0;
+
+                &:before {
+                    content: "##";
+                    color: white;
+                    padding: .1rem .4rem;
+                    margin-right: .5rem;
+                    background: $color-violet-light;
+                    border-radius: calc($radius / 2);
+
+                }
+            }
+
+            ul {
+                margin: .5rem 0;
+                list-style-type: none;
+                border-left: .3rem dashed $color-violet-light;
+                padding-left: 1rem;
+            }
+
+            .wp-block-quote {
+                // border-left: $color-violet-light .3rem solid;
+                background: $color-violet-argon;
+                padding: 1rem;
+                border-radius: $radius;
+                display: flex;
+                flex-direction: column-reverse;
+                margin: 1rem 0;
+
+                p {
+                    align-self: flex-end;
+                    color: $color-violet-dark;
+
+                    &:before {
+                        content: "--";
+                        margin-right: .5rem;
+                    }
+
+                    &:empty {
+                        //如果没有内容，那咱就是个提示框
+                        display: none;
+
+                        +cite {
+                            &::before {
+                                //TODO 「TIPS」实心展示 空心展示 不展示 三选一 
+                                // display: none;
+                                content: "TIPS";
+                                color: white;
+                                font-weight: bold;
+                                font-size: 1rem;
+                                padding: .1rem .4rem;
+                                margin-right: .5rem;
+                                background: $color-violet-light;
+                                border-radius: calc($radius / 2);
+
+                                border: .1rem solid $color-violet-light;
+                                color: $color-violet-light;
+                                background: none;
+                            }
+                        }
+                    }
+                }
+
+                cite {
+                    font-weight: $font-weight-normal;
+                    color: $font-color-light;
+                    text-align: left;
+                    font-style: normal;
+
+                    &:before {
+                        content: "“";
+                        color: $color-violet-light;
+                        font-size: 2rem;
+                        margin-right: .5rem;
+                    }
+                }
+
+            }
+
+            .wp-block-code {
+                //代码块
+                //TODO 代码块高亮以后再说
+                background: #242424;
+                padding: 1rem;
+                border-radius: $radius;
+                margin: 1rem 0;
+                font-size: 1rem;
+                color: white;
+                overflow: auto;
+
+                code {
+                    color: white;
+                }
+            }
+
+
+        }
 
     }
 
+}
+
+.vio-comments {
+    @extend .vio-card;
+    padding: 2rem;
+    background: white;
 }
