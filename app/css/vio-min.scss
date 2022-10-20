@@ -2,11 +2,14 @@
     2022/10/11
     TODO 有些属性应该是成变量
 */
-
+@use 'vio-common';
+@use 'vio-component' as component;
+@use 'vio-var' as vio;
 @use 'shake-hard';
 @use 'vio-article';
-@import 'vio-var';
-@import 'vio-footer';
+@use 'vio-footer';
+
+
 
 :root {
     --vio-font-color: rgb(79, 79, 79);
@@ -44,7 +47,7 @@ header {
         margin: .7rem 3rem;
         height: 3.4rem;
         backdrop-filter: blur(7px);
-        border-radius: $radius;
+        border-radius: vio.$radius;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
     }
 
@@ -55,7 +58,7 @@ header {
         /* opacity: 0.8; */
         background-color: #38abf2e4;
         /* background-color: #f4f4f4; */
-        border-radius: $radius;
+        border-radius: vio.$radius;
 
         li {
             opacity: 1;
@@ -150,7 +153,7 @@ header {
 
     li {
         background: white;
-        border-radius: $radius;
+        border-radius: vio.$radius;
         padding: 2rem;
         margin: 2rem 0;
         // box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.134);
@@ -169,12 +172,12 @@ header {
             flex: 7;
             align-items: center;
             flex-direction: column;
-            font-weight: $font-weight-normal;
+            font-weight: vio.$font-weight-normal;
 
             h2 {
                 margin: .4rem 0;
                 font-size: 2rem;
-                font-weight: $font-weight-bold;
+                font-weight: vio.$font-weight-bold;
             }
 
             .art-info {
@@ -207,7 +210,7 @@ header {
             // max-height: 15rem; //防止太长的图片 怪，这里
             flex: 3;
             overflow: hidden;
-            border-radius: $radius;
+            border-radius: vio.$radius;
             margin: 0 0 0 1rem;
             transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
 
@@ -301,7 +304,7 @@ header {
         >img {
             width: 4rem;
             height: 4rem;
-            border-radius: $radius;
+            border-radius: vio.$radius;
             margin-right: 1rem;
         }
 
@@ -311,7 +314,7 @@ header {
             }
 
             >p {
-                color: $font-color-light;
+                color: vio.$font-color-light;
             }
         }
     }
@@ -342,8 +345,8 @@ header {
 .vio-pagination {
     //分页
     display: inline-block;
-    background: $color-violet-argon;
-    border-radius: $radius;
+    background: vio.$color-violet-argon;
+    border-radius: vio.$radius;
     padding: 1rem 1.5rem;
 
     &:empty{
@@ -352,7 +355,7 @@ header {
 
     .page-numbers {
         margin: 0 1rem;
-        font-weight: $font-weight-bold;
+        font-weight: vio.$font-weight-bold;
     }
 
     .dots {
@@ -360,28 +363,28 @@ header {
     }
 
     .current {
-        color: $color-violet-light;
+        color: vio.$color-violet-light;
 
     }
 }
 
 .vio-archive-title {
-    @extend .vio-card;
+    @include component.vio-card;
     display: flex;
     align-items: center;
     padding: 1rem 1.5rem;
     margin: 2rem 0;
-    border-radius: $radius;
+    border-radius: vio.$radius;
     font-size: 1rem;
     >div{
         display: inline-block;
     }
 
     h1 {
-        font-weight: $font-weight-bold;
+        font-weight: vio.$font-weight-bold;
     }
     p{
-        color: $font-color-light;
+        color: vio.$font-color-light;
     }
 
     &::before {
@@ -389,21 +392,21 @@ header {
         content: "&";
         line-height: 3rem;
         text-align: center;
-        color: $color-violet-light;
-        font-weight: $font-weight-bold;
+        color: vio.$color-violet-light;
+        font-weight: vio.$font-weight-bold;
         font-size: 1.5rem;
         height:3rem;
         width: 3rem;
-        background: $color-violet-argon;
-        border-radius: $radius;
+        background: vio.$color-violet-argon;
+        border-radius: vio.$radius;
         margin-right: 1rem;
     }
 
     &[tag]{
         &:before{
             content: "#";
-            background-color: $color-sky-argon;
-            color: $color-sky-light;
+            background-color: vio.$color-sky-argon;
+            color: vio.$color-sky-light;
         }
     }
 }

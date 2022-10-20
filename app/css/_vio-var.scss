@@ -1,9 +1,8 @@
-@import 'vio-icon';
 
 //TODO 属性并非完全统一
 
 // 字体栈 font stack
-$font-stack:-apple-system,Noto Sans,Helvetica Neue,Helvetica,Nimbus Sans L,Arial,Liberation Sans,PingFang SC,Hiragino Sans GB,Noto Sans CJK SC,Source Han Sans SC,Source Han Sans CN,Microsoft YaHei,Wenquanyi Micro Hei,WenQuanYi Zen Hei,ST Heiti,SimHei,WenQuanYi Zen Hei Sharp,sans-serif; //TODO 用苹方，或者其他？
+$font-stack:Roboto-Bold,-apple-system,Noto Sans,Helvetica Neue,Helvetica,Nimbus Sans L,Arial,Liberation Sans,PingFang SC,Hiragino Sans GB,Noto Sans CJK SC,Source Han Sans SC,Source Han Sans CN,Microsoft YaHei,Wenquanyi Micro Hei,WenQuanYi Zen Hei,ST Heiti,SimHei,WenQuanYi Zen Hei Sharp,sans-serif;
 //TODO ennnn，不同字体符号不一样
 
 // 字重 font weight
@@ -47,42 +46,3 @@ $vio-background-img:--vio-background-img;
 //你想要多圆 hao round you want
 $radius:1rem;
 
-
-
-:root{
-    --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg"); //TODO 应该能换
-
-    font-weight: $font-weight-normal; 
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; //so , fuck you content-box
-    font-family: $font-stack;
-    text-decoration: none;
-
-}
-
-//一个卡片应该长啥样 What should at least look like？
-.vio-card {
-    //基本样式 basic style
-    border-radius: 1rem;
-    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.05);
-    transition: box-shadow 0.3s;
-
-    &:hover {
-        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.100);
-        transition: box-shadow 0.5s;
-    }
-}
-
-%vio-img{
-        object-fit: cover;
-        border-radius: $radius;
-        transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-        &:hover {
-            transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-            box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
-        }
-}

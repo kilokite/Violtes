@@ -1,4 +1,98 @@
 @charset "UTF-8";
+/*
+
+*/
+/*
+icon from:https://github.com/Templarian/MaterialDesign
+*/
+@font-face {
+  font-family: "md-icon"; /* Project id 3713561 */
+  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
+}
+@font-face {
+  font-family: "Roboto-Bold"; /* Project id 3713561 */
+  src: url("../font/Roboto-Bold.woff2") format("woff2"), url("../font/Roboto-Bold.woff") format("woff");
+}
+:root {
+  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto-Bold, -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
+  text-decoration: none;
+}
+
+/*
+    组件？
+*/
+.toast {
+  border-radius: 0.5rem;
+  min-width: 8rem;
+  padding: 0.7rem;
+  background: #6dc2f2;
+  position: fixed;
+  top: -5rem;
+  right: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  animation: Toast 4s ease;
+}
+@keyframes Toast {
+  0% {
+    top: 4rem;
+  }
+  6% {
+    transform: translate(0px, 7px) rotate(3.5deg);
+  }
+  8% {
+    transform: translate(0px, -9px) rotate(-0.5deg);
+  }
+  10% {
+    transform: translate(-8px, -5px) rotate(2.5deg);
+  }
+  12% {
+    transform: translate(-1px, 4px) rotate(3.5deg);
+  }
+  14% {
+    transform: translate(8px, 4px) rotate(0.5deg);
+  }
+  16% {
+    transform: translate(-3px, 8px) rotate(0.5deg);
+  }
+  18% {
+    transform: translate(10px, 10px) rotate(-0.5deg);
+  }
+  20% {
+    transform: translate(-4px, 10px) rotate(0.5deg);
+  }
+  22% {
+    transform: translate(6px, 4px) rotate(0.5deg);
+  }
+  24% {
+    transform: translate(-9px, -7px) rotate(-0.5deg);
+  }
+  26% {
+    transform: translate(8px, 3px) rotate(-1.5deg);
+  }
+  28% {
+    transform: translate(-8px, -9px) rotate(2.5deg);
+  }
+  30% {
+    transform: translate(0px, -3px) rotate(-0.5deg);
+  }
+  90% {
+    top: 4rem;
+  }
+  100% {
+    top: -5rem;
+  }
+}
+
 /*! * * * * * * * * * * * * * * * * * * * *\  
   CSShake :: shake-hard
   v1.6.0
@@ -183,53 +277,20 @@
 }
 
 /*# sourceMappingURL=csshake-hard.css.map */
-@font-face {
-  font-family: "md-icon"; /* Project id 3713561 */
-  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
-}
-/*
-
-*/
-:root {
-  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 400;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
-  text-decoration: none;
-}
-
-.vio-card, .vio-archive-title, .vio-comments, .vio-single > article {
-  border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
-  transition: box-shadow 0.3s;
-}
-.vio-card:hover, .vio-archive-title:hover, .vio-comments:hover, .vio-single > article:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
-  transition: box-shadow 0.5s;
-}
-
-.vio-single > article > .info > img {
-  object-fit: cover;
-  border-radius: 1rem;
-  transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-}
-.vio-single > article > .info > img:hover {
-  transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-  box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
-}
-
 .vio-single {
   flex: 1;
 }
 .vio-single > article {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
+  transition: box-shadow 0.3s;
   background: white;
   margin: 2rem 0;
   padding: 2rem;
+}
+.vio-single > article:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
+  transition: box-shadow 0.5s;
 }
 .vio-single > article > .info {
   display: flex;
@@ -261,10 +322,17 @@
   color: #2a93d4;
 }
 .vio-single > article > .info > img {
+  object-fit: cover;
+  border-radius: 1rem;
+  transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
   transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
   border-radius: 1rem;
   width: 30%;
   max-height: 30vh;
+}
+.vio-single > article > .info > img:hover {
+  transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+  box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
 }
 .vio-single > article > .info > img:hover {
   transform: rotate(0.007turn) scale(1.2);
@@ -373,70 +441,13 @@
 }
 
 .vio-comments {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
+  transition: box-shadow 0.3s;
   padding: 2rem;
   background: white;
 }
-
-/*
-    2022/10/11
-    TODO 有些属性应该是成变量
-*/
-@font-face {
-  font-family: "md-icon"; /* Project id 3713561 */
-  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
-}
-/*
-
-*/
-:root {
-  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 400;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
-  text-decoration: none;
-}
-
-.vio-card, .vio-archive-title {
-  border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
-  transition: box-shadow 0.3s;
-}
-.vio-card:hover, .vio-archive-title:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
-  transition: box-shadow 0.5s;
-}
-
-@font-face {
-  font-family: "md-icon"; /* Project id 3713561 */
-  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
-}
-/*
-
-*/
-:root {
-  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 400;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
-  text-decoration: none;
-}
-
-.vio-card, .vio-archive-title {
-  border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
-  transition: box-shadow 0.3s;
-}
-.vio-card:hover, .vio-archive-title:hover {
+.vio-comments:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
 }
@@ -479,6 +490,10 @@ footer > div .footer-right {
   color: rgba(79, 79, 79, 0.8);
 }
 
+/*
+    2022/10/11
+    TODO 有些属性应该是成变量
+*/
 :root {
   --vio-font-color: rgb(79, 79, 79);
 }
@@ -490,13 +505,13 @@ body {
 }
 
 /* display style */
-.vio-card, .vio-archive-title {
+.vio-card {
   background: white;
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
 }
-.vio-card:hover, .vio-archive-title:hover {
+.vio-card:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
 }
@@ -774,12 +789,19 @@ header ul li a {
 }
 
 .vio-archive-title {
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
+  transition: box-shadow 0.3s;
   display: flex;
   align-items: center;
   padding: 1rem 1.5rem;
   margin: 2rem 0;
   border-radius: 1rem;
   font-size: 1rem;
+}
+.vio-archive-title:hover {
+  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
+  transition: box-shadow 0.5s;
 }
 .vio-archive-title > div {
   display: inline-block;

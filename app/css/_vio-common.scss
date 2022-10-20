@@ -1,0 +1,35 @@
+@use 'vio-var' as v;
+
+/*
+icon from:https://github.com/Templarian/MaterialDesign
+*/
+
+
+@font-face {
+    font-family: 'md-icon';  /* Project id 3713561 */
+    src: url('//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092') format('woff2'),
+         url('//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092') format('woff'),
+         url('//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092') format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Roboto-Bold';  /* Project id 3713561 */
+    src: url('../font/Roboto-Bold.woff2') format('woff2'),
+         url('../font/Roboto-Bold.woff') format('woff');
+}
+
+:root{
+    --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg"); //TODO 应该能换
+
+    font-weight: v.$font-weight-normal; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; //so , fuck you content-box
+    font-family:v.$font-stack;
+    text-decoration: none;
+}

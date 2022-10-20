@@ -1,37 +1,10 @@
 @charset "UTF-8";
 /*
+
+*/
+/*
     组件？
 */
-@font-face {
-  font-family: "md-icon"; /* Project id 3713561 */
-  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
-}
-/*
-
-*/
-:root {
-  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 400;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
-  text-decoration: none;
-}
-
-.vio-card, .toast {
-  border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
-  transition: box-shadow 0.3s;
-}
-.vio-card:hover, .toast:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
-  transition: box-shadow 0.5s;
-}
-
 .toast {
   border-radius: 0.5rem;
   min-width: 8rem;
@@ -94,36 +67,6 @@
   100% {
     top: -5rem;
   }
-}
-
-@font-face {
-  font-family: "md-icon"; /* Project id 3713561 */
-  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
-}
-/*
-
-*/
-:root {
-  --vio-background-img: url("https://s2.loli.net/2022/07/20/A1FhITWEvMeQk7C.jpg");
-  font-weight: 400;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
-  text-decoration: none;
-}
-
-.vio-card {
-  border-radius: 1rem;
-  box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
-  transition: box-shadow 0.3s;
-}
-.vio-card:hover {
-  box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
-  transition: box-shadow 0.5s;
 }
 
 form p {

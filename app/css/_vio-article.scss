@@ -1,12 +1,13 @@
-@import 'vio-var';
+@use 'vio-var' as vio;
+@use 'vio-component' as component;
 
 .vio-single {
     flex: 1;
 
     >article {
         // display: flex;
-        @extend .vio-card;
-        background: $card-background-color;
+        @include component.vio-card;
+        background: vio.$card-background-color;
         margin: 2rem 0;
         padding: 2rem;
         // transition: all 0.5s ease-out;
@@ -32,33 +33,33 @@
                     opacity: 0.6;
                     margin: 0.4rem 0;
                     z-index: -1;
-                    // color: $font-color;
+                    // color: vio.$font-color;
 
                     .item {
                         margin-left: .5rem;
                     }
 
                     a {
-                        color: $font-color;
+                        color: vio.$font-color;
                     }
                 }
             }
 
             &:hover {
                 .art-cats a {
-                    color: $color-violet;
+                    color: vio.$color-violet;
                 }
 
                 .art-tags a {
-                    color: $color-sky;
+                    color: vio.$color-sky;
                 }
             }
 
             >img {
                 //左侧图片
-                @extend %vio-img;
+                @include component.vio-img;
                 transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-                border-radius: $radius;
+                border-radius: vio.$radius;
                 width: 30%;
                 max-height: 30vh;
 
@@ -77,14 +78,14 @@
 
             img {
                 margin: 1rem 0;
-                border-radius: $radius !important;
+                border-radius: vio.$radius !important;
                 border: .1rem solid rgba(128, 128, 128, 0);
             }
 
             figcaption {
                 font-size: .8rem;
                 font-weight: 400;
-                color: $font-color-light;
+                color: vio.$font-color-light;
                 margin-top: -1rem;
                 text-align: center;
             }
@@ -98,8 +99,8 @@
                     color: white;
                     padding: .1rem .4rem;
                     margin-right: .5rem;
-                    background: $color-violet-light;
-                    border-radius: calc($radius / 2);
+                    background: vio.$color-violet-light;
+                    border-radius: calc(vio.$radius / 2);
                 }
             }
 
@@ -112,8 +113,8 @@
                     color: white;
                     padding: .1rem .4rem;
                     margin-right: .5rem;
-                    background: $color-violet-light;
-                    border-radius: calc($radius / 2);
+                    background: vio.$color-violet-light;
+                    border-radius: calc(vio.$radius / 2);
 
                 }
             }
@@ -121,22 +122,22 @@
             ul {
                 margin: .5rem 0;
                 list-style-type: none;
-                border-left: .3rem dashed $color-violet-light;
+                border-left: .3rem dashed vio.$color-violet-light;
                 padding-left: 1rem;
             }
 
             .wp-block-quote {
-                // border-left: $color-violet-light .3rem solid;
-                background: $color-violet-argon;
+                // border-left: vio.$color-violet-light .3rem solid;
+                background: vio.$color-violet-argon;
                 padding: 1rem;
-                border-radius: $radius;
+                border-radius: vio.$radius;
                 display: flex;
                 flex-direction: column-reverse;
                 margin: 1rem 0;
 
                 p {
                     align-self: flex-end;
-                    color: $color-violet-dark;
+                    color: vio.$color-violet-dark;
 
                     &:before {
                         content: "--";
@@ -157,11 +158,11 @@
                                 font-size: 1rem;
                                 padding: .1rem .4rem;
                                 margin-right: .5rem;
-                                background: $color-violet-light;
-                                border-radius: calc($radius / 2);
+                                background: vio.$color-violet-light;
+                                border-radius: calc(vio.$radius / 2);
 
-                                border: .1rem solid $color-violet-light;
-                                color: $color-violet-light;
+                                border: .1rem solid vio.$color-violet-light;
+                                color: vio.$color-violet-light;
                                 background: none;
                             }
                         }
@@ -169,14 +170,14 @@
                 }
 
                 cite {
-                    font-weight: $font-weight-normal;
-                    color: $font-color-light;
+                    font-weight: vio.$font-weight-normal;
+                    color: vio.$font-color-light;
                     text-align: left;
                     font-style: normal;
 
                     &:before {
                         content: "“";
-                        color: $color-violet-light;
+                        color: vio.$color-violet-light;
                         font-size: 2rem;
                         margin-right: .5rem;
                     }
@@ -189,7 +190,7 @@
                 //TODO 代码块高亮以后再说
                 background: #242424;
                 padding: 1rem;
-                border-radius: $radius;
+                border-radius: vio.$radius;
                 margin: 1rem 0;
                 font-size: 1rem;
                 color: white;
@@ -208,7 +209,7 @@
 }
 
 .vio-comments {
-    @extend .vio-card;
+    @include component.vio-card;
     padding: 2rem;
     background: white;
 }

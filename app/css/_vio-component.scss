@@ -1,18 +1,15 @@
 /*
     组件？
 */
-@import 'vio-var';
+@use 'vio-var' as vio;
 
-
-$radius: 1rem !default;
 
 
 .toast {
-    @extend .vio-card;
     border-radius: .5rem;
     min-width: 8rem;
     padding: .7rem;
-    background: $color-sky-light;
+    background: vio.$color-sky-light;
     position: fixed;
     top: -5rem;
     right: 1rem;
@@ -90,3 +87,26 @@ $radius: 1rem !default;
 }
 
 
+
+//一个卡片应该长啥样 What should at least look like？
+@mixin vio-card {
+    //基本样式 basic style
+    border-radius: 1rem;
+    box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.05);
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: .2rem .2rem 2rem rgba(128, 128, 128, 0.100);
+        transition: box-shadow 0.5s;
+    }
+}
+
+@mixin vio-img{
+        object-fit: cover;
+        border-radius: vio.$radius;
+        transition: box-shadow 0.5s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+        &:hover {
+            transition: box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
+            box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
+        }
+}

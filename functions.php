@@ -100,11 +100,11 @@ add_action('admin_menu', 'vio_menu');
 function vio_init()
 {
 	$init  = get_option('vio-init');
-	if ($init == false || $init < $GLOBALS['VIO_V'] - 100) {
+	if ($init == false || $init < $GLOBALS['VIO_V'] - 99) {
 		//初始化 || 更新
 		$default = array(
 			'site_info' => array(
-				'name' => 'Violets', //站长名
+				'name' => 'Violets', //站长名?
 				'portrait' => '',    //头像
 				'sign' => 'person worthy of that name', //签名
 			)
