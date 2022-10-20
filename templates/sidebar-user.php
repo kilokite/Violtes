@@ -1,9 +1,9 @@
 <div class="bar-myself vio-card">
     <div class="info">
-        <img src="<?php vio_option("portrait")?>" alt="" class="shake-hard">
+        <img src="<?php vio_option('site_info',"portrait")?>" alt="" class="shake-hard">
         <div>
-            <h2><?php vio_option('name')?></h2>
-            <p><?php vio_option('sign')?></p>
+            <h2><?php vio_option('site_info','name')?></h2>
+            <p><?php vio_option('site_info','sign')?></p>
         </div>
     </div>
     <div class="badge">
