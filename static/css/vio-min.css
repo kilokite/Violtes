@@ -10,7 +10,8 @@ icon from:https://github.com/Templarian/MaterialDesign
   src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
 }
 @font-face {
-  font-family: "Roboto-Bold"; /* Project id 3713561 */
+  font-family: "Roboto-Bold";
+  font-weight: bold;
   src: url("../font/Roboto-Bold.woff2") format("woff2"), url("../font/Roboto-Bold.woff") format("woff");
 }
 :root {
@@ -22,7 +23,7 @@ icon from:https://github.com/Templarian/MaterialDesign
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Roboto-Bold, -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
+  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   text-decoration: none;
 }
 
@@ -469,12 +470,14 @@ footer > div .footer-left {
   color: rgba(79, 79, 79, 0.8);
 }
 footer > div .footer-left > .title {
+  font-family: Roboto-Bold, -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: rgba(79, 79, 79, 0.344);
 }
 footer > div .footer-left .theme-logo {
+  font-family: Roboto-Bold, -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   margin-top: 2rem;
   text-decoration-style: none;
   padding: 0.5rem;

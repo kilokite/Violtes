@@ -1,5 +1,5 @@
 @use 'vio-var' as vio;
-
+@use 'vio-component' as component;
 
 .footer-line {
     margin-bottom: 2rem ;
@@ -16,12 +16,14 @@ footer {
             flex: 1;
             color: vio.$font-color-light;
             >.title {
+                @include component.vio-bold;
                 font-size: 1.8rem;
                 font-weight: vio.$font-weight-bold;
                 margin-bottom: 1rem;
                 color: vio.$font-color-feather;
             }
             .theme-logo{
+                @include component.vio-bold;
                 margin-top: 2rem;
                 text-decoration-style: none;
                 padding: .5rem;
