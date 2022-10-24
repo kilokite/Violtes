@@ -452,6 +452,44 @@ icon from:https://github.com/Templarian/MaterialDesign
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
 }
+.vio-comments ul {
+  list-style-type: none;
+}
+.vio-comments form {
+  border: 0.2rem solid;
+}
+.vio-comments li {
+  margin: 1rem 0;
+}
+.vio-comments li > .comment {
+  display: flex;
+}
+.vio-comments li > .comment .avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+}
+.vio-comments li > .comment .comment-content {
+  margin: 0 0 0 1rem;
+}
+.vio-comments li > .comment .comment-content .name {
+  color: rgba(79, 79, 79, 0.8);
+  margin: 0 0 0.3rem 0;
+}
+.vio-comments li > .comment .comment-content .name > a {
+  color: rgba(79, 79, 79, 0.8);
+}
+.vio-comments li > .comment .comment-content .text {
+  font-size: 0.85rem;
+  color: rgb(79, 79, 79);
+}
+.vio-comments .reply {
+  margin-left: 2rem;
+}
+.vio-comments .reply .avatar {
+  width: 2rem !important;
+  height: 2rem !important;
+}
 
 .footer-line {
   margin-bottom: 2rem;

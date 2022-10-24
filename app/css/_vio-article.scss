@@ -212,4 +212,58 @@
     @include component.vio-card;
     padding: 2rem;
     background: white;
+
+    ul {
+        list-style-type: none;
+    }
+
+    form {
+        //TODO 以后搞
+        border: .2rem solid;
+    }
+
+    li {
+        margin: 1rem 0;
+
+        >.comment {
+            display: flex;
+
+            .avatar {
+                //头像
+                width: 3rem;
+                height: 3rem;
+                border-radius: calc(vio.$radius/2);
+            }
+
+            .comment-content {
+                margin: 0 0 0 1rem;
+
+                .name {
+                    color: vio.$font-color-light;
+
+                    >a {
+                        color: vio.$font-color-light;
+                    }
+
+                    margin: 0 0 .3rem 0;
+                }
+
+                .text {
+                    font-size: .85rem;
+                    color: vio.$font-color;
+                }
+            }
+        }
+    }
+
+    .reply {
+        //子评论右移
+        margin-left: 2rem;
+
+        .avatar {
+            width: 2rem !important;
+            height: 2rem !important;
+        }
+    }
+
 }

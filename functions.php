@@ -147,8 +147,8 @@ function vio_option($class, $item, $return = false)
 		} else {
 			echo $vio_options[$class][$item];
 		}
-	}else{
-		if($return){
+	} else {
+		if ($return) {
 			return null;
 		}
 		echo 'null';
@@ -192,3 +192,60 @@ function vio_pagination()
 		'next_text' => __('▸', 'textdomain'),
 	));
 }
+?>
+
+<?php
+$previous_comment = false; //上一条评论者
+function vio_comment($comment, $args, $depth)
+{
+	global $previous_comment;
+	$style = '';
+	$reply = false;
+	//评论模板
+	if ($depth > 1) {
+		//回复
+		$previous_comment = $comment->comment_author;
+		$reply = true;
+		if ($depth == 2) {
+			$style = 'reply';
+		}
+	}
+?>
+
+	<li class="<?php echo $style ?>">
+
+		<?php
+		// echo json_encode(array(
+		// 	'comment' => $comment,
+		// 	'args' => $args,
+		// 	'depth' => $depth
+		// ));
+		?>
+
+		<div class="comment">
+
+			<div class="avatar">
+				<?php echo get_avatar($comment, 64); ?>
+			</div>
+
+			<div class="comment-content">
+				<div class="info">
+					<p class="name">
+						<?php echo get_comment_author_link(); ?>
+						<?php if($reply):?>
+							<span>▸</span>
+							<span><?php echo $previous_comment;?></span>
+							<?php endif?>
+					</p>
+					<!-- <span class="time"><?php echo get_comment_date() . ' ' . get_comment_time(); ?></span> -->
+				</div>
+				<div class="text">
+					<?php comment_text(); ?>
+				</div>
+				<div class="reply">
+					<!-- <?php comment_reply_link(array_merge($args, array('reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?> -->
+				</div>
+			</div>
+		</div>
+
+	<?php } ?>
