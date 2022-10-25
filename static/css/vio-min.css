@@ -2,13 +2,13 @@
 /*
 
 */
+@font-face {
+  font-family: "iconfont";
+  src: url("../font/iconfont.woff2?t=1666677219493") format("woff2"), url("../font/iconfont.woff?t=1666677219493") format("woff"), url("../font/iconfont.ttf?t=1666677219493") format("truetype");
+}
 /*
 icon from:https://github.com/Templarian/MaterialDesign
 */
-@font-face {
-  font-family: "md-icon"; /* Project id 3713561 */
-  src: url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff2?t=1666081212092") format("woff2"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.woff?t=1666081212092") format("woff"), url("//at.alicdn.com/t/c/font_3713561_158kdxaxn58.ttf?t=1666081212092") format("truetype");
-}
 @font-face {
   font-family: "Roboto-Bold";
   font-weight: bold;
@@ -452,14 +452,18 @@ icon from:https://github.com/Templarian/MaterialDesign
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
 }
+.vio-comments .comment_title {
+  margin-bottom: 1rem;
+}
+.vio-comments .comment_title:before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e61d";
+}
 .vio-comments ul {
   list-style-type: none;
-}
-.vio-comments form {
-  border: 0.2rem solid;
-}
-.vio-comments li {
-  margin: 1rem 0;
 }
 .vio-comments li > .comment {
   display: flex;
@@ -470,7 +474,17 @@ icon from:https://github.com/Templarian/MaterialDesign
   border-radius: 0.5rem;
 }
 .vio-comments li > .comment .comment-content {
+  width: 100%;
+  position: relative;
   margin: 0 0 0 1rem;
+}
+.vio-comments li > .comment .comment-content:hover .year {
+  opacity: 1 !important;
+  transition: opacity 0.3s;
+}
+.vio-comments li > .comment .comment-content:hover .reply_link {
+  opacity: 1 !important;
+  transition: opacity 0.3s;
 }
 .vio-comments li > .comment .comment-content .name {
   color: rgba(79, 79, 79, 0.8);
@@ -482,6 +496,36 @@ icon from:https://github.com/Templarian/MaterialDesign
 .vio-comments li > .comment .comment-content .text {
   font-size: 0.85rem;
   color: rgb(79, 79, 79);
+  margin-bottom: 1.5rem;
+  min-height: 1rem;
+}
+.vio-comments li > .comment .comment-content .time {
+  color: rgba(79, 79, 79, 0.344);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.85rem;
+}
+.vio-comments li > .comment .comment-content .year {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.vio-comments li > .comment .comment-content .reply_link {
+  opacity: 0;
+  background: rgba(127, 42, 212, 0.0823529412);
+  font-size: 0.8rem;
+  position: absolute;
+  border-radius: 0.25rem;
+  padding: 0.2rem 0.3rem;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  transition: opacity 0.3s;
+}
+.vio-comments li > .comment .comment-content .reply_link > a {
+  color: #a66df2;
+}
+.vio-comments li > .comment .comment-content .reply_link > a:hover {
+  color: #7f2ad4;
 }
 .vio-comments .reply {
   margin-left: 2rem;
@@ -489,6 +533,16 @@ icon from:https://github.com/Templarian/MaterialDesign
 .vio-comments .reply .avatar {
   width: 2rem !important;
   height: 2rem !important;
+}
+.vio-comments textarea {
+  border: none;
+  border: 0.4rem rgba(127, 42, 212, 0.0823529412) solid;
+  border-radius: 1rem;
+  width: 100%;
+  resize: none;
+}
+.vio-comments textarea:focus {
+  outline: none;
 }
 
 .footer-line {
@@ -871,6 +925,19 @@ header ul li a {
   content: "#";
   background-color: rgba(42, 147, 212, 0.0823529412);
   color: #6dc2f2;
+}
+
+.sticky_post:before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e651";
+  color: #a66df2;
+  background: rgba(127, 42, 212, 0.0823529412);
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  transform: rotate(45deg);
 }
 
 /*# sourceMappingURL=vio-min.css.map */

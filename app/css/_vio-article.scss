@@ -1,5 +1,6 @@
 @use 'vio-var' as vio;
 @use 'vio-component' as component;
+@use 'iconfont' as icon;
 
 .vio-single {
     flex: 1;
@@ -213,18 +214,27 @@
     padding: 2rem;
     background: white;
 
+    .comment_title {
+        margin-bottom: 1rem;
+        &:before{
+            @include icon.iconfont;
+            @include icon.bookmark;
+        }
+    }
+
     ul {
         list-style-type: none;
     }
 
     form {
-        //TODO 以后搞
-        border: .2rem solid;
+        //评论表单
+
     }
 
     li {
-        margin: 1rem 0;
 
+        //评论列表，留白分隔
+        // margin-left: 1rem;
         >.comment {
             display: flex;
 
@@ -236,7 +246,24 @@
             }
 
             .comment-content {
+                width: 100%;
+                position: relative;
                 margin: 0 0 0 1rem;
+
+                &:hover {
+                    .year {
+                        //显示具体年
+
+                        opacity: 1 !important;
+                        transition: opacity .3s;
+                    }
+
+                    .reply_link {
+                        //显示回复按钮
+                        opacity: 1 !important;
+                        transition: opacity .3s;
+                    }
+                }
 
                 .name {
                     color: vio.$font-color-light;
@@ -251,6 +278,44 @@
                 .text {
                     font-size: .85rem;
                     color: vio.$font-color;
+                    margin-bottom: 1.5rem;
+                    min-height: 1rem;
+                    //分隔留白同时占位置
+                }
+
+                //time
+                .time {
+                    color: vio.$font-color-feather;
+                    position: absolute;
+                    top: .5rem;
+                    right: .5rem;
+                    font-size: .85rem;
+                }
+
+                .year {
+                    opacity: 0;
+                    transition: opacity .3s;
+                }
+
+                .reply_link {
+                    opacity: 0;
+
+                    >a {
+                        color: vio.$color-violet-light;
+
+                        &:hover {
+                            color: vio.$color-violet;
+                        }
+                    }
+
+                    background: vio.$color-violet-argon;
+                    font-size: .8rem;
+                    position: absolute;
+                    border-radius: calc(vio.$radius / 4);
+                    padding: .2rem .3rem;
+                    right: .5rem;
+                    bottom: .5rem;
+                    transition: opacity .3s;
                 }
             }
         }
@@ -266,4 +331,15 @@
         }
     }
 
+
+    textarea {
+        border: none;
+        border: .4rem vio.$color-violet-argon solid;
+        border-radius: vio.$radius;
+        width: 100%;
+        resize: none;
+        &:focus{
+            outline: none;
+        }
+    }
 }

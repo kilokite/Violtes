@@ -1,0 +1,447 @@
+@font-face {
+  //TODO 
+  font-family: "iconfont"; 
+  src: url('../font/iconfont.woff2?t=1666677219493') format('woff2'),
+       url('../font/iconfont.woff?t=1666677219493') format('woff'),
+       url('../font/iconfont.ttf?t=1666677219493') format('truetype');
+}
+
+@mixin iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin alert-circle-outline {
+  content: "\e61a";
+}
+
+@mixin alert-circle {
+  content: "\e61c";
+}
+
+@mixin bookmark {
+  content: "\e61d";
+}
+
+@mixin language-markdown-outline {
+  content: "\e61f";
+}
+
+@mixin language-markdown {
+  content: "\e622";
+}
+
+@mixin launch {
+  content: "\e628";
+}
+
+@mixin image {
+  content: "\e62b";
+}
+
+@mixin lock {
+  content: "\e64a";
+}
+
+@mixin pin {
+  content: "\e651";
+}
+
+@mixin star {
+  content: "\e652";
+}
+
+@mixin puzzle-outline {
+  content: "\e653";
+}
+
+@mixin pill {
+  content: "\e654";
+}
+
+@mixin alert-circle1 {
+  content: "\e655";
+}
+
+@mixin chart-donut {
+  content: "\e656";
+}
+
+@mixin bookmark1 {
+  content: "\e657";
+}
+
+@mixin cube-outline {
+  content: "\e658";
+}
+
+@mixin pin-outline {
+  content: "\e659";
+}
+
+@mixin triangle-small-down {
+  content: "\e65a";
+}
+
+@mixin arrow-left {
+  content: "\e65c";
+}
+
+@mixin star1 {
+  content: "\e65d";
+}
+
+@mixin link-variant {
+  content: "\e660";
+}
+
+@mixin bookmark-outline {
+  content: "\e662";
+}
+
+@mixin cellphone-link {
+  content: "\e663";
+}
+
+@mixin chart-donut1 {
+  content: "\e664";
+}
+
+@mixin chevron-down1 {
+  content: "\e665";
+}
+
+@mixin chevron-left1 {
+  content: "\e666";
+}
+
+@mixin chevron-right {
+  content: "\e667";
+}
+
+@mixin chevron-up {
+  content: "\e668";
+}
+
+@mixin creation {
+  content: "\e669";
+}
+
+@mixin image1 {
+  content: "\e66a";
+}
+
+@mixin language-markdown1 {
+  content: "\e66b";
+}
+
+@mixin language-markdown-outline1 {
+  content: "\e66c";
+}
+
+@mixin puzzle {
+  content: "\e66d";
+}
+
+@mixin puzzle-outline2 {
+  content: "\e66e";
+}
+
+@mixin triangle-small-up {
+  content: "\e66f";
+}
+
+@mixin triangle-small-down1 {
+  content: "\e670";
+}
+
+@mixin heart {
+  content: "\e671";
+}
+
+@mixin cube-outline1 {
+  content: "\e672";
+}
+
+@mixin lock1 {
+  content: "\e673";
+}
+
+@mixin pin1 {
+  content: "\e674";
+}
+
+@mixin pin-outline1 {
+  content: "\e675";
+}
+
+@mixin alert-circle-outline1 {
+  content: "\e676";
+}
+
+@mixin clock-outline {
+  content: "\e602";
+}
+
+@mixin close-circle-outline {
+  content: "\e603";
+}
+
+@mixin console-line {
+  content: "\e604";
+}
+
+@mixin github {
+  content: "\e605";
+}
+
+@mixin comment-multiple-outline {
+  content: "\e606";
+}
+
+@mixin book-outline {
+  content: "\e607";
+}
+
+@mixin tag-outline {
+  content: "\e608";
+}
+
+@mixin texture {
+  content: "\e609";
+}
+
+@mixin shape {
+  content: "\e60a";
+}
+
+@mixin send {
+  content: "\e60b";
+}
+
+@mixin seat-individual-suite {
+  content: "\e60c";
+}
+
+@mixin sticker-outline {
+  content: "\e60d";
+}
+
+@mixin sticker-alert-outline {
+  content: "\e60e";
+}
+
+@mixin sticker-check-outline {
+  content: "\e60f";
+}
+
+@mixin swap-horizontal {
+  content: "\e610";
+}
+
+@mixin sync {
+  content: "\e611";
+}
+
+@mixin sticker-emoji {
+  content: "\e612";
+}
+
+@mixin bandage {
+  content: "\e614";
+}
+
+@mixin book-outline1 {
+  content: "\e615";
+}
+
+@mixin close-circle-outline1 {
+  content: "\e617";
+}
+
+@mixin checkbox-intermediate {
+  content: "\e618";
+}
+
+@mixin checkbox-blank-outline {
+  content: "\e61b";
+}
+
+@mixin fullscreen-exit {
+  content: "\e61e";
+}
+
+@mixin emotoutline {
+  content: "\e623";
+}
+
+@mixin export-variant {
+  content: "\e624";
+}
+
+@mixin earth {
+  content: "\e625";
+}
+
+@mixin fullscreen {
+  content: "\e626";
+}
+
+@mixin menu-left {
+  content: "\e627";
+}
+
+@mixin message-outline {
+  content: "\e629";
+}
+
+@mixin help-circle-outline {
+  content: "\e62a";
+}
+
+@mixin menu-right {
+  content: "\e62c";
+}
+
+@mixin octagon {
+  content: "\e62d";
+}
+
+@mixin octagram {
+  content: "\e62e";
+}
+
+@mixin label-outline {
+  content: "\e62f";
+}
+
+@mixin octagon-outline {
+  content: "\e630";
+}
+
+@mixin message-reply-outline {
+  content: "\e631";
+}
+
+@mixin octagram-outline {
+  content: "\e632";
+}
+
+@mixin package-variant-closed-minus {
+  content: "\e633";
+}
+
+@mixin package-variant-closed-plus {
+  content: "\e634";
+}
+
+@mixin pentagon {
+  content: "\e635";
+}
+
+@mixin package-variant-closed {
+  content: "\e636";
+}
+
+@mixin plus-box {
+  content: "\e637";
+}
+
+@mixin plus {
+  content: "\e638";
+}
+
+@mixin pentagon-outline {
+  content: "\e639";
+}
+
+@mixin progress-check {
+  content: "\e63a";
+}
+
+@mixin package-variant {
+  content: "\e63b";
+}
+
+@mixin panorama-fisheye {
+  content: "\e63c";
+}
+
+@mixin progress-helper {
+  content: "\e63d";
+}
+
+@mixin pound {
+  content: "\e63e";
+}
+
+@mixin send1 {
+  content: "\e63f";
+}
+
+@mixin sticker-outline1 {
+  content: "\e640";
+}
+
+@mixin progress-close {
+  content: "\e641";
+}
+
+@mixin sticker-alert-outline1 {
+  content: "\e642";
+}
+
+@mixin shape1 {
+  content: "\e643";
+}
+
+@mixin texture1 {
+  content: "\e644";
+}
+
+@mixin rhombus-medium {
+  content: "\e645";
+}
+
+@mixin swap-horizontal1 {
+  content: "\e646";
+}
+
+@mixin palette-swatch-outline {
+  content: "\e647";
+}
+
+@mixin record {
+  content: "\e648";
+}
+
+@mixin package-down {
+  content: "\e649";
+}
+
+@mixin sticker-check-outline1 {
+  content: "\e64b";
+}
+
+@mixin sync1 {
+  content: "\e64c";
+}
+
+@mixin sticker-emoji1 {
+  content: "\e64d";
+}
+
+@mixin scan-helper {
+  content: "\e64e";
+}
+
+@mixin power-sleep {
+  content: "\e64f";
+}
+
+@mixin seat-individual-suite1 {
+  content: "\e650";
+}
+

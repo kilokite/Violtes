@@ -195,16 +195,17 @@ function vio_pagination()
 ?>
 
 <?php
-$previous_comment = false; //上一条评论者
+$comment_user = Array();
 function vio_comment($comment, $args, $depth)
 {
-	global $previous_comment;
-	$style = '';
-	$reply = false;
 	//评论模板
+	global $comment_user;
+	$style = ''; //列表class li class
+	$reply = false; //是否为回复？is reply?
+	$comment_user[$depth] = $comment->comment_author;
+
 	if ($depth > 1) {
 		//回复
-		$previous_comment = $comment->comment_author;
 		$reply = true;
 		if ($depth == 2) {
 			$style = 'reply';
@@ -229,22 +230,27 @@ function vio_comment($comment, $args, $depth)
 			</div>
 
 			<div class="comment-content">
+
 				<div class="info">
 					<p class="name">
 						<?php echo get_comment_author_link(); ?>
 						<?php if($reply):?>
 							<span>▸</span>
-							<span><?php echo $previous_comment;?></span>
+							<span><?php echo $comment_user[--$depth] ?></span>
 							<?php endif?>
 					</p>
-					<!-- <span class="time"><?php echo get_comment_date() . ' ' . get_comment_time(); ?></span> -->
+
+					<span class="time"><span class="year"><?php echo get_comment_date('Y-');?></span><?php echo get_comment_date('m-d'); ?></span>
 				</div>
+
 				<div class="text">
 					<?php comment_text(); ?>
 				</div>
-				<div class="reply">
-					<!-- <?php comment_reply_link(array_merge($args, array('reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?> -->
+
+				<div class="reply_link">
+					<?php comment_reply_link(array_merge($args, array('reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
 				</div>
+
 			</div>
 		</div>
 

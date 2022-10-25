@@ -7,9 +7,12 @@
     TODO 完善各种模板
     TODO 导航栏不好看
     TODO scss整理 有点乱
+    TODO 评论标签/分类 的tag
+    TODO 图片显示优化
+    TODO 动画优化
     TODO 找个代码块高亮
     TODO 完善底部
     TODO 顶部菜单完善
     TODO 搜索 & 手机平板适配
-    TODO 国际化(工地英语)
+    TODO 寻找散落在主题文件中的中文 完成国际化(工地英语)
     TODO pjax

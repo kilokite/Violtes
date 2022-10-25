@@ -15,7 +15,6 @@
         <?php wp_nav_menu(array('header-menu' => '顶部菜单')) ?>
     </header>
     <!-- banner -->
-    <!-- sayhello 和 文章 归档 标题 都是h1 ，这，不标准？-->
     <section class="banner">
         <div class="banner-content">
 

@@ -9,7 +9,7 @@
 @use 'vio-article';
 @use 'vio-footer';
 
-
+@use 'iconfont' as icon;
 
 :root {
     --vio-font-color: rgb(79, 79, 79);
@@ -408,5 +408,17 @@ header {
             background-color: vio.$color-sky-argon;
             color: vio.$color-sky-light;
         }
+    }
+}
+
+.sticky_post{
+    &:before{
+        @include icon.iconfont;
+        @include icon.pin;
+        color: vio.$color-violet-light;
+        background: vio.$color-violet-argon;
+        padding: .3rem;
+        border-radius: calc(vio.$radius / 2);
+        transform: rotate(45deg);
     }
 }

@@ -29,7 +29,12 @@
                 <li class="vio-card">
                     <div class="art-card">
                         <!-- 文字信息 -->
-                        <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+                        <h2>
+                            <?php if(is_sticky()):?>
+                                <span class="sticky_post"></span>
+                                <?php endif?>
+                            <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                        </h2>
                         <div class="art-excerpt"><?php the_excerpt() ?></div>
                         <p class="art-info">
                             <span><?php the_time("Y-m-d") ?></span>
