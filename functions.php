@@ -223,7 +223,7 @@ function vio_comment($comment, $args, $depth)
 		// ));
 		?>
 
-		<div class="comment">
+		<div class="comment" id="comment-<?php comment_ID()?>">
 
 			<div class="avatar">
 				<?php echo get_avatar($comment, 64); ?>

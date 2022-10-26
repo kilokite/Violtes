@@ -109,7 +109,7 @@
                 // font-size: 1.2rem;
                 margin: 0.5rem 0;
 
-                &:before {
+                &::before {
                     content: "##";
                     color: white;
                     padding: .1rem .4rem;
@@ -140,7 +140,7 @@
                     align-self: flex-end;
                     color: vio.$color-violet-dark;
 
-                    &:before {
+                    &::before {
                         content: "--";
                         margin-right: .5rem;
                     }
@@ -176,7 +176,7 @@
                     text-align: left;
                     font-style: normal;
 
-                    &:before {
+                    &::before {
                         content: "“";
                         color: vio.$color-violet-light;
                         font-size: 2rem;
@@ -216,9 +216,25 @@
 
     .comment_title {
         margin-bottom: 1rem;
-        &:before{
+        &::before{
             @include icon.iconfont;
             @include icon.bookmark;
+        }
+    }
+
+    .reply_title{
+        display: inline-block;
+        margin-bottom: .5rem;
+        >a{
+            color: vio.$font-color;
+        }
+        +small{
+            background-color: vio.$color-violet-argon;
+            padding: .3rem .4rem ;
+            border-radius: calc(vio.$radius / 4);
+            >a{
+                color: vio.$color-violet-light;
+            }
         }
     }
 
@@ -227,7 +243,36 @@
     }
 
     form {
+        margin-bottom: 1rem;
         //评论表单
+        textarea {
+            border: none;
+            border-bottom: solid .1rem vio.$color-violet-light;
+            background: vio.$color-violet-argon;
+            padding: vio.$radius;
+            color: vio.$font-color;
+            $input-radius: calc(vio.$radius / 2);
+            border-radius: $input-radius $input-radius 0 0 ;
+            width: 100%;
+            min-height:5rem;
+            resize: none;
+            transition: border .3s ease-in-out;
+            &:focus{
+                outline: none;
+                border-bottom: .2rem solid vio.$color-violet-light;
+            }
+        }
+
+        .form-submit{
+            text-align: right;
+        }
+        .submit{
+            border: none;
+            padding: .4rem 1.5rem ;
+            border-radius: calc(vio.$radius / 2);
+            background: vio.$color-violet-light;
+            color: white;
+        }
 
     }
 
@@ -279,7 +324,7 @@
                     font-size: .85rem;
                     color: vio.$font-color;
                     margin-bottom: 1.5rem;
-                    min-height: 1rem;
+                    min-height: 1.5rem;
                     //分隔留白同时占位置
                 }
 
@@ -328,18 +373,6 @@
         .avatar {
             width: 2rem !important;
             height: 2rem !important;
-        }
-    }
-
-
-    textarea {
-        border: none;
-        border: .4rem vio.$color-violet-argon solid;
-        border-radius: vio.$radius;
-        width: 100%;
-        resize: none;
-        &:focus{
-            outline: none;
         }
     }
 }

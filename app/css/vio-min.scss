@@ -370,11 +370,11 @@ header {
 
 .vio-archive-title {
     @include component.vio-card;
+    background: white;
     display: flex;
     align-items: center;
     padding: 1rem 1.5rem;
     margin: 2rem 0;
-    border-radius: vio.$radius;
     font-size: 1rem;
     >div{
         display: inline-block;
@@ -403,7 +403,7 @@ header {
     }
 
     &[tag]{
-        &:before{
+        &::before{
             content: "#";
             background-color: vio.$color-sky-argon;
             color: vio.$color-sky-light;
@@ -412,7 +412,7 @@ header {
 }
 
 .sticky_post{
-    &:before{
+    &::before{
         @include icon.iconfont;
         @include icon.pin;
         color: vio.$color-violet-light;
