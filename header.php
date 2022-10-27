@@ -16,7 +16,7 @@
     </header>
     <!-- banner -->
     <section class="banner">
-        <div class="banner-content">
+        <div class="banner-content container">
 
 
             <?php if (is_404()) : ?>
@@ -24,6 +24,18 @@
                     <h1>404</h1>
                     <p>The ordinary days that we live in may, in fact, be a series of miracles.</p>
                 </div>
+            <?php elseif (is_page()) : ?>
+                <div class="sayhello vio-page">
+                    <h1><?php the_title() ?></h1>
+                    <p><?php echo get_post_meta(get_the_ID(), 'vio_page_description', true) ?></p>
+                </div>
+                <?php if (has_post_thumbnail()) : ?>
+                    <style>
+                        :root{
+                            --banner-background-img:url(<?php echo get_the_post_thumbnail_url() //banner background?>); 
+                        }
+                    </style> 
+                <?php endif ?>
             <?php else : ?>
                 <div class="sayhello">
                     <h1><?php bloginfo('name') ?></h1>

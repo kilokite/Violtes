@@ -41,6 +41,9 @@ body {
 header {
     position: fixed;
     z-index: 999;
+    margin: 0 auto;
+    max-width: 100%;
+    display: block;
 
     .menu {
         display: flex;
@@ -82,22 +85,29 @@ header {
     height: 80vh;
     /*  60% height  */
     font-weight: 100%;
-    background: url("https://tva4.sinaimg.cn/large/ec43126fgy1gzuaszf2xwj22801cye82.jpg") center;
+    background: vio.$banner-background-img center;
     /* TODO 背景图，应该是变量 */
     background-size: cover;
     background-attachment: fixed;
-    padding: 3rem;
-    padding-bottom: 7rem;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: center;
 }
+
+.banner-content{
+    width: 100%;
+    margin-top: -10vh !important;
+}
+
 
 .sayhello {
     /* background: red; */
     color: #f4f4f4;
-
-    margin-top: -10vh;
+    width: 100%;
+    text-shadow: 0 0 6rem rgb(0, 0, 0);
     >h1 {
+        
         font-weight: bold;
         font-size: 3rem;
         line-height: 4rem;
@@ -125,7 +135,7 @@ header {
 
 /* # 内容容器 */
 .container {
-    margin: auto;
+    margin: 0 auto;
     max-width: 80rem;
     padding: 0 2rem;
 }
