@@ -1,49 +1,31 @@
 <?php
 $GLOBALS['VIO_V'] = 100;
-//大版本+100000，数据结构改变+100，日常+2，修bug+1
+//？ 大版本+100000，数据结构改变+100，日常+2，修bug+1
 //version
+$GLOBALS['force_update'] = true;
+//强制更新数据结构
+
+require_once(get_theme_file_path('functions-ugly.php'));
+// 不好看的functions ugly functions
 
 function vio_require_styles()
 {
-	//静态资源
+	//引入静态资源
 	wp_enqueue_style('vio-min', get_theme_file_uri('static/css/vio-min.css'));
 }
 add_action('wp_enqueue_scripts', 'vio_require_styles');
 
 
-
-//删除一些非必要的东西
-
-//remove_action( 'wp_head', 'wp_enqueue_scripts', 1 );
-remove_action('wp_head', 'feed_links', 2);   //移除feed
-remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
-remove_action('wp_head', 'rsd_link'); //移除离线编辑器开放接口
-remove_action('wp_head', 'wlwmanifest_link'); //移除头部的Windows Live Writer的适配器
-remove_action('wp_head', 'index_rel_link'); //去除本页唯一链接信息
-remove_action('wp_head', 'parent_post_rel_link', 10, 0); //清除前后文信息
-remove_action('wp_head', 'start_post_rel_link', 10, 0); //清除前后文信息
-remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0); //清除前后文信息
-//remove_action( 'wp_head', 'locale_stylesheet' ); //移除本地化样式表
-remove_action('publish_future_post', 'check_and_publish_future_post', 10, 1); //移除本地化样式表
-//remove_action( 'wp_head', 'noindex', 1 ); //移除本地化样式表
-//remove_action( 'wp_head', 'wp_print_styles', 8 ); //移除本地化样式表
-//remove_action( 'wp_head', 'wp_print_head_scripts', 9 ); //移除本地化样式表
-remove_action('wp_head', 'wp_generator');  //wordpress版本号
-//remove_action( 'wp_head', 'rel_canonical' ); //去除规范链接
-remove_action('wp_footer', 'wp_print_footer_scripts'); //移除页脚js
-remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0); //移除短链接
-remove_action('template_redirect', 'wp_shortlink_header', 11, 0); //移除短链接
-add_action('widgets_init', 'my_remove_recent_comments_style'); //移除评论样式
+//# 特性 feature
 
 function my_remove_recent_comments_style()
 {
 	global $wp_widget_factory;
 	remove_action('wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style')); //移除评论样式
 }
-
 add_filter('show_admin_bar', '__return_false'); //移除顶部工具栏（admin_bar）
 //TODO 隐藏 还是 更好的的显示方式
-//这玩意真有人用？
+//？这玩意真有人用？
 
 //注册菜单（导航栏）
 function register_my_menus()
@@ -56,8 +38,9 @@ function register_my_menus()
 }
 add_action('init', 'register_my_menus');
 
-//特色图片支持
+
 add_theme_support("post-thumbnails");
+//特色图片支持
 
 //摘录字数 150
 function wpdocs_custom_excerpt_length($length)
@@ -94,19 +77,27 @@ function vio_menu()
 }
 add_action('admin_menu', 'vio_menu');
 
-//violets functions
+//# violets functions
 
-//init and update
+//保存与使用设置选项
+//init & update
 function vio_init()
 {
 	$init  = get_option('vio-init');
-	if ($init == false || $init < $GLOBALS['VIO_V'] - 99) {
+	if ($init == false || $init < $GLOBALS['VIO_V'] - 99 || $GLOBALS['force_update']) {
 		//初始化 || 更新
 		$default = array(
 			'site_info' => array(
 				'name' => 'Violets', //站长名?
 				'portrait' => '',    //头像
 				'sign' => 'person worthy of that name', //签名
+			),
+			'footer' => array(
+				'name' => 'ZSKT Studio', //底部署名
+			),
+			'style' => array(
+				'theme_color' => 'violet',
+				'pjax' => true,
 			)
 		);
 		if ($init == false) {
@@ -131,8 +122,10 @@ function vio_init()
 }
 vio_init();
 
-$vio_options = array(); //算缓存？
+//## 设置选项
+$vio_options = array(); //？ 缓存选项
 
+//获取设置选项
 function vio_option($class, $item, $return = false)
 {
 	//获取单个项 类 项 返回方式
@@ -155,7 +148,7 @@ function vio_option($class, $item, $return = false)
 	}
 }
 
-
+//设置设置选项
 function vio_set_option($class, $items)
 {
 	global $vio_options;
@@ -168,90 +161,79 @@ function vio_set_option($class, $items)
 	$vio_options[$class] = null;
 }
 
-
+//获取侧边栏模板
 function vio_sidebar($bar)
 {
-	//侧栏 blog信息应该是
+
 	get_template_part('templates/sidebar', $bar);
 }
 
-
+//TODO 取得徽章
 function vio_badge($num)
 {
-	//TODO 取得徽章
 	$badge = get_option("vio-badge");
 	$badge = explode(",", $badge);
 }
 
+//分页
 function vio_pagination()
 {
-	//分页
 	the_posts_pagination(array(
 		'max_size'  => 2,
 		'prev_text' => __('◂', 'textdomain'),
 		'next_text' => __('▸', 'textdomain'),
 	));
 }
-?>
 
-<?php
-$comment_user = Array();
-function vio_comment($comment, $args, $depth)
+//# ajax
+
+// function vio_ajax_test()
+// {
+// 	echo "ajax is ok";
+// 	echo json_encode($_POST['value']);
+// 	wp_die();
+// }
+// add_action('wp_ajax_vio_ajax_test', 'vio_ajax_test');
+
+// function vio_ajax_get_option_page()
+// {
+// 	// if(isset($_POST['vio_page'])){
+// 	// 	$page = $_POST['vio_page'];
+// 	// }else{
+// 	// 	$page = 'main';
+// 	// };
+// 	$page = $_POST['vio_page'];
+// 	get_template_part("templates/option", $page);
+// 	wp_die();
+// }
+// add_action('wp_ajax_vio_ajax_get_option_page', 'vio_ajax_get_option_page');
+
+
+function vio_ajax()
 {
-	//评论模板
-	global $comment_user;
-	$style = ''; //列表class li class
-	$reply = false; //是否为回复？is reply?
-	$comment_user[$depth] = $comment->comment_author;
-
-	if ($depth > 1) {
-		//回复
-		$reply = true;
-		if ($depth == 2) {
-			$style = 'reply';
+	$post_data = $_POST['data'];
+	$return  = array();
+	$func = "vio_ajax_" . $post_data['action'];
+	if (function_exists($func)) {
+		//存在 不需要管理员的 函数
+		$return['return'] = $func($post_data);
+	} elseif (function_exists($func . '_manager')) {
+		//存在 需要管理员的 函数
+		if (current_user_can('manage_options')) {
+			//是管理员
+			$return['return'] = $func($post_data);
+		} else {
+			$return['error'] = 'no permission';
 		}
+	} else {
+		$return['error'] = 'no action';
 	}
-?>
+	echo json_encode($return);
+	wp_die();
+}
+add_action('wp_ajax_vio_ajax', 'vio_ajax');
 
-	<li class="<?php echo $style ?>">
-
-		<?php
-		// echo json_encode(array(
-		// 	'comment' => $comment,
-		// 	'args' => $args,
-		// 	'depth' => $depth
-		// ));
-		?>
-
-		<div class="comment" id="comment-<?php comment_ID()?>">
-
-			<div class="avatar">
-				<?php echo get_avatar($comment, 64); ?>
-			</div>
-
-			<div class="comment-content">
-
-				<div class="info">
-					<p class="name">
-						<?php echo get_comment_author_link(); ?>
-						<?php if($reply):?>
-							<span>▸</span>
-							<span><?php echo $comment_user[--$depth] ?></span>
-							<?php endif?>
-					</p>
-
-					<span class="time"><span class="year"><?php echo get_comment_date('Y-');?></span><?php echo get_comment_date('m-d'); ?></span>
-				</div>
-
-				<div class="text">
-					<?php comment_text(); ?>
-				</div>
-
-				<div class="reply_link">
-					<?php comment_reply_link(array_merge($args, array('reply_text' => '回复', 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-				</div>
-
-			</div>
-		</div>
-
-	<?php } ?>
+function vio_ajax_the_test($parameter)
+{
+	return 'ajax is ok' . $parameter;
+}

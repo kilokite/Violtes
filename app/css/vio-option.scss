@@ -1,53 +1,67 @@
 @use 'vio-component';
 @use 'vio-var' as vio;
+@use 'iconfont' as icon;
 
-form {
-    p {
-        font-size: 1rem;
-        font-weight: 500;
-        color: vio.$font-color;
+.tips{
+    color:rgb(39, 162, 60);
+    &::before{
+        content: "//";
     }
+}
 
-    >div {
+#wpwrap{
+}
 
-        margin: 1rem .5rem;
-        >h2 {
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
+#wpcontent,#wpbody,#wpbody-content{
+    padding: 0;
+}
 
-        //内容区域 content container
-        label {
-            display: inline-block;
-            width: 15rem;
-
-            &::after {
-                content: ":";
+.vio_setting{
+    height: 95vh;
+    overflow: hidden;
+    display: flex;
+    width: 45rem;
+    .setting_list{
+        width: 15rem;
+        padding:0 1rem;
+        border-right: solid .1rem vio.$color-violet-argon;
+        button{
+            color: vio.$font-color;
+            margin:.1rem 0;
+            width: 100%;
+            text-align: left;
+            padding: .2rem 1rem;
+            border: none;
+            background-color: transparent;
+            border-radius: calc(vio.$radius / 3);
+            font-size: .9rem;
+            &:hover{
+                background-color: vio.$color-violet-argon;
+                &::before{
+                    background: none;
+                }
+            }
+            &::before{
+                margin-right: .5rem;
+                display: inline-block;
+                @include icon.iconfont;
+                // transform: scale(1.5);
+                padding: .3rem;
+                background: vio.$color-violet-argon;
+                color: vio.$color-violet-light;
+                border-radius: calc(vio.$radius / 4);
+                font-weight: bold;
             }
         }
-
-        input {
-            display: inline-block;
-            width: 20rem;
-            height: 2rem;
-            border: solid 1px vio.$font-color;
-            border-radius: 0.5rem;
-            padding: 0 0.5rem;
-            margin: 0 0.5rem;
-        }
     }
-
-    button {
-        font-size: 1rem;
-        font-weight: bold;
-        color:white;
-        padding: .3rem .5rem;
-        background-color: vio.$color-violet-light;
-        border: none;
-        border-radius: vio.$radius;
-        &:before{
-            content: "";
-        }
+    .setting{
+        width: 30rem;
+        margin: 2rem;
+        // background: vio.$background-color;
     }
+}
 
+
+button[go="top"]::before{
+    @include icon.star;
 }

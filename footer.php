@@ -1,9 +1,8 @@
-</div>
 <div class="footer-line"></div>
 <footer>
     <div class="container">
         <div class="footer-left">
-            <h2 class="title">ZSKT Studio</h2>
+            <h2 class="title"><?php vio_option('footer','name')?></h2>
             <p>Theme <a class="theme-logo" href="#">Violets</a></p>
         </div>
         <div class="footer-right">

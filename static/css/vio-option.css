@@ -69,45 +69,69 @@
   }
 }
 
-form p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgb(79, 79, 79);
+@font-face {
+  font-family: "iconfont";
+  src: url("../font/iconfont.woff2?t=1666677219493") format("woff2"), url("../font/iconfont.woff?t=1666677219493") format("woff"), url("../font/iconfont.ttf?t=1666677219493") format("truetype");
 }
-form > div {
-  margin: 1rem 0.5rem;
+.tips {
+  color: rgb(39, 162, 60);
 }
-form > div > h2 {
-  font-size: 1.5rem;
-  font-weight: 500;
+.tips::before {
+  content: "//";
 }
-form > div label {
-  display: inline-block;
+
+#wpcontent, #wpbody, #wpbody-content {
+  padding: 0;
+}
+
+.vio_setting {
+  height: 95vh;
+  overflow: hidden;
+  display: flex;
+  width: 45rem;
+}
+.vio_setting .setting_list {
   width: 15rem;
+  padding: 0 1rem;
+  border-right: solid 0.1rem rgba(127, 42, 212, 0.0823529412);
 }
-form > div label::after {
-  content: ":";
-}
-form > div input {
-  display: inline-block;
-  width: 20rem;
-  height: 2rem;
-  border: solid 1px rgb(79, 79, 79);
-  border-radius: 0.5rem;
-  padding: 0 0.5rem;
-  margin: 0 0.5rem;
-}
-form button {
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  padding: 0.3rem 0.5rem;
-  background-color: #a66df2;
+.vio_setting .setting_list button {
+  color: rgb(79, 79, 79);
+  margin: 0.1rem 0;
+  width: 100%;
+  text-align: left;
+  padding: 0.2rem 1rem;
   border: none;
-  border-radius: 1rem;
+  background-color: transparent;
+  border-radius: 0.3333333333rem;
+  font-size: 0.9rem;
 }
-form button:before {
-  content: "";
+.vio_setting .setting_list button:hover {
+  background-color: rgba(127, 42, 212, 0.0823529412);
+}
+.vio_setting .setting_list button:hover::before {
+  background: none;
+}
+.vio_setting .setting_list button::before {
+  margin-right: 0.5rem;
+  display: inline-block;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0.3rem;
+  background: rgba(127, 42, 212, 0.0823529412);
+  color: #a66df2;
+  border-radius: 0.25rem;
+  font-weight: bold;
+}
+.vio_setting .setting {
+  width: 30rem;
+  margin: 2rem;
+}
+
+button[go=top]::before {
+  content: "\e652";
 }
 
 /*# sourceMappingURL=vio-option.css.map */

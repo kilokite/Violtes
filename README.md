@@ -4,6 +4,7 @@
 🚧  一个wordpress主题 🚧
 
 ## todoList
+    TODO 设置
     TODO 完善各种模板
     TODO 导航栏不好看
     TODO 完善底部
