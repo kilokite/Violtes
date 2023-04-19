@@ -1,4 +1,17 @@
+<script src="<?php echo get_theme_file_uri('static/js/jquery-min.js') ?>"></script>
+<script src="<?php echo get_theme_file_uri('static/js/vio-option.js') ?>"></script>
+<link rel="stylesheet" href="<?php echo get_theme_file_uri('static/css/vio-option.css') ?>">
+
+<script>
+    let vioValue = {
+        ajaxURL: "<?php echo admin_url('admin-ajax.php') ?>"
+    }
+</script>
+
+
+
 <?php get_template_part('templates/option', 'common') ?>
+
 <!-- <h2>Violet Version : <?php echo get_option('vio-init') ?></h2> -->
 
 <!-- <button onclick="vio_click()">ajax</button> -->
@@ -7,41 +20,27 @@
     <div class="setting_list">
         <ul>
             <li>
-                <button go="top">站点</button>
+                <button page="site">站点</button>
             </li>
             <li>
-                <button go="top">顶部与底部</button>
+                <button page="style">顶部与底部</button>
             </li>
             <li>
-                <button go="top">内容</button>
+                <button page="content">内容</button>
             </li>
             <li>
-                <button go="top">侧边栏</button>
+                <button page="top">侧边栏</button>
             </li>
             <li>
-                <button go="top">SEO</button>
+                <button page="top">SEO</button>
             </li>
             <li>
-                <button go="top">自定义</button>
+                <button page="test">测试</button>
             </li>
         </ul>
     </div>
-    <div class="setting">
-        <?php get_template_part('templates/option', 'content') ?>
-        <button id="test">click me</button>
+    <div class="vio-option-container">
+        <!-- 选项容器 -->
     </div>
 </div>
 
-<script>
-    function vio_click() {
-        alert("start")
-        vio.action('the_test',{},(data)=>{
-            alert(data)
-        })
-    }
-
-
-    $("#test").click(function() {
-        vio_click()
-    })
-</script>
