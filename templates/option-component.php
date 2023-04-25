@@ -28,3 +28,24 @@ function vio_option_component_switch($class, $item, $introduce)
     <?php
 }
     ?>
+
+<?php
+/**
+ * 表单组件 下拉框
+ */
+function vio_option_component_select($class,$item,$introduce,$select){
+    $vio_option = vio_option($class,$item);
+    ?>
+    <div>
+    <label for="<?php echo $item?>"><?php echo $introduce?></label>
+    <select name="<?php echo $item?>" id="<?php echo $item?>">
+    <?php foreach($select as $value){
+        ?>
+        <option value="<?php echo $value['value']?>" <?php if($vio_option==$value['value']) echo 'selected'?>><?php echo $value['name']?></option>
+        <?php
+    }?>
+    </select>
+    </div>
+    <?php
+}
+?>

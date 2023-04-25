@@ -8,12 +8,6 @@
     }
 </script>
 
-
-
-<?php get_template_part('templates/option', 'common') ?>
-
-<!-- <h2>Violet Version : <?php echo get_option('vio-init') ?></h2> -->
-
 <!-- <button onclick="vio_click()">ajax</button> -->
 
 <div class="vio_setting">
