@@ -208,23 +208,24 @@ function vio_pagination()
 // }
 // add_action('wp_ajax_vio_ajax_get_option_page', 'vio_ajax_get_option_page');
 
-
+//TODO 传参自己加_manger 会出现安全问题
 function vio_ajax()
 {
 	$post_data = $_POST['data'];
 	$return  = array();
 	$func = "vio_ajax_" . $post_data['action'];
 	if (function_exists($func)) {
-		//存在 不需要管理员的 函数
-		$return['return'] = $func($post_data);
-	} elseif (function_exists($func . '_manager')) {
-		//存在 需要管理员的 函数
+		//存在 需要管理员的函数
 		if (current_user_can('manage_options')) {
 			//是管理员
 			$return['return'] = $func($post_data);
 		} else {
 			$return['error'] = 'no permission';
 		}
+	} elseif (function_exists($func . '_public')) {
+		$func = $func . '_public';
+		//存在 不需要管理员的函数
+		$return['return'] = $func($post_data);
 	} else {
 		$return['error'] = 'no action';
 	}
@@ -233,7 +234,12 @@ function vio_ajax()
 }
 add_action('wp_ajax_vio_ajax', 'vio_ajax');
 
-function vio_ajax_the_test($parameter)
+function vio_ajax_the_test_public($parameter)
 {
 	return 'ajax is ok' . $parameter;
+}
+function vio_ajax_get_option_page($parameter)
+{
+	$page = $parameter['page'];
+	get_template_part("templates/option", $page);
 }

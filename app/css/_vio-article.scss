@@ -262,6 +262,11 @@
                 border-bottom: .2rem solid vio.$color-violet-light;
             }
         }
+        input {
+            background-color: vio.$color-violet-argon;
+            border: none;
+            // border-radius: vio.$radius;
+        }
 
         .form-submit{
             text-align: right;
