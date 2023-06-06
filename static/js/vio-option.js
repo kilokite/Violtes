@@ -14,9 +14,15 @@ let vio = {
         )
     },
     optionGo(name = 'content') {
+        function setListItemStatus(pageName){
+            $(".setting_list button").removeClass('active')
+            $(".setting_list button[page='"+pageName+"']").addClass('active')
+        }
         vio.action('get_option_page', {
-            name: name,
+            name,
         }, (data) => {
+            localStorage.setItem('vio_option_page', name)
+            setListItemStatus(name)
             $('.vio-option-container').html(data.return)
             $("form").submit(function (e) {
                 e.preventDefault();
@@ -41,13 +47,28 @@ let vio = {
                 })
             })
         })
+    },
+    selectMedia(cssSelector){
+        var frame = wp.media({
+            title: '选择图片',
+            button: {
+                text: '选择图片'
+            },
+            multiple: false  // Set to true to allow multiple files to be selected
+        });
+        frame.on('select', function () {
+            var attachment = frame.state().get('selection').first().toJSON();
+            $(cssSelector).val(attachment.url)
+        });
+        frame.open();
     }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     $(".setting_list button").click(function () {
-        vio.optionGo($(this).attr("page"))
+        let page = $(this).attr("page")
+        vio.optionGo(page)
     })
 })
 
-vio.optionGo('test')
+vio.optionGo(localStorage.getItem('vio_option_page'))

@@ -84,18 +84,18 @@
   padding: 0;
 }
 
-.vio_setting {
+.vio-setting {
   height: 95vh;
   overflow: hidden;
   display: flex;
   width: 45rem;
 }
-.vio_setting .setting_list {
+.vio-setting .setting_list {
   width: 15rem;
   padding: 0 1rem;
   border-right: solid 0.1rem rgba(127, 42, 212, 0.0823529412);
 }
-.vio_setting .setting_list button {
+.vio-setting .setting_list button {
   color: rgb(79, 79, 79);
   margin: 0.1rem 0;
   width: 100%;
@@ -106,13 +106,13 @@
   border-radius: 0.3333333333rem;
   font-size: 0.9rem;
 }
-.vio_setting .setting_list button:hover {
+.vio-setting .setting_list button:hover, .vio-setting .setting_list button.active {
   background-color: rgba(127, 42, 212, 0.0823529412);
 }
-.vio_setting .setting_list button:hover::before {
+.vio-setting .setting_list button:hover::before, .vio-setting .setting_list button.active::before {
   background: none;
 }
-.vio_setting .setting_list button::before {
+.vio-setting .setting_list button::before {
   margin-right: 0.5rem;
   display: inline-block;
   font-family: "iconfont" !important;
@@ -125,32 +125,54 @@
   border-radius: 0.25rem;
   font-weight: bold;
 }
-.vio_setting .vio-option-container {
+.vio-setting .vio-option-container {
   width: 30rem;
-  margin: 1rem 1.5rem;
+  margin: 1rem 0.5rem;
 }
-.vio_setting .vio-option-container .option-component {
+.vio-setting .vio-option-container h2 {
+  margin: 0 0 -2.2rem 0;
+  text-align: right;
+  font-size: 1.2rem;
+  color: rgba(79, 79, 79, 0.344);
+  font-weight: bold;
+}
+.vio-setting .vio-option-container h3 {
+  margin-top: 0;
+}
+.vio-setting .vio-option-container h3::before {
+  content: "";
+  display: block;
+  width: 0.3rem;
+  height: 1rem;
+}
+.vio-setting .vio-option-container .setting-card, .vio-setting .vio-option-container form {
+  background: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+.vio-setting .vio-option-container .option-component {
   margin: 1rem 0;
 }
-.vio_setting .vio-option-container .vio-item-input p {
+.vio-setting .vio-option-container .vio-item-input p {
   margin: 0.3rem 0 0 0;
 }
-.vio_setting .vio-option-container .vio-item-input input {
+.vio-setting .vio-option-container .vio-item-input input {
   border: none;
   background-color: rgba(127, 42, 212, 0.0823529412);
   width: 100%;
   border-radius: 0.25rem;
 }
-.vio_setting .vio-option-container .vio-item-input input:focus {
+.vio-setting .vio-option-container .vio-item-input input:focus {
   box-shadow: none;
 }
-.vio_setting .vio-option-container .vio-item-switch {
+.vio-setting .vio-option-container .vio-item-switch {
   display: flex;
 }
-.vio_setting .vio-option-container .vio-item-switch label {
+.vio-setting .vio-option-container .vio-item-switch label {
   flex: 1;
 }
-.vio_setting .vio-option-container .vio-item-switch input {
+.vio-setting .vio-option-container .vio-item-switch input {
   margin: 0;
   padding: 0.3rem !important;
   border: none;
@@ -162,7 +184,7 @@
   align-items: center;
   border-radius: 0.25rem;
 }
-.vio_setting .vio-option-container .vio-item-switch input::before {
+.vio-setting .vio-option-container .vio-item-switch input::before {
   content: "";
   background: rgba(127, 42, 212, 0.2862745098);
   display: block;
@@ -172,9 +194,29 @@
   border-radius: 0.25rem;
   transition: 0.2s ease;
 }
-.vio_setting .vio-option-container .vio-item-switch input:checked::before {
+.vio-setting .vio-option-container .vio-item-switch input:checked::before {
   margin-left: 1.1rem;
   background: #a66df2;
+}
+.vio-setting .vio-option-container .vio-item-select {
+  display: flex;
+}
+.vio-setting .vio-option-container .vio-item-select select {
+  background-color: rgba(127, 42, 212, 0.0823529412);
+  border: none;
+}
+.vio-setting .vio-option-container .vio-item-select label {
+  flex: 1;
+}
+.vio-setting .vio-option-container button[type=submit] {
+  text-align: right;
+  background: #a66df2;
+  border: none;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 button[page=top]::before {
@@ -183,6 +225,21 @@ button[page=top]::before {
 
 button[page=test]::before {
   content: "\e652";
+}
+button[page=site]::before {
+  content: "\e639";
+}
+button[page=style]::before {
+  content: "\e669";
+}
+button[page=content]::before {
+  content: "\e607";
+}
+button[page=sidebar]::before {
+  content: "\e65c";
+}
+button[page=other]::before {
+  content: "\e609";
 }
 
 /*# sourceMappingURL=vio-option.css.map */

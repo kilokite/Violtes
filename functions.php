@@ -65,16 +65,16 @@ function vio_menu()
 	{
 		get_template_part("templates/option", "main");
 	}
-	add_submenu_page("vio-option", "内容", "内容", "manage_options", "vio-option-content", "vio_option_content");
-	function vio_option_content()
-	{
-		get_template_part("templates/option", "content");
-	}
-	add_submenu_page("vio-option", "样式", "样式", "manage_options", "vio-option-style", "vio_option_style");
-	function vio_option_style()
-	{
-		get_template_part("templates/option", "style");
-	}
+	// add_submenu_page("vio-option", "内容", "内容", "manage_options", "vio-option-content", "vio_option_content");
+	// function vio_option_content()
+	// {
+	// 	get_template_part("templates/option", "content");
+	// }
+	// add_submenu_page("vio-option", "样式", "样式", "manage_options", "vio-option-style", "vio_option_style");
+	// function vio_option_style()
+	// {
+	// 	get_template_part("templates/option", "style");
+	// }
 }
 add_action('admin_menu', 'vio_menu');
 
@@ -88,7 +88,8 @@ function vio_init()
 	if ($init == false || $init < $GLOBALS['VIO_V'] - 99 || $GLOBALS['force_update']) {
 		//初始化 || 更新
 		$default = array(
-			'site_info' => array(
+			'data_card' => array(
+				'enable' => true,
 				'name' => 'Violets', //站长名?
 				'portrait' => '',    //头像
 				'sign' => 'person worthy of that name', //签名
@@ -103,8 +104,10 @@ function vio_init()
 			'test' => array(
 				//TODO
 				'input' => 'none',
-				'select' => 'A',
-			)
+				'select' => true,
+				'switch' => 'h',
+				'img_url' => 'none'
+ 			)
 		);
 		if ($init == false) {
 			foreach ($default as $key => $value) {

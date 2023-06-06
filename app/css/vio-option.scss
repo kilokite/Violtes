@@ -15,8 +15,7 @@
 #wpcontent,#wpbody,#wpbody-content{
     padding: 0;
 }
-
-.vio_setting{
+.vio-setting{
     height: 95vh;
     overflow: hidden;
     display: flex;
@@ -35,7 +34,7 @@
             background-color: transparent;
             border-radius: calc(vio.$radius / 3);
             font-size: .9rem;
-            &:hover{
+            &:hover,&.active{
                 background-color: vio.$color-violet-argon;
                 &::before{
                     background: none;
@@ -56,7 +55,29 @@
     }
     .vio-option-container{
         width: 30rem;
-        margin: 1rem 1.5rem;
+        margin: 1rem .5rem;
+        h2{
+            margin: 0 0 -2.2rem 0;
+            text-align: right;
+            font-size: 1.2rem;
+            color: vio.$font-color-feather  ;
+            font-weight: bold;
+        }
+        h3{
+            margin-top: 0;
+            &::before{
+                content: "";
+                display: block;
+                width: .3rem;
+                height: 1rem;
+            }
+        }
+        .setting-card,form{
+            background: white;
+            padding: 1rem;
+            border-radius: vio.$radius;
+            margin: 1rem;
+        }
         .option-component{
             margin:1rem 0;
         }
@@ -106,6 +127,26 @@
                 }
             }
         }
+        .vio-item-select{
+            display: flex;
+            select{
+                background-color: vio.$color-violet-argon;
+                border: none;
+            }
+            label{
+                flex: 1;
+            }
+        }
+        button[type="submit"]{
+            text-align: right   ;
+            background: vio.$color-violet-light;
+            border: none;
+            color: white;
+            padding: .3rem 1rem;
+            border-radius: .5rem;
+            font-size: 1rem;
+            font-weight: bold;
+        }
     }
 }
 
@@ -118,5 +159,20 @@ button[page="top"]::before{
 button{
     &[page="test"]::before{
         @include icon.star;
+    }
+    &[page="site"]::before{
+        @include icon.pentagon-outline;
+    }
+    &[page="style"]::before{
+        @include icon.creation;
+    }
+    &[page="content"]::before{
+        @include icon.book-outline;
+    }
+    &[page="sidebar"]::before{
+        @include icon.arrow-left;
+    }
+    &[page="other"]::before{
+        @include icon.texture;
     }
 }
