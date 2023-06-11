@@ -18,7 +18,7 @@ let vio = {
             $(".setting_list button").removeClass('active')
             $(".setting_list button[page='"+pageName+"']").addClass('active')
         }
-        vio.action('get_option_page', {
+        vio.action('get_option_page_manager', {
             name,
         }, (data) => {
             localStorage.setItem('vio_option_page', name)
