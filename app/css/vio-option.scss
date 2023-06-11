@@ -85,6 +85,9 @@
             p{
                 margin: .3rem 0 0 0;
             }
+            div{
+                display: flex;
+            }
             input{
                 border: none;
                 background-color: vio.$color-violet-argon;
@@ -92,6 +95,9 @@
                 border-radius: calc(vio.$radius/4);
                 &:focus{
                     box-shadow: none;
+                }
+                &[type="button"]{
+                    flex: 1;
                 }
             }
         }

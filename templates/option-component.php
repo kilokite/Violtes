@@ -9,10 +9,12 @@ function vio_option_component_input($class, $item, $introduce, $placeholder = ''
 ?>
     <div class="vio-item-input option-component">
         <label for="<?php echo $id ?>"><?php echo $introduce ?></label>
-        <p><input type="text" name="<?php echo $item ?>" id="<?php echo $id ?>" placeholder="<?php echo $placeholder ?>" value="<?php vio_option($class, $item) ?>"></p>
+        <div>
+        <input type="text" name="<?php echo $item ?>" id="<?php echo $id ?>" placeholder="<?php echo $placeholder ?>" value="<?php vio_option($class, $item) ?>">
         <?php if($media){?>
             <input type="button" onclick="vio.selectMedia('#<?echo $id?>')" value="选择图片"></input>
         <?php }?>
+        </div>
     </div>
 <?php
 }

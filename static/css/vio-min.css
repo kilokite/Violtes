@@ -441,6 +441,33 @@ icon from:https://github.com/Templarian/MaterialDesign
   color: white;
 }
 
+.bar-directory {
+  padding: 2rem;
+}
+
+.directory-header #directory-title {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.directory {
+  margin-top: 1rem;
+}
+.directory > p P {
+  margin: 0 0 0 1rem;
+  padding: 0.3rem 0 0.3rem 1rem;
+  border-left: rgba(79, 79, 79, 0.344) 0.1rem solid;
+}
+.directory p {
+  margin: 0.3rem;
+  font-weight: 400;
+}
+.directory .active > span {
+  font-weight: bold;
+  color: #a66df2;
+}
+
 .vio-comments {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
@@ -508,6 +535,26 @@ icon from:https://github.com/Templarian/MaterialDesign
   border-radius: 0.5rem;
   background: #a66df2;
   color: white;
+}
+.vio-comments form .input {
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0.2rem 0.3rem;
+  margin: 0.1rem;
+  color: #7f2ad4;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.vio-comments form .input::placeholder {
+  color: rgba(128, 128, 128, 0.511);
+}
+.vio-comments form .input::before {
+  content: "p";
+  background-color: #a66df2;
+  display: block;
+  height: 1rem;
+  width: 1rem;
 }
 .vio-comments li > .comment {
   display: flex;
@@ -868,11 +915,17 @@ header ul li a {
   flex: 0;
   flex-basis: auto;
   margin: 2rem 0 2rem 2rem;
+  max-width: 25vw;
+}
+.sidebar .vio-card {
+  margin-bottom: 1rem;
+}
+.sidebar > div {
+  position: sticky;
+  top: 1rem;
 }
 
 .bar-myself {
-  position: sticky;
-  top: 1rem;
   padding: 2rem;
 }
 .bar-myself > .info {
