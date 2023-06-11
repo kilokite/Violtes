@@ -157,6 +157,9 @@
 .vio-setting .vio-option-container .vio-item-input p {
   margin: 0.3rem 0 0 0;
 }
+.vio-setting .vio-option-container .vio-item-input div {
+  display: flex;
+}
 .vio-setting .vio-option-container .vio-item-input input {
   border: none;
   background-color: rgba(127, 42, 212, 0.0823529412);
@@ -165,6 +168,9 @@
 }
 .vio-setting .vio-option-container .vio-item-input input:focus {
   box-shadow: none;
+}
+.vio-setting .vio-option-container .vio-item-input input[type=button] {
+  flex: 1;
 }
 .vio-setting .vio-option-container .vio-item-switch {
   display: flex;

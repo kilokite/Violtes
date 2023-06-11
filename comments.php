@@ -9,9 +9,9 @@ if (post_password_required()) {
 <?php comment_form(array(
     //TODO 垃圾东西，等我ajax
     'fields' => array(
-        'email' => '<span class="title">email</span> <input id="email" name="email" type="text" class="input"/>',
-        'url' => '<span class="title">url</span> <input id="email" name="email" type="text" class="input"/>',
-        'author' => '<span class="title">author</span> <input id="email" name="email" type="text" class="input"/>',
+        'email' => '<input id="email" name="email" type="text" class="input" placeholder="email"/>',
+        'url' => '<input id="url" name="url" type="text" class="input" placeholder="blog url"/>',
+        'author' => '<input id="author" name="author" type="text" class="input" placeholder="author"/>',
     ),
     'title_reply_before' => '',
     'title_reply' => "", //“发表评论”

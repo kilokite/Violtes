@@ -11,7 +11,8 @@ require_once(get_theme_file_path('functions-ugly.php'));
 function vio_require_styles()
 {
 	//引入静态资源
-	wp_enqueue_style('vio-min', get_theme_file_uri('static/css/vio-min.css'));
+	wp_enqueue_style('vio-min-css', get_theme_file_uri('static/css/vio-min.css'));
+	wp_enqueue_script('vio-js', get_theme_file_uri('static/js/vio.js'));
 }
 add_action('wp_enqueue_scripts', 'vio_require_styles');
 

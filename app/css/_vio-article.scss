@@ -208,7 +208,35 @@
     }
 
 }
-
+.bar-directory{
+    padding: 2rem;
+}
+.directory-header{
+    #directory-title{
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        // background-color: #7f2ad4;
+    }
+}
+.directory{
+    margin-top: 1rem;
+    >p{
+        P{
+            margin: 0 0 0 1rem;
+            padding: .3rem 0 .3rem 1rem;
+            border-left: vio.$font-color-feather .1rem solid;
+        }
+    }
+    p{
+        margin: .3rem;
+        font-weight: 400;
+    }
+    .active >span{
+        font-weight: bold;
+        color: vio.$color-violet-light;
+    }
+}
 .vio-comments {
     @include component.vio-card;
     padding: 2rem;
@@ -216,23 +244,27 @@
 
     .comment_title {
         margin-bottom: 1rem;
-        &::before{
+
+        &::before {
             @include icon.iconfont;
             @include icon.bookmark;
         }
     }
 
-    .reply_title{
+    .reply_title {
         display: inline-block;
         margin-bottom: .5rem;
-        >a{
+
+        >a {
             color: vio.$font-color;
         }
-        +small{
+
+        +small {
             background-color: vio.$color-violet-argon;
-            padding: .3rem .4rem ;
+            padding: .3rem .4rem;
             border-radius: calc(vio.$radius / 4);
-            >a{
+
+            >a {
                 color: vio.$color-violet-light;
             }
         }
@@ -244,6 +276,7 @@
 
     form {
         margin-bottom: 1rem;
+
         //评论表单
         textarea {
             border: none;
@@ -252,12 +285,13 @@
             padding: vio.$radius;
             color: vio.$font-color;
             $input-radius: calc(vio.$radius / 2);
-            border-radius: $input-radius $input-radius 0 0 ;
+            border-radius: $input-radius $input-radius 0 0;
             width: 100%;
-            min-height:5rem;
+            min-height: 5rem;
             resize: none;
             transition: border .3s ease-in-out;
-            &:focus{
+
+            &:focus {
                 outline: none;
                 border-bottom: .2rem solid vio.$color-violet-light;
             }
@@ -268,15 +302,39 @@
             // border-radius: vio.$radius;
         }
 
-        .form-submit{
+        .form-submit {
             text-align: right;
         }
-        .submit{
+
+        .submit {
             border: none;
-            padding: .4rem 1.5rem ;
+            padding: .4rem 1.5rem;
             border-radius: calc(vio.$radius / 2);
             background: vio.$color-violet-light;
             color: white;
+        }
+
+        .input {
+            background: none;
+            outline: none;
+            border: none;
+            padding: .2rem .3rem;
+            margin: .1rem;
+            // border-radius: calc(vio.$radius / 4);
+            // border-bottom: vio.$color-violet-light .1rem solid;
+            color: vio.$color-violet;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            &::placeholder{
+                color: rgba(128, 128, 128, 0.511);
+            }
+            &::before{
+                content: "p";
+                background-color: vio.$color-violet-light;
+                display: block;
+                height:1rem;
+                width: 1rem;
+            }
         }
 
     }

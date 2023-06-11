@@ -46,7 +46,10 @@
 </div>
 </main>
 <div class="sidebar">
+    <div>
     <?php vio_sidebar('user') ?>
+    <? vio_sidebar('directory')?>
+    </div>
 </div>
 </div>
 <?php get_footer()?>

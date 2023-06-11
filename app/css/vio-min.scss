@@ -3,11 +3,11 @@
     TODO 有些属性应该是成变量
 */
 @use 'vio-common';
-@use 'vio-component' as component;
-@use 'vio-var' as vio;
+@use 'vio-component' as component; //复用
+@use 'vio-var' as vio; //颜色字体大小等
 @use 'shake-hard';
-@use 'vio-article';
-@use 'vio-footer';
+@use 'vio-article'; //文章页
+@use 'vio-footer'; //底部
 
 @use 'iconfont' as icon;
 
@@ -302,11 +302,17 @@ header {
     flex: 0;
     flex-basis: auto;
     margin: 2rem 0 2rem 2rem;
+    max-width: 25vw;
+    .vio-card{
+        margin-bottom: 1rem;
+    }
+    >div{
+        position: sticky;
+        top:1rem;
+    }
 }
 
 .bar-myself {
-    position: sticky;
-    top: 1rem;
     padding: 2rem;
 
     >.info {
@@ -343,9 +349,6 @@ header {
             transition: transform .5s cubic-bezier(0, 0, 0, 1);
 
             &:hover {
-                // box-shadow: .2rem .2rem .5rem rgba(128, 128, 128, 0.273);
-                // background: linear-gradient(145deg, #ddd, #fff);
-                // box-shadow: 2px 4px 8px #ddd, -2px -4px 8px #fff;
                 transform: translate(0, -0.2rem) scale(1.2);
                 transition: transform .3s cubic-bezier(0, 0, 0, 1);
             }
