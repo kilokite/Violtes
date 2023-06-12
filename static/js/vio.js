@@ -25,6 +25,10 @@ ready(() => {
         title.appendChild(document.createElement('span'))
         if (nodeName.charAt(0) == 'H') {
             let level = nodeName.charAt(1)
+            while(!node.firstChild.data){
+                node  = node.firstChild
+                //可能会有一些格式嵌套
+            }
             title.firstChild.innerHTML = node.firstChild.data
             console.log(nodeName, title)
             if (level == '1') {
