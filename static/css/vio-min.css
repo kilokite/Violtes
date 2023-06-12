@@ -468,6 +468,20 @@ icon from:https://github.com/Templarian/MaterialDesign
   color: #a66df2;
 }
 
+.helper {
+  height: 2rem;
+  background: rgba(0, 0, 255, 0.108);
+  border-radius: 0.5rem;
+  margin: 1rem 0 0 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.helper .precent {
+  font-weight: bold;
+  text-align: center;
+}
+
 .vio-comments {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
@@ -525,6 +539,10 @@ icon from:https://github.com/Templarian/MaterialDesign
 .vio-comments form textarea:focus {
   outline: none;
   border-bottom: 0.2rem solid #a66df2;
+}
+.vio-comments form input {
+  background-color: rgba(127, 42, 212, 0.0823529412);
+  border: none;
 }
 .vio-comments form .form-submit {
   text-align: right;

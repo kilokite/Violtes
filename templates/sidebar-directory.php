@@ -5,4 +5,7 @@
     <div class="directory" id="directory_body">
 
     </div>
+    <div class="helper">
+        <span class="precent">67%</span>
+    </div>
 </div>

@@ -8,6 +8,10 @@ function ready(fn) {
 }
 let directory = {
     highLight: null,
+    articleStart:null,
+    articleEnd:null,
+    articleHigh:0,
+    precent:0,
     list: [],
 }
 ready(() => {
@@ -48,6 +52,10 @@ ready(() => {
         }
     }
     console.log("ok")
+    directory.articleStart = document.querySelector('#startanchor')
+    directory.articleEnd = document.querySelector('#endanchor')
+    directory.articleHigh = (directory.articleEnd.getBoundingClientRect().top - directory.articleStart.getBoundingClientRect().top)
+
     directoryScroll()
 })
 
@@ -66,6 +74,11 @@ function directoryScroll(){
         }
         highLight.classList.add('active')
         directory.highLight = highLight
+    }
+    let precent = parseInt((0-(document.querySelector("#startanchor").getBoundingClientRect().top) / directory.articleHigh)*100)
+    if(directory.precent != precent){
+        document.querySelector('.helper .precnt').innerHTML = precent + '%'
+        directory.precent = precent
     }
     setTimeout(directoryScroll, 100)
 }

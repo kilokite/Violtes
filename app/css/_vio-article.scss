@@ -3,6 +3,7 @@
 @use 'iconfont' as icon;
 
 .vio-single {
+    //整体
     flex: 1;
 
     >article {
@@ -208,6 +209,7 @@
     }
 
 }
+//目录
 .bar-directory{
     padding: 2rem;
 }
@@ -235,6 +237,19 @@
     .active >span{
         font-weight: bold;
         color: vio.$color-violet-light;
+    }
+}
+.helper{
+    height: 2rem;
+    background: rgba(0, 0, 255, 0.108);
+    border-radius: .5rem;
+    margin: 1rem 0 0 0 ;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    .precent{
+        font-weight: bold;
+        text-align: center;
     }
 }
 .vio-comments {
