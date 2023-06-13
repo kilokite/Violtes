@@ -6,6 +6,9 @@
 
     </div>
     <div class="helper">
-        <span class="precent">67%</span>
+        <div class="tool">
+            <span class="light icon"></span>
+        </div>
+        <span class="precent">0%</span>
     </div>
 </div>
