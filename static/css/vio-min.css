@@ -285,6 +285,7 @@ icon from:https://github.com/Templarian/MaterialDesign
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
+  padding: 2rem;
   background: white;
   margin: 2rem 0;
   padding: 2rem;
@@ -441,10 +442,6 @@ icon from:https://github.com/Templarian/MaterialDesign
   color: white;
 }
 
-.bar-directory {
-  padding: 2rem;
-}
-
 .directory-header #directory-title {
   margin-bottom: 1rem;
   font-size: 1.1rem;
@@ -494,13 +491,39 @@ icon from:https://github.com/Templarian/MaterialDesign
   font-size: 1.5rem;
 }
 .helper .icon:hover::before {
-  background-color: rgba(0, 0, 0, 0.062745098);
+  color: rgba(0, 0, 0, 0.4705882353);
   border-radius: 0.3333333333rem;
-  transition: 0.1s ease-out background-color;
+  transition: 0.1s ease-out color;
 }
 .helper .icon::before {
   display: block;
   padding: 0.2rem;
+  transition: 0.1s ease-out color;
+}
+
+.post-password-form {
+  border-radius: 11px;
+  background: #FF7171;
+  padding: 1rem;
+  color: white;
+}
+.post-password-form input[name=post_password] {
+  background: none;
+  border: none;
+  border-bottom: 2px solid #FFF;
+  color: #FFF;
+  min-width: 15rem;
+}
+.post-password-form input[name=post_password]:focus {
+  outline: none;
+}
+.post-password-form input[type=submit] {
+  color: #FF7171;
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  text-align: left;
 }
 
 .vio-comments {
@@ -508,11 +531,15 @@ icon from:https://github.com/Templarian/MaterialDesign
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
   padding: 2rem;
+  padding: 2rem;
   background: white;
 }
 .vio-comments:hover {
   box-shadow: 0.2rem 0.2rem 2rem rgba(128, 128, 128, 0.1);
   transition: box-shadow 0.5s;
+}
+.vio-comments:empty {
+  display: none;
 }
 .vio-comments .comment_title {
   margin-bottom: 1rem;
@@ -705,6 +732,21 @@ footer > div .footer-right {
   color: rgba(79, 79, 79, 0.8);
 }
 
+.footer-link {
+  list-style: none;
+  display: flex;
+  background-color: rgba(196, 196, 196, 0.108);
+  padding: 0.5rem 1rem;
+  max-width: 40vw;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+.footer-link > li a {
+  color: rgb(144, 144, 144);
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
 /*
     2022/10/11
     TODO 有些属性应该是成变量
@@ -746,6 +788,11 @@ header .menu {
   backdrop-filter: blur(7px);
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.246);
+  transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
+}
+header .menu-hide {
+  margin-top: -4rem;
+  transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
 }
 header ul {
   list-style-type: none;
@@ -957,6 +1004,7 @@ header ul li a {
   max-width: 25vw;
 }
 .sidebar .vio-card {
+  padding: 2rem;
   margin-bottom: 1rem;
 }
 .sidebar > div {
@@ -997,6 +1045,28 @@ header ul li a {
   transition: transform 0.3s cubic-bezier(0, 0, 0, 1);
 }
 
+.bar-category {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bar-category > a {
+  display: inline-block;
+  margin: 0.3rem 0.3rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  word-wrap: break-all;
+  border-radius: 0.25rem;
+}
+.bar-category > .category {
+  color: #a66df2;
+  background-color: rgba(127, 42, 212, 0.0823529412);
+}
+.bar-category > .tag {
+  color: #6dc2f2;
+  background-color: rgba(42, 147, 212, 0.0823529412);
+}
+
 .vio-pagination {
   display: inline-block;
   background: rgba(127, 42, 212, 0.0823529412);
@@ -1021,6 +1091,7 @@ header ul li a {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.05);
   transition: box-shadow 0.3s;
+  padding: 2rem;
   background: white;
   display: flex;
   align-items: center;

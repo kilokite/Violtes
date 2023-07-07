@@ -212,7 +212,6 @@
 
 //目录
 .bar-directory {
-    padding: 2rem;
 }
 
 .directory-header {
@@ -275,14 +274,41 @@
         margin: 0 .5rem;
         font-size: 1.5rem;
         &:hover::before{
-            background-color: #00000010;
+            color: #00000078;
             border-radius: calc(vio.$radius / 3);
-            transition: .1s ease-out background-color;
+            transition: .1s ease-out color;
         }
         &::before{
             display:block;
             padding: .2rem;
+            transition: .1s ease-out color;
         }
+    }
+}
+
+.post-password-form{
+    border-radius: 11px;
+    background: #FF7171;
+    padding: 1rem;
+    color: white;
+    // font-weight: bold;
+    input[name="post_password"]{
+        background: none;
+        border: none;
+        border-bottom: 2px solid #FFF;
+        color: #FFF;
+        min-width: 15rem;
+        &:focus{
+            outline: none;
+        }
+    }
+    input[type="submit"]{
+        color: #FF7171;
+        background-color: white;
+        border: none;
+        border-radius: calc(vio.$radius / 2);
+        padding: .3rem .7rem;
+        text-align: left;
     }
 }
 
@@ -290,7 +316,9 @@
     @include component.vio-card;
     padding: 2rem;
     background: white;
-
+    &:empty{
+        display: none;
+    }
     .comment_title {
         margin-bottom: 1rem;
 

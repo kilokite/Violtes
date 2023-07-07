@@ -44,3 +44,18 @@ footer {
         }
     }
 }
+
+.footer-link{
+    list-style: none;
+    display: flex;
+    background-color: rgba(196, 196, 196, 0.108);
+    padding: .5rem 1rem;
+    max-width: 40vw;
+    border-radius: calc(vio.$radius /2);
+    margin-bottom: 1rem;
+    >li a{
+        color: rgb(144, 144, 144);
+        font-weight: bold;
+        margin-right: 1rem;
+    }
+}

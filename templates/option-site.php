@@ -10,7 +10,7 @@ include_once 'option-component.php';
         <h3>个人信息</h3>
 		<p class="tips">有关你和你的站点的信息</p>
         <?vio_option_component_input('data_card','name','昵称',"name")?>
-        <?vio_option_component_input('data_card','portrait','头像URL',"name")?>
+        <?vio_option_component_input('data_card','portrait','头像URL',"name",'media')?>
         <?vio_option_component_input('data_card','sign','简短的介绍',"name")?>
 	</div>
     <?vio_option_component_switch('data_card','enable',"显示资料卡")?>
@@ -19,21 +19,16 @@ include_once 'option-component.php';
 
 <form action="post" option_class="footer">
 <div>
-		<h2>内容</h2>
-		<p class="tips">将会站点中展示的乱七八糟东西</p>
-		<div>
-
-		</div>
-	</div>
 	<div>
 		<h2>底部信息</h2>
-		<p class="tips">显示在底部的东西</p>
 		<div>
+			<h3>署名</h3>
 			<?php
 			vio_option_component_input('footer','name',"站点底部署名");
-
 			?>
+			<?vio_option_component_input('footer','custom','自定义HTML','HTML','textarea')?>
 		</div>
 	</div>
+	<button type="submit">save</button>
 
 </form>

@@ -52,6 +52,12 @@ header {
         backdrop-filter: blur(7px);
         border-radius: vio.$radius;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
+        transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
+    }
+
+    .menu-hide {
+        margin-top: -4rem;
+        transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
     }
 
     ul {
@@ -85,7 +91,7 @@ header {
     height: 80vh;
     /*  60% height  */
     font-weight: 100%;
-    background:vio.$banner-background-img center;
+    background: vio.$banner-background-img center;
     /* TODO 背景图，应该是变量 */
     background-size: cover;
     background-attachment: fixed;
@@ -95,7 +101,7 @@ header {
     justify-content: center;
 }
 
-.banner-content{
+.banner-content {
     width: 100%;
     margin-top: -10vh !important;
 }
@@ -106,8 +112,9 @@ header {
     color: #f4f4f4;
     width: 100%;
     text-shadow: 0 0 6rem rgb(0, 0, 0);
+
     >h1 {
-        
+
         font-weight: bold;
         font-size: 3rem;
         line-height: 4rem;
@@ -123,11 +130,12 @@ header {
 }
 
 
-.vio-404{
-    >h1{
+.vio-404 {
+    >h1 {
         font-size: 5rem;
     }
-    >p{
+
+    >p {
         margin-top: 1rem;
         font-size: 1.5rem;
     }
@@ -140,7 +148,7 @@ header {
     padding: 0 2rem;
 }
 
-.content{
+.content {
     margin: -35vh auto 2rem auto;
     display: flex;
 }
@@ -303,12 +311,15 @@ header {
     flex-basis: auto;
     margin: 2rem 0 2rem 2rem;
     max-width: 25vw;
-    .vio-card{
+
+    .vio-card {
+        padding: 2rem;
         margin-bottom: 1rem;
     }
-    >div{
+
+    >div {
         position: sticky;
-        top:1rem;
+        top: 1rem;
     }
 }
 
@@ -345,7 +356,6 @@ header {
             // width: 2rem;
             height: 2rem;
             margin-right: .5rem;
-
             transition: transform .5s cubic-bezier(0, 0, 0, 1);
 
             &:hover {
@@ -354,8 +364,31 @@ header {
             }
         }
     }
-
 }
+
+.bar-category{
+    display: flex;
+    flex-wrap: wrap;
+    >a {
+        display: inline-block;
+        margin: .3rem .3rem;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: .3rem .5rem;
+        word-wrap: break-all;
+        border-radius: calc(vio.$radius / 4);
+    }
+    >.category {
+            color: vio.$color-violet-light;
+            background-color: vio.$color-violet-argon;
+    }
+    >.tag{
+            color: vio.$color-sky-light;
+            background-color: vio.$color-sky-argon;
+    }
+    
+}
+
 
 .vio-pagination {
     //分页
@@ -364,7 +397,7 @@ header {
     border-radius: vio.$radius;
     padding: 1rem 1.5rem;
 
-    &:empty{
+    &:empty {
         display: none;
     }
 
@@ -391,14 +424,16 @@ header {
     padding: 1rem 1.5rem;
     margin: 2rem 0;
     font-size: 1rem;
-    >div{
+
+    >div {
         display: inline-block;
     }
 
     h1 {
         font-weight: vio.$font-weight-bold;
     }
-    p{
+
+    p {
         color: vio.$font-color-light;
     }
 
@@ -410,15 +445,15 @@ header {
         color: vio.$color-violet-light;
         font-weight: vio.$font-weight-bold;
         font-size: 1.5rem;
-        height:3rem;
+        height: 3rem;
         width: 3rem;
         background: vio.$color-violet-argon;
         border-radius: vio.$radius;
         margin-right: 1rem;
     }
 
-    &[tag]{
-        &::before{
+    &[tag] {
+        &::before {
             content: "#";
             background-color: vio.$color-sky-argon;
             color: vio.$color-sky-light;
@@ -426,8 +461,8 @@ header {
     }
 }
 
-.sticky_post{
-    &::before{
+.sticky_post {
+    &::before {
         @include icon.iconfont;
         @include icon.pin;
         color: vio.$color-violet-light;

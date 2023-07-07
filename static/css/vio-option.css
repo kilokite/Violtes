@@ -85,7 +85,6 @@
 }
 
 .vio-setting {
-  height: 95vh;
   overflow: hidden;
   display: flex;
   width: 45rem;
@@ -246,6 +245,12 @@ button[page=sidebar]::before {
 }
 button[page=other]::before {
   content: "\e609";
+}
+
+textarea {
+  width: 100%;
+  min-height: 5rem;
+  border: solid #a66df2 0.1rem;
 }
 
 /*# sourceMappingURL=vio-option.css.map */

@@ -3,17 +3,21 @@
 /**
  * 表单组件输入框
  */
-function vio_option_component_input($class, $item, $introduce, $placeholder = '',$media = false)
+function vio_option_component_input($class, $item, $introduce, $placeholder = '', $type = 'none')
 {
     $id = $class . '_' . $item;
 ?>
     <div class="vio-item-input option-component">
         <label for="<?php echo $id ?>"><?php echo $introduce ?></label>
         <div>
-        <input type="text" name="<?php echo $item ?>" id="<?php echo $id ?>" placeholder="<?php echo $placeholder ?>" value="<?php vio_option($class, $item) ?>">
-        <?php if($media){?>
-            <input type="button" onclick="vio.selectMedia('#<?echo $id?>')" value="选择图片"></input>
-        <?php }?>
+            <? if($type == 'textarea'):?>
+            <textarea name="<?php echo $item ?>" id="<?php echo $id ?>" placeholder="<?php echo $placeholder ?>"><?php vio_option($class, $item) ?></textarea>
+                <?else:?>
+            <input type="text" name="<?php echo $item ?>" id="<?php echo $id ?>" placeholder="<?php echo $placeholder ?>" value="<?php vio_option($class, $item) ?>">
+            <?php if ($type == 'media') : ?>
+                <input type="button" onclick="vio.selectMedia('#<? echo $id ?>')" value="选择图片"></input>
+            <? endif ?>
+            <? endif ?>
         </div>
     </div>
 <?php

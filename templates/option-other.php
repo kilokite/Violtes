@@ -16,6 +16,6 @@ include_once 'option-component.php';
     <h3>下拉菜单</h3>
     <? vio_option_component_select('test', 'switch', '选择一个字母', [['小笼包汤圆', 'h'], ['菠萝披萨', 'y'], ['仰望星空派', 'z']]) ?>
     <h3>媒体选择</h3>
-    <?php vio_option_component_input('test', 'img_url', "选择一张图片",'',true) ?>
+    <?php vio_option_component_input('test', 'img_url', "选择一张图片",'','media') ?>
     <button type="submit">save</button>
 </form>

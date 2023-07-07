@@ -34,6 +34,7 @@ function register_my_menus()
 	register_nav_menus(
 		array(
 			'header-menu' => '顶部菜单（导航栏）',
+			'footer-link' => '底部连接'
 		)
 	);
 }
@@ -58,7 +59,7 @@ function wpdocs_excerpt_more($more)
 add_filter('excerpt_more', 'wpdocs_excerpt_more');
 
 
-/**添加菜单*/
+/**添加菜单(设置)*/
 function vio_menu()
 {
 	add_menu_page("Violets", "Violets", "manage_options", "vio-option", "vio_option_main");
@@ -66,16 +67,6 @@ function vio_menu()
 	{
 		get_template_part("templates/option", "main");
 	}
-	// add_submenu_page("vio-option", "内容", "内容", "manage_options", "vio-option-content", "vio_option_content");
-	// function vio_option_content()
-	// {
-	// 	get_template_part("templates/option", "content");
-	// }
-	// add_submenu_page("vio-option", "样式", "样式", "manage_options", "vio-option-style", "vio_option_style");
-	// function vio_option_style()
-	// {
-	// 	get_template_part("templates/option", "style");
-	// }
 }
 add_action('admin_menu', 'vio_menu');
 
@@ -97,10 +88,12 @@ function vio_init()
 			),
 			'footer' => array(
 				'name' => 'ZSKT Studio', //底部署名
+				'custom' => '', //自定义内容
 			),
 			'style' => array(
 				'theme_color' => 'violet',
 				'pjax' => true,
+				'background'=>'none'
 			),
 			'test' => array(
 				//TODO
@@ -189,7 +182,10 @@ function vio_sidebar($bar)
 {
 	get_template_part('templates/sidebar', $bar);
 }
-
+/**获取 值？ */
+function vio_value(){
+	get_template_part('templates/value');
+}
 /**取得徽章*/
 function vio_badge($num)
 {

@@ -43,9 +43,7 @@
 
         </article>
 
-        <div class="vio-comments">
-            <?php comments_template() ?>
-        </div>
+        <div class="vio-comments"><?php comments_template() ?></div>
     </main>
     <div class="sidebar">
         <div>

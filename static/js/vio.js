@@ -14,6 +14,11 @@ let directory = {
     precent: 0,
     list: [],
 }
+let navigationBar = {
+    status:true,
+    anchor:0,
+    hide:false
+}
 ready(() => {
     //目录
     let last = document.getElementById('directory_body')
@@ -37,9 +42,19 @@ ready(() => {
                     //事标题？    233
                     document.getElementById('directory-title').innerHTML = node.firstChild.data
                 } else {
+                                        //标题点击滚动
+                    (()=>{
+                        let packNode = node
+                        title.onclick = (e) => {
+                            navigationBar.hide = true
+                            packNode.scrollIntoView({behavior:"smooth"})
+                            setTimeout(()=>{navigationBar.hide = false},3000)
+                            e.stopPropagation()
+                        }
+                    })()
                     if (last.nodeName == 'DIV' || last.level < level) {
                         //插入子节点
-                        last.appendChild(title)
+                        last.appendChild(title) 
                         console.log('add', level, last)
                     } else if (last.level == level) {
                         last.parentNode.appendChild(title)
@@ -71,21 +86,40 @@ function directoryScroll() {
         //刷线目录状态2
         let highLight = directory.list[0][1]
         for ([node, title] of directory.list) {
-            if (node.getBoundingClientRect().top < 0) {
+            if (node.getBoundingClientRect().top < 50) {
                 highLight = title
             } else {
                 break
             }
         }
         if (highLight != directory.highLight) {
-            if (directory.highLight) {
+            if (directory.highLight) {  
                 directory.highLight.classList.remove('active')
             }
             highLight.classList.add('active')
             directory.highLight = highLight
         }
     }
-    let precent = parseInt(((window.innerHeight - directory.articleStart.getBoundingClientRect().bottom) / directory.articleHigh) * 100)
+    let precent = ((window.innerHeight - directory.articleStart.getBoundingClientRect().bottom) / directory.articleHigh) * 100
+    if(directory.articleStart.getBoundingClientRect().top < 10
+    ){
+        //开始隐藏导航栏
+        if(navigationBar.status && (navigationBar.anchor == 0 || precent - navigationBar.anchor > 0) ||navigationBar.hide){
+            let timeout = 0
+            if(navigationBar.anchor == 0){
+                timeout = 1000;
+            }
+            setTimeout(()=>{
+            navigationBar.status = false
+            document.querySelector('#menu-header').classList.add('menu-hide')
+            },timeout)
+        }else if((!navigationBar.status) && (navigationBar.anchor == 0 || navigationBar.anchor-precent > 0)){
+            navigationBar.status = true
+            document.querySelector('#menu-header').classList.remove('menu-hide')
+        }
+        navigationBar.anchor = precent
+    }
+    precent = precent.toFixed(0);
     if (precent > 100) {
         precent = 100
     } else if (precent < 0) {

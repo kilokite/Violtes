@@ -7,22 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php bloginfo('name') . wp_title("&nbsp; - &nbsp;") ?></title>
     <?php wp_head() ?>
-
-    <script>
-        let vioValue = {
-            ajaxURL: "<?php echo admin_url('admin-ajax.php') ?>"
-        }
-    </script>
-
-    <style>
-
-    </style>
+    <? vio_value() ?>
 </head>
 
 <body>
     <header>
         <!-- 导航栏 -->
-        <?php wp_nav_menu(array('header-menu' => '顶部菜单')) ?>
+        <?php wp_nav_menu(array('theme_location'=>'header-menu')) ?>
     </header>
     <!-- banner -->
     <section class="banner">
@@ -41,10 +32,11 @@
                 </div>
                 <?php if (has_post_thumbnail()) : ?>
                     <style>
-                        :root{
-                            --banner-background-img:url(<?php echo get_the_post_thumbnail_url() //banner background?>); 
+                        :root {
+                            --banner-background-img: url(<?php echo get_the_post_thumbnail_url() //banner background
+                                                            ?>);
                         }
-                    </style> 
+                    </style>
                 <?php endif ?>
             <?php else : ?>
                 <div class="sayhello">

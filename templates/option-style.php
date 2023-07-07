@@ -12,6 +12,8 @@
                 ['粉','bbb']
             ]);
             vio_option_component_switch('style','pjax','style','pjax');
+            
+            vio_option_component_input('style','background','背景图URL','url','media');
             ?>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container content">
 
-    <?php // TODO 置顶帖子实现
+    <?php // TODO 置顶帖子实现z
     ?>
 
     <main class="art-list">
@@ -60,7 +60,10 @@
 
     <nav class="sidebar">
         <!-- sideBar! -->
+        <div>
         <?php vio_sidebar('user') ?>
+        <?php vio_sidebar('category') ?>
+        </div>
     </nav>
 </div>
 <?php get_footer() ?>

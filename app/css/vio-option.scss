@@ -16,7 +16,6 @@
     padding: 0;
 }
 .vio-setting{
-    height: 95vh;
     overflow: hidden;
     display: flex;
     width: 45rem;
@@ -181,4 +180,9 @@ button{
     &[page="other"]::before{
         @include icon.texture;
     }
+}
+textarea{
+    width: 100%;
+    min-height: 5rem;
+    border: solid vio.$color-violet-light .1rem;
 }

@@ -6,8 +6,13 @@
             <p>Theme <a class="theme-logo" href="#">Violets</a></p>
         </div>
         <div class="footer-right">
-            <h3>MORE</h3>
-            <p>邮箱：<?php echo get_option('admin_email') ?></p>
+        <?php 
+        wp_nav_menu(array(
+            'theme_location'=>'footer-link',
+            'menu_class'=>'footer-link',
+        ));
+        vio_option('footer','custom')
+        ?>
         </div>
     </div>
 </footer>
