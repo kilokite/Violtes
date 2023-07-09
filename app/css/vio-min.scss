@@ -53,6 +53,8 @@ header {
         border-radius: vio.$radius;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
         transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
+        border-radius: calc(vio.$radius * 2);
+        background-color: #38abf2e4;
     }
 
     .menu-hide {
@@ -65,9 +67,7 @@ header {
         display: flex;
         padding: .5rem 1rem;
         /* opacity: 0.8; */
-        background-color: #38abf2e4;
         /* background-color: #f4f4f4; */
-        border-radius: vio.$radius;
 
         li {
             opacity: 1;
@@ -307,10 +307,11 @@ header {
 .sidebar {
     display: flex;
     flex-direction: column;
-    flex: 0;
+    flex: 2.5;
     flex-basis: auto;
     margin: 2rem 0 2rem 2rem;
-    max-width: 25vw;
+    // max-width: 25vw;
+    width: 0;
 
     .vio-card {
         padding: 2rem;
@@ -388,8 +389,39 @@ header {
     }
     
 }
-
-
+.bar-article {
+    .bar-article-title {
+        color: vio.$font-color;
+        margin-bottom:.3rem ;
+        font-size: 1rem;
+        font-weight: bold;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow:hidden;
+        width:  100%;
+    }   
+    .icon-sync{
+        // display: inline-block;
+        margin-right: .5rem;
+        // font-size: 1rem;
+        &::before{
+            @include icon.sync;
+        }
+    }
+    .tool-random{
+        color: #fff;
+        font-size: .9rem;
+        font-weight: bold;
+        background-color: vio.$font-color-feather;
+        padding: .2rem;
+        border-radius: calc(vio.$radius / 4);
+        border: none;
+    }
+}
+.tool{
+    display: flex;
+    align-items: center;
+}
 .vio-pagination {
     //分页
     display: inline-block;

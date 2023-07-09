@@ -15,10 +15,16 @@ icon from:https://github.com/Templarian/MaterialDesign
          url('../font/Roboto-Bold.woff') format('woff');
 }
 
+.icon::before{
+    @include icon.iconfont;
+}
 :root{
     --banner-background-img: url("https://tvax1.sinaimg.cn/large/ec43126fgy1gwf1m76slyj23561xgnpg.jpg"); //TODO 应该能换
 
     font-weight: v.$font-weight-normal; 
+}
+
+::selection{
 }
 
 * {

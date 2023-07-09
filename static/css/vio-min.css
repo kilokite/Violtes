@@ -14,6 +14,13 @@ icon from:https://github.com/Templarian/MaterialDesign
   font-weight: bold;
   src: url("../font/Roboto-Bold.woff2") format("woff2"), url("../font/Roboto-Bold.woff") format("woff");
 }
+.icon::before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 :root {
   --banner-background-img: url("https://tvax1.sinaimg.cn/large/ec43126fgy1gwf1m76slyj23561xgnpg.jpg");
   font-weight: 400;
@@ -279,7 +286,7 @@ icon from:https://github.com/Templarian/MaterialDesign
 
 /*# sourceMappingURL=csshake-hard.css.map */
 .vio-single {
-  flex: 1;
+  flex: 6;
 }
 .vio-single > article {
   border-radius: 1rem;
@@ -487,7 +494,7 @@ icon from:https://github.com/Templarian/MaterialDesign
   content: "\e64f";
 }
 .helper .icon {
-  margin: 0 0.5rem;
+  margin-right: 0.5rem;
   font-size: 1.5rem;
 }
 .helper .icon:hover::before {
@@ -496,7 +503,6 @@ icon from:https://github.com/Templarian/MaterialDesign
   transition: 0.1s ease-out color;
 }
 .helper .icon::before {
-  display: block;
   padding: 0.2rem;
   transition: 0.1s ease-out color;
 }
@@ -789,6 +795,8 @@ header .menu {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.246);
   transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
+  border-radius: 2rem;
+  background-color: rgba(56, 171, 242, 0.8941176471);
 }
 header .menu-hide {
   margin-top: -4rem;
@@ -799,9 +807,7 @@ header ul {
   display: flex;
   padding: 0.5rem 1rem;
   /* opacity: 0.8; */
-  background-color: rgba(56, 171, 242, 0.8941176471);
   /* background-color: #f4f4f4; */
-  border-radius: 1rem;
 }
 header ul li {
   opacity: 1;
@@ -998,10 +1004,10 @@ header ul li a {
 .sidebar {
   display: flex;
   flex-direction: column;
-  flex: 0;
+  flex: 2.5;
   flex-basis: auto;
   margin: 2rem 0 2rem 2rem;
-  max-width: 25vw;
+  width: 0;
 }
 .sidebar .vio-card {
   padding: 2rem;
@@ -1065,6 +1071,37 @@ header ul li a {
 .bar-category > .tag {
   color: #6dc2f2;
   background-color: rgba(42, 147, 212, 0.0823529412);
+}
+
+.bar-article .bar-article-title {
+  color: rgb(79, 79, 79);
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+.bar-article .icon-sync {
+  margin-right: 0.5rem;
+}
+.bar-article .icon-sync::before {
+  content: "\e611";
+}
+.bar-article .tool-random {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: rgba(79, 79, 79, 0.344);
+  padding: 0.2rem;
+  border-radius: 0.25rem;
+  border: none;
+}
+
+.tool {
+  display: flex;
+  align-items: center;
 }
 
 .vio-pagination {

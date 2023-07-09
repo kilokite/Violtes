@@ -4,7 +4,7 @@
 
 .vio-single {
     //整体
-    flex: 1;
+    flex: 6;
 
     >article {
         // display: flex;
@@ -271,7 +271,7 @@
         }
     }
     .icon{
-        margin: 0 .5rem;
+        margin-right: .5rem;
         font-size: 1.5rem;
         &:hover::before{
             color: #00000078;
@@ -279,7 +279,7 @@
             transition: .1s ease-out color;
         }
         &::before{
-            display:block;
+            // display:block;
             padding: .2rem;
             transition: .1s ease-out color;
         }

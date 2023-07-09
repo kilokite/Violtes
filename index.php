@@ -63,6 +63,7 @@
         <div>
         <?php vio_sidebar('user') ?>
         <?php vio_sidebar('category') ?>
+        <? vio_sidebar('randArticle')?>
         </div>
     </nav>
 </div>
