@@ -11,9 +11,14 @@
 </head>
 
 <body>
-    <header>
-        <!-- 导航栏 -->
+    <header id="header">
+        <!-- 左-->
         <?php wp_nav_menu(array('theme_location'=>'header-menu')) ?>
+        <div class="menu tool">
+            <!-- 右   -->
+             <span class="icon search"></span>
+            <span class="icon dark-light-switch"></span>
+        </div>
     </header>
     <!-- banner -->
     <section class="banner">

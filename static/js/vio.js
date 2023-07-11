@@ -111,11 +111,11 @@ function directoryScroll() {
             }
             setTimeout(() => {
                 navigationBar.status = false
-                document.querySelector('#menu-header').classList.add('menu-hide')
+                document.querySelector('#header').classList.add('menu-hide')
             }, timeout)
         } else if ((!navigationBar.status) && (navigationBar.anchor == 0 || navigationBar.anchor - precent > 0)) {
             navigationBar.status = true
-            document.querySelector('#menu-header').classList.remove('menu-hide')
+            document.querySelector('#header').classList.remove('menu-hide')
         }
         navigationBar.anchor = precent
     }

@@ -267,7 +267,7 @@
     .light {
         &::before {
             @include icon.iconfont;
-            @include icon.power-sleep;
+            @include icon.darkmode;
         }
     }
     .icon{

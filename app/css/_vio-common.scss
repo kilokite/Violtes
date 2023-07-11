@@ -34,3 +34,12 @@ icon from:https://github.com/Templarian/MaterialDesign
     font-family:v.$font-stack;
     text-decoration: none;
 }
+
+::-webkit-scrollbar{
+    width: .5rem;
+    background-color: rgb(244, 244, 244);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(164, 164, 164);
+    border-radius: 1rem;
+}

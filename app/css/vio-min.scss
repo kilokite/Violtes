@@ -36,51 +36,73 @@ body {
     }
 }
 
+.menu-hide {
+    margin-top: -5rem;
+    transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
 
+}
 /* # header */
 header {
     position: fixed;
     z-index: 999;
     margin: 0 auto;
-    max-width: 100%;
-    display: block;
-
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
     .menu {
         display: flex;
         margin: .7rem 3rem;
-        height: 3.4rem;
+        height: 3.5rem;
         backdrop-filter: blur(7px);
         border-radius: vio.$radius;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
-        transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
-        border-radius: calc(vio.$radius * 2);
-        background-color: #38abf2e4;
+        border-radius: calc(vio.$radius);
+        background-color: rgba(255, 255, 255, .8);
+        padding: .5rem 1rem;
     }
 
-    .menu-hide {
-        margin-top: -4rem;
-        transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
-    }
 
     ul {
         list-style-type: none;
         display: flex;
-        padding: .5rem 1rem;
         /* opacity: 0.8; */
         /* background-color: #f4f4f4; */
 
         li {
             opacity: 1;
-            margin: 0 auto;
-            margin: auto 1rem;
+            margin: 0 .2rem;
+            padding: .5rem 1rem;
+            border-radius: calc(vio.$radius / 2);
+            transition: background-color 0.1s ease-out;
+            display: flex;
+            align-items: center;
 
             a {
                 text-decoration: none;
-                color: white;
+                color: vio.$font-color;
                 font-weight: bold;
                 font-size: 1.1rem;
             }
+            &:hover{
+                background-color: #0000000f;
+                transition: background-color 0.1s ease-out;
+            }
 
+        }
+    }
+    .icon{
+        margin-right: .5rem;
+    }
+    .search::before{
+        @include icon.search;
+        font-size: 1.5rem;
+    }
+    .dark-light-switch{
+        transform:translateY(.2rem);
+        &::before{
+            @include icon.lightmode;
+            font-size: 1.7rem;
         }
     }
 

@@ -444,3 +444,19 @@
 @mixin seat-individual-suite1 {
   content: "\e650";
 }
+
+@mixin search {
+  content: "\e655";
+}
+
+@mixin refresh {
+  content: "\e65f";
+}
+
+@mixin darkmode {
+  content: "\e65b";
+}
+
+@mixin lightmode {
+  content: "\e65e";
+}
