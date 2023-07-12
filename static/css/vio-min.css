@@ -297,6 +297,7 @@ icon from:https://github.com/Templarian/MaterialDesign
 /*# sourceMappingURL=csshake-hard.css.map */
 .vio-single {
   flex: 6;
+  width: 0;
 }
 .vio-single > article {
   border-radius: 1rem;
@@ -761,6 +762,51 @@ footer > div .footer-right {
   color: rgb(144, 144, 144);
   font-weight: bold;
   margin-right: 1rem;
+}
+
+.vio-archive {
+  list-style: none;
+}
+.vio-archive h2 {
+  font-size: 2rem;
+}
+.vio-archive li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.5rem 0;
+}
+.vio-archive li a {
+  width: 100%;
+  color: rgb(79, 79, 79);
+  font-weight: bold;
+}
+.vio-archive li span {
+  margin-right: 0.8rem;
+  margin-left: 1rem;
+  color: #a66df2;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.3333333333rem;
+  font-size: 0.9rem;
+  white-space: 0.2rem;
+  font-weight: bold;
+}
+.vio-archive .M01 span, .vio-archive .M02 span, .vio-archive .M03 span {
+  color: #4CAF50;
+}
+.vio-archive .M04 span, .vio-archive .M05 span, .vio-archive .M06 span {
+  color: #f6695f;
+}
+.vio-archive .M07 span, .vio-archive .M08 span, .vio-archive .M09 span {
+  color: #FF9800;
+}
+.vio-archive .M10 span, .vio-archive .M11 span, .vio-archive .M12 span {
+  color: #2196F3;
+}
+.vio-archive .M10 span::before, .vio-archive .M11 span::before, .vio-archive .M12 span::before {
+  content: "❄️";
+  position: absolute;
+  transform: translateX(-1.5rem);
 }
 
 /*

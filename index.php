@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 <div class="container content">
-
-    <?php // TODO 置顶帖子实现z
-    ?>
-
     <main class="art-list">
         <?php if (is_archive()) : ?>
             <?php if (is_tag()) : ?>

@@ -5,7 +5,7 @@
 .vio-single {
     //整体
     flex: 6;
-
+    width: 0;
     >article {
         // display: flex;
         @include component.vio-card;
