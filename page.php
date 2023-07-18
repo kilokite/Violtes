@@ -20,7 +20,9 @@
         <?php endif ?>
     </main>
     <div class="sidebar">
-        <?php vio_sidebar('user') ?>
+        <div>
+        <?vio_get_sidebar('page')?>
+        </div>
     </div>
 </div>
 <?php get_footer() ?>

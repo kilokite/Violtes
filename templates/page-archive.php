@@ -17,22 +17,25 @@ $the_year = 0;
             <? endif ?>
             <div class="cutup"></div>
             <ul class="vio-archive">
-            <?while($the_query->have_posts()):$the_query->the_post()?>
-                <?
-                $year = get_the_time('Y');
-                if($year != $the_year):
-                $the_year = $year
-                ?>
-                <li><h2><?echo $year?>年</h2></li>
-                <?endif?>
-                <li class="M<?the_time('m')?>"><span><?the_time('m / d')?></span><a href="<?the_permalink()?>"><?the_title()?></a></li>
-            <?endwhile?>
+                <? while ($the_query->have_posts()) : $the_query->the_post() ?>
+                    <?
+                    $year = get_the_time('Y');
+                    if ($year != $the_year) :
+                        $the_year = $year
+                    ?>
+                        <li>
+                            <h2><? echo $year ?>年</h2>
+                        </li>
+                    <? endif ?>
+                    <li class="M<? the_time('m') ?>"><span><? the_time('m / d') ?></span><a href="<? the_permalink() ?>"><? the_title() ?></a></li>
+                <? endwhile ?>
             </ul>
         </article>
     </main>
     <div class="sidebar">
-        <?php vio_sidebar('user') ?>
-        <? vio_sidebar('category')?>
+        <div>
+        <?vio_get_sidebar('archive')?>
+        </div>
     </div>
 </div>
 <?php get_footer() ?>

@@ -47,8 +47,7 @@
     </main>
     <div class="sidebar">
         <div>
-            <?php vio_sidebar('user') ?>
-            <? vio_sidebar('directory') ?>
+        <?vio_get_sidebar('article')?>
         </div>
     </div>
 </div>

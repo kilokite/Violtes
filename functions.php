@@ -101,7 +101,14 @@ function vio_init()
 				'select' => true,
 				'switch' => 'h',
 				'img_url' => 'none'
- 			)
+ 			),
+			'sidebar' => array(
+				'index' => '["user","category","randArticle"]',
+				'article' => '["user","directory"]',
+				'page' => '["user","randArticle"]',
+				'archive' => '["user","category"]',
+
+			)
 		);
 		if ($init == false) {
 			foreach ($default as $key => $value) {
@@ -182,6 +189,13 @@ function vio_sidebar($bar)
 {
 	get_template_part('templates/sidebar', $bar);
 }
+function vio_get_sidebar($barName){
+	$list = vio_option('sidebar', $barName, true);
+	$list = json_decode($list,true);
+	foreach ($list as $value) {
+		vio_sidebar($value);
+	}	
+}
 /**获取 值？ */
 function vio_value(){
 	get_template_part('templates/value');
@@ -208,7 +222,10 @@ function vio_pagination()
 /**ajax*/
 function vio_ajax()
 {
+
 	$post_data = $_POST['data'];
+	//全部去斜杠
+	$post_data = stripslashes_deep($post_data);
 	$return  = array();
 	$func = "vio_ajax_" . $post_data['action'];
 	if (function_exists($func)) {
@@ -266,3 +283,4 @@ function vio_ajax_get_option_page($parameter)
 	$page = $parameter['page'];
 	get_template_part("templates/option", $page);
 }
+

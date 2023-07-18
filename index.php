@@ -57,9 +57,7 @@
     <nav class="sidebar">
         <!-- sideBar! -->
         <div>
-        <?php vio_sidebar('user') ?>
-        <?php vio_sidebar('category') ?>
-        <? vio_sidebar('randArticle')?>
+            <?vio_get_sidebar('index')?>
         </div>
     </nav>
 </div>
