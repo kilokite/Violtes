@@ -11,9 +11,7 @@ $the_year = 0;
         <article>
             <?php if (have_posts()) : ?>
                 <?php the_post() ?>
-                <div class="main-body">
-                    <?php the_content() ?>
-                </div>
+                <div class="main-body"><?php the_content() ?></div>
             <? endif ?>
             <div class="cutup"></div>
             <ul class="vio-archive">

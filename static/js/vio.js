@@ -15,9 +15,9 @@ let directory = {
     list: [],
 }
 let navigationBar = {
-    status: true,
-    anchor: 0,
-    hide: false
+    status: true, //显示状态
+    anchor: 0, //锚点
+    hide: false //强制隐藏
 }
 ready(() => {
     //目录
@@ -47,7 +47,7 @@ ready(() => {
                         let packNode = node
                         title.onclick = (e) => {
                             navigationBar.hide = true
-                            packNode.scrollIntoView({ behavior: "smooth" })
+                            packNode.scrollIntoView({ behavior: "smooth", duration: 7000 })
                             setTimeout(() => { navigationBar.hide = false }, 3000)
                             e.stopPropagation()
                         }
@@ -79,6 +79,7 @@ ready(() => {
         console.log(directory.articleHigh, directory.articleStart.getBoundingClientRect().bottom, directory.articleEnd.getBoundingClientRect().bottom)
         directoryScroll()
     }
+
 })
 
 function directoryScroll() {
@@ -101,13 +102,14 @@ function directoryScroll() {
         }
     }
     let precent = ((window.innerHeight - directory.articleStart.getBoundingClientRect().bottom) / directory.articleHigh) * 100
+    //文章百分比
     if (directory.articleStart.getBoundingClientRect().top < 10
     ) {
-        //开始隐藏导航栏
+        //到达正文，开始隐藏导航栏
         if (navigationBar.status && (navigationBar.anchor == 0 || precent - navigationBar.anchor > 0) || navigationBar.hide) {
             let timeout = 0
             if (navigationBar.anchor == 0) {
-                timeout = 1000;
+                timeout = 4000;
             }
             setTimeout(() => {
                 navigationBar.status = false
@@ -134,9 +136,38 @@ function directoryScroll() {
 
 ready(() => {
     if (document.querySelector("#tool_random")) {
-    document.querySelector("#tool_random").onclick = () => {
-        let list = document.querySelectorAll('#bar_article_list a')
-        list[Math.floor(Math.random() * list.length)].click()
+        document.querySelector("#tool_random").onclick = () => {
+            let list = document.querySelectorAll('#bar_article_list a')
+            list[Math.floor(Math.random() * list.length)].click()
+        }
     }
-}
+    document.getElementById('menu_button').onclick = () => {
+        let header = document.getElementById('header');
+        header.classList.toggle('menu-show')
+        toggleMask()
+    }
+    document.getElementById('open_sidebar').onclick = () => {
+        // 切换状态
+        let sidebar = document.querySelector('.sidebar');
+        sidebar.classList.toggle('show')
+        document.querySelector('#float_action_buttons').classList.toggle('menu-show')
+        toggleMask()
+    }
+    document.querySelector('.mask').addEventListener('touchstart',() => {
+        closeAll()
+    })
+    document.getElementById('back_to_top').onclick = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
 })
+
+function toggleMask() {
+    document.querySelector('.mask').classList.toggle('show')
+}
+
+function closeAll() {
+    document.querySelector('#header').classList.remove('menu-show')
+    document.querySelector('#float_action_buttons').classList.remove('menu-show')
+    document.querySelector('.sidebar').classList.remove('show')
+    document.querySelector('.mask').classList.remove('show')
+}

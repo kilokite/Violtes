@@ -12,11 +12,14 @@
 
 <body>
     <header id="header">
+        <div class="left">
+            <span id="menu_button" class="menu-button"> </span>
+            <?php wp_nav_menu(array('theme_location' => 'header-menu')) ?>
+        </div>
         <!-- 左-->
-        <?php wp_nav_menu(array('theme_location'=>'header-menu')) ?>
         <div class="menu tool">
             <!-- 右   -->
-             <span class="icon search"></span>
+            <span class="icon search"></span>
             <span class="icon dark-light-switch"></span>
         </div>
     </header>
@@ -52,6 +55,11 @@
 
         </div>
     </section>
+    <div id="mask" class="mask"></div>
+    <div class="float-action-buttons" id="float_action_buttons">
+        <div class="back-to-top" id="back_to_top"></div>
+        <div class="open-sidebar" id="open_sidebar"></div>
+    </div>
     <?php
     //导航栏 
     //wp_nav_menu( array( 'theme_location' => 'header-menu' ) );

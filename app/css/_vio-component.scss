@@ -113,3 +113,11 @@
             box-shadow: 0 0 1rem rgba(128, 128, 128, 0.411);
         }
 }
+
+@mixin hide-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+}

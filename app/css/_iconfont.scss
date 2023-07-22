@@ -109,11 +109,11 @@
   content: "\e664";
 }
 
-@mixin chevron-down1 {
+@mixin chevron-down {
   content: "\e665";
 }
 
-@mixin chevron-left1 {
+@mixin chevron-left {
   content: "\e666";
 }
 
@@ -459,4 +459,12 @@
 
 @mixin lightmode {
   content: "\e65e";
+}
+
+@mixin menu {
+  content: "\e677";
+}
+
+@mixin close {
+  content: "\e661";
 }

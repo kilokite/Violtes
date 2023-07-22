@@ -30,7 +30,7 @@ icon from:https://github.com/Templarian/MaterialDesign
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
+  font-family: system-ui, -apple-system, Arial, Helvetica Neue, Helvetica, Nimbus Sans L, Noto Sans, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   text-decoration: none;
 }
 
@@ -726,14 +726,14 @@ footer > div .footer-left {
   color: rgba(79, 79, 79, 0.8);
 }
 footer > div .footer-left > .title {
-  font-family: Roboto-Bold, -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
+  font-family: Roboto-Bold, system-ui, -apple-system, Arial, Helvetica Neue, Helvetica, Nimbus Sans L, Noto Sans, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: rgba(79, 79, 79, 0.344);
 }
 footer > div .footer-left .theme-logo {
-  font-family: Roboto-Bold, -apple-system, Noto Sans, Helvetica Neue, Helvetica, Nimbus Sans L, Arial, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
+  font-family: Roboto-Bold, system-ui, -apple-system, Arial, Helvetica Neue, Helvetica, Nimbus Sans L, Noto Sans, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   margin-top: 2rem;
   text-decoration-style: none;
   padding: 0.5rem;
@@ -762,6 +762,10 @@ footer > div .footer-right {
   color: rgb(144, 144, 144);
   font-weight: bold;
   margin-right: 1rem;
+}
+
+.main-body:empty {
+  display: none;
 }
 
 .vio-archive {
@@ -809,6 +813,157 @@ footer > div .footer-right {
   transform: translateX(-1.5rem);
 }
 
+@media screen and (max-width: 50rem) {
+  header {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+  }
+  header.menu-show > div > .menu-header-container {
+    margin-left: 2rem;
+  }
+  header.menu-show > div > .menu-header-container .menu {
+    background-color: rgb(255, 255, 255);
+    max-height: 20rem;
+  }
+  header > div > .menu-header-container {
+    height: 3.5rem;
+    transition: all 0.3s ease-in-out;
+  }
+  header > div > .menu-header-container > ul.menu {
+    height: auto;
+    flex-direction: column;
+  }
+  header > div > .menu-header-container > ul.menu li:nth-child(n+2) {
+    display: block;
+  }
+  header > div > .menu-header-container > .menu,
+header div.menu.tool {
+    overflow: hidden;
+    border-radius: 0 0 1rem 1rem;
+    transition: all 0.3s ease-in-out;
+    margin: 0 !important;
+    box-shadow: none !important;
+    background: none;
+    backdrop-filter: none;
+    max-height: 3.5rem;
+  }
+  header > div > .menu-header-container > .menu li:nth-child(n+2),
+header div.menu.tool li:nth-child(n+2) {
+    display: none;
+  }
+  header > div.left {
+    display: flex;
+    align-items: center;
+  }
+  header .menu-button {
+    display: block;
+  }
+  div.float-action-buttons div.open-sidebar {
+    display: block;
+  }
+  div.float-action-buttons .back-to-top {
+    max-height: 0;
+  }
+  .container {
+    padding: 0 1rem !important;
+  }
+  div.sidebar {
+    transition: margin-right 0.3s ease;
+    position: fixed;
+    top: 0;
+    right: -70vw;
+    width: 70vw;
+    z-index: 91;
+    backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.5);
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    height: 100vh;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  div.sidebar .vio-card {
+    background: none;
+    padding: 1rem;
+    margin: 0;
+    box-shadow: none;
+  }
+  div.sidebar.show {
+    margin-right: 70vw;
+  }
+  .sayhello h1 {
+    font-size: 2.3rem !important;
+    font-weight: 900;
+  }
+  .sayhello p {
+    font-size: 1rem !important;
+  }
+  .art-list .vio-card {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+  .art-list .vio-card .art-img {
+    margin: 0 0 -1.5rem 0;
+    border-radius: 1rem 1rem 0rem 0rem;
+    max-width: 100%;
+    pointer-events: none;
+  }
+  .art-list .vio-card .art-img img {
+    height: auto;
+    max-height: 40vh;
+  }
+  .art-list .vio-card .art-card {
+    margin: 2rem;
+  }
+  .art-list .vio-card .art-card h2 {
+    font-size: 1.5rem;
+  }
+  article {
+    padding: 0 !important;
+  }
+  article .info {
+    flex-direction: column-reverse;
+  }
+  article .info img {
+    width: 100% !important;
+    border-radius: 1rem 1rem 0 0 !important;
+    pointer-events: none;
+  }
+  article .info h1 {
+    font-size: 1.5rem !important;
+  }
+  article .info > div {
+    margin: 1.5rem 1rem 1rem 1rem;
+    text-align: center;
+  }
+  article .info .post-meta span:first-child {
+    display: none;
+  }
+  article .info .post-meta span:empty {
+    display: none !important;
+  }
+  article .info .post-meta span.item {
+    display: inline-block;
+  }
+  article .info .post-meta > p {
+    display: inline;
+  }
+  article .main-body, article .vio-archive {
+    padding: 1rem;
+  }
+  article .main-body p, article .vio-archive p {
+    font-size: 1rem !important;
+  }
+  .vio-archive h2 {
+    font-size: 1.5rem;
+  }
+  footer div {
+    flex-direction: column-reverse;
+  }
+  footer div ul {
+    max-width: 100% !important;
+  }
+}
 /*
     2022/10/11
     TODO 有些属性应该是成变量
@@ -840,10 +995,26 @@ body {
   transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
 }
 
+.menu-button {
+  z-index: 1;
+  display: none;
+  align-items: center;
+  margin-right: -1rem;
+  margin-left: 1rem;
+}
+.menu-button::before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e677";
+  font-size: 1.5rem;
+}
+
 /* # header */
 header {
   position: fixed;
-  z-index: 999;
+  z-index: 90;
   margin: 0 auto;
   width: 100%;
   display: flex;
@@ -858,7 +1029,7 @@ header .menu {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 1rem rgba(128, 128, 128, 0.246);
   border-radius: 1rem;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 0.5rem 1rem;
 }
 header ul {
@@ -876,7 +1047,13 @@ header ul li {
   display: flex;
   align-items: center;
 }
+header ul li:first-child a::before {
+  content: "";
+  background: #a66df2;
+  width: 0.2rem;
+}
 header ul li a {
+  font-family: Roboto-Bold, system-ui, -apple-system, Arial, Helvetica Neue, Helvetica, Nimbus Sans L, Noto Sans, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   text-decoration: none;
   color: rgb(79, 79, 79);
   font-weight: bold;
@@ -908,7 +1085,6 @@ header .dark-light-switch::before {
   background: var(--banner-background-img) center;
   /* TODO 背景图，应该是变量 */
   background-size: cover;
-  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -926,6 +1102,7 @@ header .dark-light-switch::before {
   text-shadow: 0 0 6rem rgb(0, 0, 0);
 }
 .sayhello > h1 {
+  font-family: Roboto-Bold, system-ui, -apple-system, Arial, Helvetica Neue, Helvetica, Nimbus Sans L, Noto Sans, Liberation Sans, PingFang SC, Hiragino Sans GB, Noto Sans CJK SC, Source Han Sans SC, Source Han Sans CN, Microsoft YaHei, Wenquanyi Micro Hei, WenQuanYi Zen Hei, ST Heiti, SimHei, WenQuanYi Zen Hei Sharp, sans-serif;
   font-weight: bold;
   font-size: 3rem;
   line-height: 4rem;
@@ -955,6 +1132,62 @@ header .dark-light-switch::before {
 .content {
   margin: -35vh auto 2rem auto;
   display: flex;
+}
+
+.float-action-buttons {
+  z-index: 93;
+  position: fixed;
+  bottom: 2rem;
+  right: 4vw;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(7px);
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #a66df2;
+  box-shadow: rgba(0, 0, 0, 0.1176470588) 1 1 1rem;
+}
+.float-action-buttons .open-sidebar {
+  display: none;
+  transition: transform 0.3s ease-out;
+}
+.float-action-buttons .open-sidebar::before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e666";
+}
+.float-action-buttons .back-to-top {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.float-action-buttons .back-to-top::before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e668";
+}
+.float-action-buttons.menu-show .open-sidebar {
+  transform: rotate(180deg);
+}
+.float-action-buttons.menu-show .back-to-top {
+  max-height: 2rem;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  transition: opacity 0.3s ease-out;
+}
+.mask.show {
+  display: block;
 }
 
 /* ## main */
@@ -1017,13 +1250,13 @@ header .dark-light-switch::before {
   /* font-size: 1.2rem; */
 }
 .art-list li .art-img {
-  max-width: 15rem;
+  display: flex;
+  flex-direction: column;
   flex: 3;
   overflow: hidden;
   border-radius: 1rem;
   margin: 0 0 0 1rem;
   transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-  max-height: 30vh;
 }
 .art-list li .art-img:hover {
   transform: rotate(0.007turn) scale(1.2);
@@ -1032,16 +1265,12 @@ header .dark-light-switch::before {
 }
 .art-list li .art-img img {
   width: 100%;
-  height: 100%;
+  height: 0;
+  flex-grow: 1;
   object-fit: cover;
 }
 
 /* ## tag & category */
-.art-tags,
-.art-cats {
-  margin: 0 0.5rem;
-}
-
 .art-tags > a,
 .art-cats > a {
   /* color: #2a93d4; */
@@ -1119,6 +1348,13 @@ header .dark-light-switch::before {
 }
 .bar-myself > .badge {
   margin-top: 1rem;
+  white-space: nowrap;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.bar-myself > .badge::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
 }
 .bar-myself > .badge > img {
   border-radius: 0.3rem;

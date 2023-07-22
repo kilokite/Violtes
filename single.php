@@ -10,10 +10,10 @@
                         <div class="post-meta">
                             <?php if (has_post_thumbnail()) :  //根据有无头图提供不同信息展示方式 
                             ?>
+                                <p> <span>时间</span><span class="item"><?php the_time('Y-m-d H:m') ?></span></p>
                                 <p> <span>分类</span><span class="art-cats item"><?php the_category(' ') ?></span></p>
                                 <p> <span>标签</span><span class="art-tags item"><?php the_tags("", " ") ?></span></p>
                                 <p> <span>评论</span><span class="item"><?php comments_number() ?></span></p>
-                                <p> <span>时间</span><span class="item"><?php the_time('Y-m-d H:m') ?></span></p>
                                 <?php //英文长度不统一 S,T,S,T吧，可能 
                                 ?>
                             <?php else : ?>

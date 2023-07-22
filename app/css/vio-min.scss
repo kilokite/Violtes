@@ -9,7 +9,7 @@
 @use 'vio-article'; //文章页
 @use 'vio-footer'; //底部
 @use 'vio-archive'; //归档页
-
+@use 'vio-mobile'; //移动端适配
 @use 'iconfont' as icon;
 
 :root {
@@ -42,10 +42,22 @@ body {
     transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
 
 }
+.menu-button {
+    z-index: 1;
+    display: none;
+    align-items: center;
+    margin-right: -1rem;
+    margin-left: 1rem;
+    &::before {
+        @include icon.iconfont;
+        @include icon.menu;
+        font-size: 1.5rem;
+    }
+}
 /* # header */
 header {
     position: fixed;
-    z-index: 999;
+    z-index: 90;
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -59,7 +71,7 @@ header {
         border-radius: vio.$radius;
         box-shadow: .2rem .2rem 1rem rgba(128, 128, 128, 0.246);
         border-radius: calc(vio.$radius);
-        background-color: rgba(255, 255, 255, .8);
+        background-color: rgba(255, 255, 255, .5);
         padding: .5rem 1rem;
     }
 
@@ -78,8 +90,16 @@ header {
             transition: background-color 0.1s ease-out;
             display: flex;
             align-items: center;
-
+            &:first-child a{
+                // color: #a66df2;
+                &::before {
+                    content: "";
+                    background: #a66df2;
+                    width: .2rem;
+                }
+            }
             a {
+                @include component.vio-bold;
                 text-decoration: none;
                 color: vio.$font-color;
                 font-weight: bold;
@@ -117,7 +137,7 @@ header {
     background: vio.$banner-background-img center;
     /* TODO 背景图，应该是变量 */
     background-size: cover;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     display: flex;
     flex-direction: column;
     // align-items: center;
@@ -135,9 +155,8 @@ header {
     color: #f4f4f4;
     width: 100%;
     text-shadow: 0 0 6rem rgb(0, 0, 0);
-
     >h1 {
-
+        @include component.vio-bold;
         font-weight: bold;
         font-size: 3rem;
         line-height: 4rem;
@@ -177,7 +196,56 @@ header {
 }
 
 
-
+.float-action-buttons {
+    z-index: 93;
+    position: fixed;
+    bottom: 2rem;
+    right: 4vw;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(7px);
+    border-radius: vio.$radius;
+    padding: .5rem;
+    font-size: 1.5rem;
+    color: vio.$color-violet-light;
+    box-shadow: #0000001e 1 1 1rem;
+    .open-sidebar {
+        display: none;
+        transition: transform 0.3s ease-out;
+        &::before {
+            @include icon.iconfont;
+            @include icon.chevron-left;
+        }
+    }
+    .back-to-top {
+        overflow: hidden;
+        transition: max-height .3s ease-out;
+        &::before {
+            @include icon.iconfont;
+            @include icon.chevron-up;
+        }
+    }
+    &.menu-show {
+        .open-sidebar {
+                transform: rotate(180deg);
+        }
+        .back-to-top {
+            max-height: 2rem;
+        }
+    }
+}
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    transition: opacity 0.3s ease-out;
+    &.show {
+        display: block;
+    }
+}
 /* ## main */
 
 .art-list {
@@ -249,15 +317,13 @@ header {
         }
 
         .art-img {
-            max-width: 15rem;
-            // max-height: 15rem; //防止太长的图片 怪，这里
+            display: flex;
+            flex-direction: column;
             flex: 3;
             overflow: hidden;
             border-radius: vio.$radius;
             margin: 0 0 0 1rem;
             transition: transform 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04), box-shadow 0.3s cubic-bezier(0.73, -0.02, 0.27, 1.04);
-
-            max-height: 30vh;
 
             &:hover {
                 transform: rotate(.007turn) scale(1.2);
@@ -267,7 +333,8 @@ header {
 
             img {
                 width: 100%;
-                height: 100%;
+                height: 0;
+                flex-grow: 1;
                 object-fit: cover;
             }
         }
@@ -281,7 +348,6 @@ header {
 /* ## tag & category */
 .art-tags,
 .art-cats {
-    margin: 0 .5rem;
 }
 
 .art-tags>a,
@@ -374,7 +440,9 @@ header {
 
     >.badge {
         margin-top: 1rem;
-
+        white-space:nowrap;
+        overflow: scroll;
+        @include component.hide-scrollbar;
         >img {
             border-radius: .3rem;
             // width: 2rem;
@@ -527,3 +595,4 @@ header {
         transform: rotate(45deg);
     }
 }
+

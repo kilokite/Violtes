@@ -1,0 +1,209 @@
+@media screen and (max-width:50rem) {
+    header {
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+
+        &.menu-show {
+            >div>.menu-header-container {
+                margin-left: 2rem;
+
+                .menu {
+                    background-color: rgb(255, 255, 255);
+                    max-height: 20rem;
+                }
+            }
+        }
+
+        >div>.menu-header-container {
+            height: 3.5rem;
+            transition: all 0.3s ease-in-out;
+
+            >ul.menu {
+                height: auto;
+                flex-direction: column;
+
+                li:nth-child(n + 2) {
+                    display: block;
+                }
+            }
+
+        }
+
+        >div>.menu-header-container>.menu,
+        div.menu.tool {
+            overflow: hidden;
+            border-radius: 0 0 1rem 1rem;
+            transition: all 0.3s ease-in-out;
+            margin: 0 !important;
+            box-shadow: none !important;
+            background: none;
+            backdrop-filter: none;
+            max-height: 3.5rem;
+
+            li:nth-child(n + 2) {
+                display: none;
+            }
+        }
+
+        >div.left {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-button {
+            display: block;
+        }
+    }
+
+    div.float-action-buttons {
+
+        div.open-sidebar {
+            display: block;
+        }
+
+        .back-to-top {
+            max-height: 0;
+        }
+    }
+
+    .container {
+        padding: 0 1rem !important;
+    }
+
+    .content {}
+
+    div.sidebar {
+        transition: margin-right 0.3s ease;
+        position: fixed;
+        top: 0;
+        right: -70vw;
+        width: 70vw;
+        z-index: 91;
+        backdrop-filter: blur(7px);
+        background: rgba(255, 255, 255, .5);
+        // border-radius: 1rem 0 0 1rem;
+        padding-left: 1rem;
+        font-size: .9rem;
+        height: 100vh;
+        margin-top: 0;
+        margin-left: 0;
+
+        .vio-card {
+            background: none;
+            padding: 1rem;
+            margin: 0;
+            box-shadow: none;
+        }
+
+        &.show {
+            margin-right: 70vw;
+        }
+    }
+
+    .sayhello {
+        h1 {
+            font-size: 2.3rem !important;
+            font-weight: 900;
+        }
+
+        p {
+            font-size: 1rem !important;
+        }
+    }
+
+    .art-list {
+        .vio-card {
+            padding: 0;
+            flex-direction: column-reverse;
+
+            .art-img {
+                margin: 0 0 -1.5rem 0;
+                border-radius: 1rem 1rem 0rem 0rem; //TODO var
+                max-width: 100%;
+                pointer-events: none;
+
+                img {
+                    height: auto;
+                    max-height: 40vh;
+                }
+            }
+
+            .art-card {
+                margin: 2rem;
+
+                h2 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+
+    article {
+        padding: 0 !important;
+
+        .info {
+            flex-direction: column-reverse;
+
+            img {
+                width: 100% !important;
+                border-radius: 1rem 1rem 0 0 !important;
+                pointer-events: none;
+            }
+
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            >div {
+                margin: 1.5rem 1rem 1rem 1rem;
+                text-align: center;
+            }
+
+            .post-meta {
+                span {
+                    &:first-child {
+                        display: none;
+                    }
+
+                    &:empty {
+                        display: none !important;
+                    }
+
+                    &.item {
+                        display: inline-block;
+                    }
+                }
+
+                >p {
+                    display: inline;
+                }
+            }
+        }
+
+        .main-body,.vio-archive {
+            padding: 1rem;
+
+            p {
+                font-size: 1rem !important;
+            }
+        }
+    }
+    .vio-archive{
+        h2{
+            font-size: 1.5rem;
+        }
+    }
+    footer {
+        div {
+            flex-direction: column-reverse;
+
+            ul {
+                max-width: 100% !important;
+            }
+        }
+
+        .footer-left {
+            // align-self: center;
+        }
+    }
+}

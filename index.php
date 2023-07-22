@@ -54,11 +54,11 @@
         <?php endif ?>
     </main>
 
-    <nav class="sidebar">
+    <div class="sidebar">
         <!-- sideBar! -->
         <div>
             <?vio_get_sidebar('index')?>
         </div>
-    </nav>
+        </div>
 </div>
 <?php get_footer() ?>

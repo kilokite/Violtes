@@ -2,6 +2,11 @@
 @use 'vio-component' as component;
 @use 'iconfont' as icon;
 
+.main-body {
+    &:empty {
+        display: none;
+    }
+}
 .vio-archive {
     list-style: none;
     h2{
