@@ -4,7 +4,7 @@
         backdrop-filter: blur(10px);
 
         &.menu-show {
-            >div>.menu-header-container {
+            >div>div {
                 margin-left: 2rem;
 
                 .menu {
@@ -14,7 +14,7 @@
             }
         }
 
-        >div>.menu-header-container {
+        >div>div {
             height: 3.5rem;
             transition: all 0.3s ease-in-out;
 
@@ -29,7 +29,7 @@
 
         }
 
-        >div>.menu-header-container>.menu,
+        >div>div>.menu,
         div.menu.tool {
             overflow: hidden;
             border-radius: 0 0 1rem 1rem;

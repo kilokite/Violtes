@@ -96,7 +96,6 @@ function vio_init()
 				'background'=>'none'
 			),
 			'test' => array(
-				//TODO
 				'input' => 'none',
 				'select' => true,
 				'switch' => 'h',

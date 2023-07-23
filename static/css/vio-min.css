@@ -758,6 +758,9 @@ footer > div .footer-right {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
+.footer-link:empty {
+  display: none;
+}
 .footer-link > li a {
   color: rgb(144, 144, 144);
   font-weight: bold;
@@ -818,25 +821,25 @@ footer > div .footer-right {
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(10px);
   }
-  header.menu-show > div > .menu-header-container {
+  header.menu-show > div > div {
     margin-left: 2rem;
   }
-  header.menu-show > div > .menu-header-container .menu {
+  header.menu-show > div > div .menu {
     background-color: rgb(255, 255, 255);
     max-height: 20rem;
   }
-  header > div > .menu-header-container {
+  header > div > div {
     height: 3.5rem;
     transition: all 0.3s ease-in-out;
   }
-  header > div > .menu-header-container > ul.menu {
+  header > div > div > ul.menu {
     height: auto;
     flex-direction: column;
   }
-  header > div > .menu-header-container > ul.menu li:nth-child(n+2) {
+  header > div > div > ul.menu li:nth-child(n+2) {
     display: block;
   }
-  header > div > .menu-header-container > .menu,
+  header > div > div > .menu,
 header div.menu.tool {
     overflow: hidden;
     border-radius: 0 0 1rem 1rem;
@@ -847,7 +850,7 @@ header div.menu.tool {
     backdrop-filter: none;
     max-height: 3.5rem;
   }
-  header > div > .menu-header-container > .menu li:nth-child(n+2),
+  header > div > div > .menu li:nth-child(n+2),
 header div.menu.tool li:nth-child(n+2) {
     display: none;
   }

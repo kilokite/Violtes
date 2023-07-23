@@ -46,6 +46,9 @@ footer {
 }
 
 .footer-link{
+    &:empty{
+        display: none;
+    }
     list-style: none;
     display: flex;
     background-color: rgba(196, 196, 196, 0.108);
