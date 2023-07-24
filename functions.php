@@ -7,6 +7,7 @@ $GLOBALS['force_update'] = true;
 
 require_once(get_theme_file_path('functions-ugly.php'));
 // 不好看的functions ugly functions
+require_once('vio-arc-card/my-first-block.php');
 
 function vio_require_styles()
 {

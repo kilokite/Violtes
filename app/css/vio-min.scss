@@ -42,18 +42,21 @@ body {
     transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
 
 }
+
 .menu-button {
     z-index: 1;
     display: none;
     align-items: center;
     margin-right: -1rem;
     margin-left: 1rem;
+
     &::before {
         @include icon.iconfont;
         @include icon.menu;
         font-size: 1.5rem;
     }
 }
+
 /* # header */
 header {
     position: fixed;
@@ -63,6 +66,7 @@ header {
     display: flex;
     justify-content: space-between;
     transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
+
     .menu {
         display: flex;
         margin: .7rem 3rem;
@@ -90,7 +94,9 @@ header {
             transition: background-color 0.1s ease-out;
             display: flex;
             align-items: center;
-            &:first-child a{
+
+            &:first-child a {
+
                 // color: #a66df2;
                 &::before {
                     content: "";
@@ -98,6 +104,7 @@ header {
                     width: .2rem;
                 }
             }
+
             a {
                 @include component.vio-bold;
                 text-decoration: none;
@@ -105,23 +112,28 @@ header {
                 font-weight: bold;
                 font-size: 1.1rem;
             }
-            &:hover{
+
+            &:hover {
                 background-color: #0000000f;
                 transition: background-color 0.1s ease-out;
             }
 
         }
     }
-    .icon{
+
+    .icon {
         margin-right: .5rem;
     }
-    .search::before{
+
+    .search::before {
         @include icon.search;
         font-size: 1.5rem;
     }
-    .dark-light-switch{
-        transform:translateY(.2rem);
-        &::before{
+
+    .dark-light-switch {
+        transform: translateY(.2rem);
+
+        &::before {
             @include icon.lightmode;
             font-size: 1.7rem;
         }
@@ -155,6 +167,7 @@ header {
     color: #f4f4f4;
     width: 100%;
     text-shadow: 0 0 6rem rgb(0, 0, 0);
+
     >h1 {
         @include component.vio-bold;
         font-weight: bold;
@@ -208,31 +221,38 @@ header {
     font-size: 1.5rem;
     color: vio.$color-violet-light;
     box-shadow: #0000001e 1 1 1rem;
+
     .open-sidebar {
         display: none;
         transition: transform 0.3s ease-out;
+
         &::before {
             @include icon.iconfont;
             @include icon.chevron-left;
         }
     }
+
     .back-to-top {
         overflow: hidden;
         transition: max-height .3s ease-out;
+
         &::before {
             @include icon.iconfont;
             @include icon.chevron-up;
         }
     }
+
     &.menu-show {
         .open-sidebar {
-                transform: rotate(180deg);
+            transform: rotate(180deg);
         }
+
         .back-to-top {
             max-height: 2rem;
         }
     }
 }
+
 .mask {
     position: fixed;
     top: 0;
@@ -242,10 +262,12 @@ header {
     height: 100vh;
     display: none;
     transition: opacity 0.3s ease-out;
+
     &.show {
         display: block;
     }
 }
+
 /* ## main */
 
 .art-list {
@@ -347,8 +369,7 @@ header {
 
 /* ## tag & category */
 .art-tags,
-.art-cats {
-}
+.art-cats {}
 
 .art-tags>a,
 .art-cats>a {
@@ -440,9 +461,10 @@ header {
 
     >.badge {
         margin-top: 1rem;
-        white-space:nowrap;
+        white-space: nowrap;
         overflow: scroll;
         @include component.hide-scrollbar;
+
         >img {
             border-radius: .3rem;
             // width: 2rem;
@@ -458,48 +480,87 @@ header {
     }
 }
 
-.bar-category{
+.bar-category {
     display: flex;
     flex-wrap: wrap;
-    >a {
+
+    li {
+        list-style: none;
         display: inline-block;
         margin: .3rem .3rem;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: bold;
-        padding: .3rem .5rem;
+        padding: 0 .3rem;
         word-wrap: break-all;
         border-radius: calc(vio.$radius / 4);
-    }
-    >.category {
-            color: vio.$color-violet-light;
+
+        span,
+        a {
+            display: inline-block;
+            padding-top: .2rem;
+            padding-bottom: .2rem;
+        }
+
+        span {
+            border-left: solid .1rem;
+            padding: .2rem;
+            // font-size: .9rem;
+        }
+
+        &.category {
+
+            a,
+            span {
+                color: vio.$color-violet-light;
+            }
+
+            span {
+                border-color: vio.$color-violet-argon;
+            }
+
             background-color: vio.$color-violet-argon;
-    }
-    >.tag{
-            color: vio.$color-sky-light;
+        }
+
+        &.tag {
+
+            a,
+            span {
+                color: vio.$color-sky-light;
+            }
+
+            span {
+                border-color: vio.$color-sky-argon;
+            }
+
             background-color: vio.$color-sky-argon;
+        }
     }
-    
+
 }
+
 .bar-article {
     .bar-article-title {
         color: vio.$font-color;
-        margin-bottom:.3rem ;
+        margin-bottom: .3rem;
         font-size: 1rem;
         font-weight: bold;
         white-space: nowrap;
         text-overflow: ellipsis;
-        overflow:hidden;
-        width:  100%;
-    }   
-    .icon-sync{
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .icon-sync {
         // display: inline-block;
         margin-right: .5rem;
+
         // font-size: 1rem;
-        &::before{
+        &::before {
             @include icon.sync;
         }
     }
-    .tool-random{
+
+    .tool-random {
         color: #fff;
         font-size: .9rem;
         font-weight: bold;
@@ -509,10 +570,12 @@ header {
         border: none;
     }
 }
-.tool{
+
+.tool {
     display: flex;
     align-items: center;
 }
+
 .vio-pagination {
     //分页
     display: inline-block;
@@ -595,4 +658,3 @@ header {
         transform: rotate(45deg);
     }
 }
-

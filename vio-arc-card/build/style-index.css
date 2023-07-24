@@ -1,0 +1,56 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-violet-vio-article-card {
+  margin: 1rem 0;
+  color: rgb(79, 79, 79);
+  border-radius: 1rem;
+  border-radius: 1.0625rem;
+  border: 2px solid #efefef;
+  overflow: hidden;
+}
+.wp-block-violet-vio-article-card p {
+  margin: 0;
+}
+.wp-block-violet-vio-article-card .info {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+.wp-block-violet-vio-article-card .info .text {
+  margin-left: 1rem;
+}
+.wp-block-violet-vio-article-card .info .text p.name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.wp-block-violet-vio-article-card .info .avatar {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 1rem;
+}
+.wp-block-violet-vio-article-card .info .avatar img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  margin: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-violet-vio-article-card .url {
+  background: #e4e3e3;
+}
+.wp-block-violet-vio-article-card .url a {
+  padding: 0.2rem 1rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: rgb(79, 79, 79);
+}
+
+/*# sourceMappingURL=style-index.css.map*/

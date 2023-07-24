@@ -1,0 +1,56 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-violet-vio-article-card {
+	margin: 1rem 0;
+	color: rgb(79, 79, 79);
+	border-radius: 1rem;
+	border-radius: 1.0625rem;
+	border: 2px solid #efefef;
+	overflow: hidden;
+	// height: 9rem;
+	p{
+		margin: 0;
+	}
+	.info {
+		padding: .5rem 1rem;
+		display: flex;
+		align-items: center;
+
+		.text {
+			margin-left: 1rem;
+			p {
+				&.name {
+					font-weight: bold;
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		.avatar {
+			height: 4rem;
+			width: 4rem;
+			border-radius: 1rem;
+			img {
+				height: 100%;
+				width: 100%;
+				border-radius: 1rem;
+				margin: 0;
+				object-fit: cover;
+			}
+		}
+	}
+	.url {
+		background: #e4e3e3;
+		a{
+			padding: .2rem 1rem	;
+			font-weight: bold;
+			font-size: .9rem;
+			color: rgb(79, 79, 79);
+		}
+	}
+}

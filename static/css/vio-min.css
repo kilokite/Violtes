@@ -1374,22 +1374,45 @@ header .dark-light-switch::before {
   display: flex;
   flex-wrap: wrap;
 }
-.bar-category > a {
+.bar-category li {
+  list-style: none;
   display: inline-block;
   margin: 0.3rem 0.3rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
-  padding: 0.3rem 0.5rem;
+  padding: 0 0.3rem;
   word-wrap: break-all;
   border-radius: 0.25rem;
 }
-.bar-category > .category {
-  color: #a66df2;
+.bar-category li span,
+.bar-category li a {
+  display: inline-block;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+.bar-category li span {
+  border-left: solid 0.1rem;
+  padding: 0.2rem;
+}
+.bar-category li.category {
   background-color: rgba(127, 42, 212, 0.0823529412);
 }
-.bar-category > .tag {
-  color: #6dc2f2;
+.bar-category li.category a,
+.bar-category li.category span {
+  color: #a66df2;
+}
+.bar-category li.category span {
+  border-color: rgba(127, 42, 212, 0.0823529412);
+}
+.bar-category li.tag {
   background-color: rgba(42, 147, 212, 0.0823529412);
+}
+.bar-category li.tag a,
+.bar-category li.tag span {
+  color: #6dc2f2;
+}
+.bar-category li.tag span {
+  border-color: rgba(42, 147, 212, 0.0823529412);
 }
 
 .bar-article .bar-article-title {

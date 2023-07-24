@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "violet/vio-article-card",
+  "version": "0.1.0",
+  "title": "友链卡片",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "可自定义样式的友链卡片",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "my-first-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "name": {
+      "type": "string",
+      "source": "html",
+      "selector": ".name"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".content"
+    },
+    "avatar": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src",
+      "default": null
+    },
+    "url": {
+      "type": "string",
+      "source": "attribute",
+      "selector": ".url a",
+      "attribute": "href",
+      "default": null
+    }
+  }
+}
