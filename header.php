@@ -19,7 +19,10 @@
         <!-- 左-->
         <div class="menu tool">
             <!-- 右   -->
-            <span class="icon search"></span>
+            <span class="icon search" id="search"></span>
+                <form action="<?php echo home_url() ?>" method="get" class="search-container">
+                    <input type="text" name="s" id="search_input" placeholder="搜索" autocomplete="off">
+                </form>
             <span class="icon dark-light-switch"></span>
         </div>
     </header>
@@ -56,9 +59,13 @@
         </div>
     </section>
     <div id="mask" class="mask"></div>
+    <!-- 遮罩  -->
     <div class="float-action-buttons" id="float_action_buttons">
         <div class="back-to-top" id="back_to_top"></div>
         <div class="open-sidebar" id="open_sidebar"></div>
+    </div>
+    <!-- 打开侧边栏/返回顶部 -->
+    <div class="search">
     </div>
     <?php
     //导航栏 

@@ -13,9 +13,13 @@
 	border: 2px solid #efefef;
 	overflow: hidden;
 	// height: 9rem;
-	p{
+	background-position: center;
+	background-size: cover;
+
+	p {
 		margin: 0;
 	}
+
 	.info {
 		padding: .5rem 1rem;
 		display: flex;
@@ -23,6 +27,7 @@
 
 		.text {
 			margin-left: 1rem;
+
 			p {
 				&.name {
 					font-weight: bold;
@@ -35,6 +40,7 @@
 			height: 4rem;
 			width: 4rem;
 			border-radius: 1rem;
+
 			img {
 				height: 100%;
 				width: 100%;
@@ -44,13 +50,33 @@
 			}
 		}
 	}
+
 	.url {
 		background: #e4e3e3;
-		a{
-			padding: .2rem 1rem	;
+
+		a {
+			padding: .2rem 1rem;
 			font-weight: bold;
 			font-size: .9rem;
 			color: rgb(79, 79, 79);
+			width: 100%;
 		}
+	}
+}
+
+.is-style-color {
+	border: none;
+
+	.url {
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+.is-style-img {
+	background-color: rgba(0, 0, 0, 0.5);
+
+	.url {
+		background-color: rgba(255, 255, 255, 0.8);
+		backdrop-filter: blur(10px);
 	}
 }

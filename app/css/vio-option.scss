@@ -18,10 +18,25 @@
     padding: 0;
 }
 
+.open-menu {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: none;
+    &::before{
+        @include icon.chevron-right;
+        @include icon.iconfont;
+        background: vio.$color-violet-light;
+        color: white;
+        font-size: 1.5rem;
+        padding: .5rem;
+        border-radius: .5rem;
+    }
+}
 .vio-setting {
     overflow: hidden;
     display: flex;
-    width: 45rem;
+    // width: 45rem;
 
     .setting_list {
         width: 15rem;
@@ -239,4 +254,27 @@ textarea {
     width: 100%;
     min-height: 5rem;
     border: solid vio.$color-violet-light .1rem;
+}
+
+@media screen and (max-width:50rem) {
+    .open-menu {
+        display: block;
+    }
+    .setting_list {
+        padding-top: 4rem !important;
+        position: fixed;
+        left: -100%;
+        background: rgba(255, 255, 255, 0.616);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        &.show{
+            left: 0;
+        }
+    }
+    .vio-option-container {
+        margin-top: 4rem !important;
+        form {
+            margin: 1rem 0 !important;
+        }
+    }
 }

@@ -17,6 +17,14 @@
                     </div>
                 </div>
             <?php endif ?>
+        <?php elseif (is_search()) : ?>
+            <div class="vio-archive-title" search>
+                <div>
+                    <h1>搜索：<?php echo get_search_query() ?></h1>
+                    <p>找到<?php echo $wp_query->found_posts ?>条结果</p>
+                </div>
+            </div>
+            
 
         <?php endif ?>
         <?php if (have_posts()) : ?>

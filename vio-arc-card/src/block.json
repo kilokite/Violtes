@@ -14,6 +14,21 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
+	"styles":[
+		{
+			"name": "default",
+			"label": "Default",
+			"isDefault": true
+		},
+		{
+			"name": "color",
+			"label": "Color"
+		},
+		{
+			"name":"img",
+			"label":"Img"
+		}
+	],
 	"attributes": {
 		"name": {
 			"type": "string",
@@ -32,12 +47,24 @@
 			"attribute": "src",
 			"default":null
 		},
+		"backgroundImage":{
+			"type":"string",
+			"default":null
+		},
 		"url": {
 			"type": "string",
 			"source": "attribute",
 			"selector": ".url a",
 			"attribute": "href",
 			"default":null
+		},
+		"textColor": {
+			"type": "string",
+			"default": "#000000"
+		},
+		"backgroundColor": {
+			"type": "string",
+			"default": "#ffffff"
 		}
 	}
 }

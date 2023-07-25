@@ -86,10 +86,28 @@
   padding: 0;
 }
 
+.open-menu {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+}
+.open-menu::before {
+  content: "\e667";
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #a66df2;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
 .vio-setting {
   overflow: hidden;
   display: flex;
-  width: 45rem;
 }
 .vio-setting .setting_list {
   width: 15rem;
@@ -269,6 +287,29 @@ textarea {
   width: 100%;
   min-height: 5rem;
   border: solid #a66df2 0.1rem;
+}
+
+@media screen and (max-width: 50rem) {
+  .open-menu {
+    display: block;
+  }
+  .setting_list {
+    padding-top: 4rem !important;
+    position: fixed;
+    left: -100%;
+    background: rgba(255, 255, 255, 0.616);
+    backdrop-filter: blur(10px);
+    height: 100%;
+  }
+  .setting_list.show {
+    left: 0;
+  }
+  .vio-option-container {
+    margin-top: 4rem !important;
+  }
+  .vio-option-container form {
+    margin: 1rem 0 !important;
+  }
 }
 
 /*# sourceMappingURL=vio-option.css.map */

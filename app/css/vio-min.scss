@@ -66,7 +66,6 @@ header {
     display: flex;
     justify-content: space-between;
     transition: margin-top 0.3s cubic-bezier(0, 0, 0.38, 1.04);
-
     .menu {
         display: flex;
         margin: .7rem 3rem;
@@ -77,6 +76,12 @@ header {
         border-radius: calc(vio.$radius);
         background-color: rgba(255, 255, 255, .5);
         padding: .5rem 1rem;
+    }
+
+    &.search-show{
+        .search-container input{
+            max-width: 10rem;
+        }
     }
 
 
@@ -111,6 +116,7 @@ header {
                 color: vio.$font-color;
                 font-weight: bold;
                 font-size: 1.1rem;
+                white-space: nowrap;
             }
 
             &:hover {
@@ -209,6 +215,21 @@ header {
 }
 
 
+.search-container{
+    //搜索框
+    input{
+        transition: max-width .3s ease-out;
+        width: 10rem;
+        max-width: 0rem;
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        &:focus{
+            outline: none;
+
+        }
+    }
+}
 .float-action-buttons {
     z-index: 93;
     position: fixed;
@@ -643,6 +664,13 @@ header {
             content: "#";
             background-color: vio.$color-sky-argon;
             color: vio.$color-sky-light;
+        }
+    }
+    &[search] {
+        &::before {
+            @include icon.iconfont;
+            @include icon.search;
+            padding-right: .15rem;
         }
     }
 }

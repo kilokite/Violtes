@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps ,RichText} from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 /**
  * The save function defines the way in which the different attributes should
@@ -15,25 +15,37 @@ import { __ } from '@wordpress/i18n';
  *
  * @return {WPElement} Element to render.
  */
-export default function save({attributes}) {
+export default function save({ attributes }) {
+	console.log(attributes.backgroundImage)
 	return (
-		<div { ...useBlockProps.save() }>
+		<div
+			{...useBlockProps.save()}
+			style={{
+				backgroundColor: attributes.backgroundColor,
+				backgroundImage: `url(${attributes.backgroundImage})`,
+			}}
+		>
 			<div class="info">
 				<div class="avatar">
 					<img
-					src={attributes.avatar}
+						src={attributes.avatar}
 					/>
 				</div>
-				<div class="text">
+				<div
+					class="text"
+					style={{
+						color: attributes.textColor,
+					}}
+				>
 					<RichText.Content
-					tagName="p"
-					value={attributes.name}
-					className="name"
+						tagName="p"
+						value={attributes.name}
+						className="name"
 					/>
 					<RichText.Content
-					tagName='p'
-					value={attributes.content}
-					className='content'
+						tagName='p'
+						value={attributes.content}
+						className='content'
 					/>
 				</div>
 			</div>

@@ -156,8 +156,16 @@ ready(() => {
     document.querySelector('.mask').addEventListener('touchstart',() => {
         closeAll()
     })
+    document.querySelector('.mask').addEventListener('click',() => {
+        closeAll()
+    })
     document.getElementById('back_to_top').onclick = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+    document.getElementById('search').onclick = () => {
+        document.querySelector('#header').classList.toggle('search-show')
+        document.querySelector('#header .search-container input').focus();
+        toggleMask()
     }
 })
 
@@ -170,4 +178,5 @@ function closeAll() {
     document.querySelector('#float_action_buttons').classList.remove('menu-show')
     document.querySelector('.sidebar').classList.remove('show')
     document.querySelector('.mask').classList.remove('show')
+    document.querySelector('#header').classList.remove('search-show')    
 }

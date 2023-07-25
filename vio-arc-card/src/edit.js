@@ -12,13 +12,16 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {
-	useBlockProps ,
-	RichText ,
-	InspectorControls ,
+	useBlockProps,
+	RichText,
+	InspectorControls,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
+import {
+	PanelBody, Button
+} from '@wordpress/components'
 
 
-import { Button } from '@wordpress/components';
 import { MediaUpload, MediaUploadCheck } from '@wordpress/block-editor';;
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -36,58 +39,118 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes }) {
 	let mediaId
-	function onChangeName(content){
-		setAttributes({name:content})
+	function onChangeName(content) {
+		setAttributes({ name: content })
 	}
-	function onChangeContent(content){
-		setAttributes({content});
+	function onChangeContent(content) {
+		setAttributes({ content });
 	}
 	return (
-		<div { ...useBlockProps() }>
-			<div class="info">
-				<div class="avatar">
-					<MediaUpload
-				onSelect={ ( media ) =>
-					setAttributes( { avatar: media.url } )
-				}
-				allowedTypes={[ 'image' ]}
-				value={ mediaId }
-				render={ ( { open } ) => (
-					<img
-					src={attributes.avatar}
-					onClick={ open }
-					/>
-				) }/>
-				</div>
-				<div class="text">
-					<RichText
-					tagName="p"
-					value={attributes.name}
-					onChange={onChangeName}
-					placeholder={__('Your name', 'vio-arc-card')}
-					className="name"
-					/>
-					<RichText
-					tagName='p'
-					value={attributes.content}
-					onChange={onChangeContent}
-					placeholder='Your content'
-					className='content'
-					/>
-				</div>
-			</div>
-			<div class="url">
-				<RichText
-				tagName='a'
-				value={attributes.url}
-				onChange={(content)=>{
-					setAttributes({url:content})
-				}}
-				placeholder='Your url'
+		<>
+			<InspectorControls>
+				<PanelColorSettings
+					title='Color'
+					initialOpen={true}
+					colorSettings={[
+						{
+							value: attributes.textColor,
+							onChange: (color) => {
+								setAttributes({ textColor: color })
+							},
+							label: 'Text Color'
+						},
+						{
+							value: attributes.backgroundColor,
+							onChange: (color) => {
+								setAttributes({ backgroundColor: color })
+							},
+							label: 'Background Color'
+						}
+					]}
 				/>
+				<PanelBody
+					title='Image'
+					initialOpen={true}
+				>
+					<MediaUploadCheck fallback={
+						<p>no promession</p>
+					}>
+						<MediaUpload
+							title='backgorund'
+							allowedTypes={['image']}
+							onSelect={(media) => {
+								setAttributes({ backgroundImage: media.url })
+							}}
+							value={attributes.backgroundImage}
+							render={({ open }) => (
+								<Button
+									onClick={open}
+								>
+									select backgroundImage
+								</Button>
+							)}
+						/>
+					</MediaUploadCheck>
+				</PanelBody>
+			</InspectorControls>
+			<div
+				{...useBlockProps()}
+				style={{
+					backgroundColor: attributes.backgroundColor,
+					backgroundImage: `url(${attributes.backgroundImage})`,
+					backgroundPosition: 'center',
+				}}
+			>
+				<div class="info">
+					<div class="avatar">
+						<MediaUpload
+							onSelect={(media) =>
+								setAttributes({ avatar: media.url })
+							}
+							allowedTypes={['image']}
+							value={mediaId}
+							render={({ open }) => (
+								<img
+									src={attributes.avatar}
+									onClick={open}
+								/>
+							)} />
+					</div>
+					<div
+						class="text"
+						style={{
+							color: attributes.textColor,
+						}}
+					>
+						<RichText
+							tagName="p"
+							value={attributes.name}
+							onChange={onChangeName}
+							placeholder={__('Your name', 'vio-arc-card')}
+							className="name"
+						/>
+						<RichText
+							tagName='p'
+							value={attributes.content}
+							onChange={onChangeContent}
+							placeholder='Your content'
+							className='content'
+						/>
+					</div>
+				</div>
+				<div class="url">
+					<RichText
+						tagName='a'
+						value={attributes.url}
+						onChange={(content) => {
+							setAttributes({ url: content })
+						}}
+						placeholder='Your url'
+					/>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }

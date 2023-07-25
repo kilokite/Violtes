@@ -161,3 +161,7 @@ function renderList(inputId) {
         selectedItemsContainer.appendChild(listItem);
     });
 }
+
+function toggleMenu(){
+    document.querySelector(".setting_list").classList.toggle("show")
+}

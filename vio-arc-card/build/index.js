@@ -70,8 +70,52 @@ function Edit({
       content
     });
   }
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.PanelColorSettings, {
+    title: "Color",
+    initialOpen: true,
+    colorSettings: [{
+      value: attributes.textColor,
+      onChange: color => {
+        setAttributes({
+          textColor: color
+        });
+      },
+      label: 'Text Color'
+    }, {
+      value: attributes.backgroundColor,
+      onChange: color => {
+        setAttributes({
+          backgroundColor: color
+        });
+      },
+      label: 'Background Color'
+    }]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: "Image",
+    initialOpen: true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, {
+    fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "no promession")
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
+    title: "backgorund",
+    allowedTypes: ['image'],
+    onSelect: media => {
+      setAttributes({
+        backgroundImage: media.url
+      });
+    },
+    value: attributes.backgroundImage,
+    render: ({
+      open
+    }) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+      onClick: open
+    }, "select backgroundImage")
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(),
+    style: {
+      backgroundColor: attributes.backgroundColor,
+      backgroundImage: `url(${attributes.backgroundImage})`,
+      backgroundPosition: 'center'
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "info"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -89,7 +133,10 @@ function Edit({
       onClick: open
     })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "text"
+    class: "text",
+    style: {
+      color: attributes.textColor
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
     value: attributes.name,
@@ -113,7 +160,7 @@ function Edit({
       });
     },
     placeholder: "Your url"
-  })));
+  }))));
 }
 
 /***/ }),
@@ -209,8 +256,13 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
+  console.log(attributes.backgroundImage);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save(),
+    style: {
+      backgroundColor: attributes.backgroundColor,
+      backgroundImage: `url(${attributes.backgroundImage})`
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "info"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -218,7 +270,10 @@ function save({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: attributes.avatar
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "text"
+    class: "text",
+    style: {
+      color: attributes.textColor
+    }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {
     tagName: "p",
     value: attributes.name,
@@ -316,7 +371,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"violet/vio-article-card","version":"0.1.0","title":"友链卡片","category":"widgets","icon":"smiley","description":"可自定义样式的友链卡片","supports":{"html":false},"textdomain":"my-first-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"name":{"type":"string","source":"html","selector":".name"},"content":{"type":"string","source":"html","selector":".content"},"avatar":{"type":"string","source":"attribute","selector":"img","attribute":"src","default":null},"url":{"type":"string","source":"attribute","selector":".url a","attribute":"href","default":null}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"violet/vio-article-card","version":"0.1.0","title":"友链卡片","category":"widgets","icon":"smiley","description":"可自定义样式的友链卡片","supports":{"html":false},"textdomain":"my-first-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","styles":[{"name":"default","label":"Default","isDefault":true},{"name":"color","label":"Color"},{"name":"img","label":"Img"}],"attributes":{"name":{"type":"string","source":"html","selector":".name"},"content":{"type":"string","source":"html","selector":".content"},"avatar":{"type":"string","source":"attribute","selector":"img","attribute":"src","default":null},"backgroundImage":{"type":"string","default":null},"url":{"type":"string","source":"attribute","selector":".url a","attribute":"href","default":null},"textColor":{"type":"string","default":"#000000"},"backgroundColor":{"type":"string","default":"#ffffff"}}}');
 
 /***/ })
 

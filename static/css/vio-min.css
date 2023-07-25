@@ -828,6 +828,12 @@ footer > div .footer-right {
     background-color: rgb(255, 255, 255);
     max-height: 20rem;
   }
+  header.search-show > div > div {
+    opacity: 0;
+  }
+  header.search-show .dark-light-switch {
+    opacity: 0;
+  }
   header > div > div {
     height: 3.5rem;
     transition: all 0.3s ease-in-out;
@@ -924,31 +930,31 @@ header div.menu.tool li:nth-child(n+2) {
   article {
     padding: 0 !important;
   }
-  article .info {
+  article > .info {
     flex-direction: column-reverse;
   }
-  article .info img {
+  article > .info img {
     width: 100% !important;
     border-radius: 1rem 1rem 0 0 !important;
     pointer-events: none;
   }
-  article .info h1 {
+  article > .info h1 {
     font-size: 1.5rem !important;
   }
-  article .info > div {
+  article > .info > div {
     margin: 1.5rem 1rem 1rem 1rem;
     text-align: center;
   }
-  article .info .post-meta span:first-child {
+  article > .info .post-meta span:first-child {
     display: none;
   }
-  article .info .post-meta span:empty {
+  article > .info .post-meta span:empty {
     display: none !important;
   }
-  article .info .post-meta span.item {
+  article > .info .post-meta span.item {
     display: inline-block;
   }
-  article .info .post-meta > p {
+  article > .info .post-meta > p {
     display: inline;
   }
   article .main-body, article .vio-archive {
@@ -1035,6 +1041,9 @@ header .menu {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0.5rem 1rem;
 }
+header.search-show .search-container input {
+  max-width: 10rem;
+}
 header ul {
   list-style-type: none;
   display: flex;
@@ -1061,6 +1070,7 @@ header ul li a {
   color: rgb(79, 79, 79);
   font-weight: bold;
   font-size: 1.1rem;
+  white-space: nowrap;
 }
 header ul li:hover {
   background-color: rgba(0, 0, 0, 0.0588235294);
@@ -1135,6 +1145,18 @@ header .dark-light-switch::before {
 .content {
   margin: -35vh auto 2rem auto;
   display: flex;
+}
+
+.search-container input {
+  transition: max-width 0.3s ease-out;
+  width: 10rem;
+  max-width: 0rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+}
+.search-container input:focus {
+  outline: none;
 }
 
 .float-action-buttons {
@@ -1509,6 +1531,14 @@ header .dark-light-switch::before {
   content: "#";
   background-color: rgba(42, 147, 212, 0.0823529412);
   color: #6dc2f2;
+}
+.vio-archive-title[search]::before {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e655";
+  padding-right: 0.15rem;
 }
 
 .sticky_post::before {

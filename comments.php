@@ -28,6 +28,9 @@ if (post_password_required()) {
 
 <?php if (have_comments()) : ?>
     <div class="comments">
+        <?
+        // print_r(get_comments(array('post_id' => get_the_ID())));
+        ?>
         <ul>
 
             <?php

@@ -14,7 +14,17 @@
             }
         }
 
+        &.search-show{
+            >div>div {
+                opacity: 0;
+            }
+            .dark-light-switch {
+                opacity: 0;
+            }
+        }
+
         >div>div {
+            //左侧菜单
             height: 3.5rem;
             transition: all 0.3s ease-in-out;
 
@@ -141,9 +151,8 @@
     article {
         padding: 0 !important;
 
-        .info {
+        >.info {
             flex-direction: column-reverse;
-
             img {
                 width: 100% !important;
                 border-radius: 1rem 1rem 0 0 !important;
